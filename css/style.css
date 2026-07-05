@@ -1629,3 +1629,89 @@ body { font-size: 17px; line-height: 1.9; }
   .req-table { font-size: 15.5px; }
   .stat-value .num { font-size: 60px; }
 }
+
+/* ============================================================
+   デザイン底上げ（Claude design・2026-07-06）
+   方針: A系（丸ゴ Zen Maru・桜・明るいクリーム）を保ったまま、構図・面・
+         余白・数字の見せ方・読み込み時の所作を craft で洗練させる。
+   制約: すべてトークン経由（6配色で崩れない）／脱AI原則（影3階層・
+         色の許可リスト＝桜は「ここぞ」だけ）を尊重／saiyo-lp-templateへ
+         逆輸入できる範囲に留める（意匠の昇格候補）。
+   ============================================================ */
+:root {
+  --radius-card: 20px;                       /* 18→20: 全カードをわずかに柔らかく */
+  --radius-organic: 22px 22px 22px 8px;      /* ヒーロー/主役写真の非対称角丸（有機的な柔らかさ） */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --hairline: rgba(43, 43, 58, 0.06);
+}
+
+/* --- 余白のリズムをひとまわりゆったりに（品の土台） --- */
+.section { padding: 64px 0; }
+@media (min-width: 768px) { .section { padding: 104px 0; } }
+
+/* --- ヒーロー: 写真まわりに桜色の空気感、カードは主役の影で浮かせる --- */
+.hero { background: linear-gradient(180deg, var(--color-primary-soft), var(--color-cream) 62%); }
+.hero-card {
+  border-radius: var(--radius-organic);
+  box-shadow: var(--shadow-float);
+  border: 1px solid var(--hairline);
+}
+
+/* --- ヒーロー数字: ステッチ枠 → 白い面＋下線（クラフト感を上質へ・桜はhero統計のみ） --- */
+.hero-stats li {
+  border: none;
+  background: var(--color-paper);
+  box-shadow: var(--shadow-tight);
+  border-radius: 13px;
+  padding: 10px 4px 9px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-stats li::after {
+  content: "";
+  position: absolute; left: 24%; right: 24%; bottom: 0; height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--color-line);
+}
+.hero-stats .stat-hero::after { background: var(--color-primary); }   /* 桜は「早番の退勤」1点のみ＝色の許可リスト遵守 */
+
+/* モバイルFV死守: 底上げで増えた高さを詰め、375×667でCTAを画面内に戻す */
+@media (max-width: 767px) {
+  .hero-card { padding: 16px 18px 14px; }
+  .hero-stats li { padding: 8px 4px 7px; }
+  .hero-copy { margin-bottom: 10px; }
+  .hero-note { margin-bottom: 8px; }
+}
+
+/* --- 読み込み時の所作: ヒーローを順に立ち上げる（1回だけ・reduce尊重・非対応でも表示） --- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-card > * { animation: heroRise 0.7s var(--ease-soft) both; }
+  .hero-eyebrow { animation-delay: 0.05s; }
+  .hero-copy    { animation-delay: 0.15s; }
+  .hero-stats   { animation-delay: 0.27s; }
+  .hero-note    { animation-delay: 0.36s; }
+  .hero-cta     { animation-delay: 0.44s; }
+  .hero-stamp   { animation: stampPop 0.55s var(--ease-soft) 0.62s both; }
+}
+@keyframes heroRise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@keyframes stampPop { from { opacity: 0; transform: rotate(8deg) scale(0.55); } to { opacity: 1; transform: rotate(8deg) scale(1); } }
+
+/* --- 見出し: eyebrowをより端正に、タイトルの前後を少し開ける --- */
+.sec-eyebrow { letter-spacing: 0.26em; }
+.sec-title { margin-bottom: 40px; }
+@media (min-width: 768px) { .sec-title { margin-bottom: 52px; } }
+
+/* --- 面の手触り: カードはホバーでそっと持ち上がる（影3階層: 通常card→ホバーfloat） --- */
+.feature-card, .voice-card, .stat-card, .flow-step {
+  transition: transform 0.35s var(--ease-soft), box-shadow 0.35s var(--ease-soft);
+}
+@media (hover: hover) {
+  .feature-card:hover, .voice-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-float); }
+}
+
+/* --- 有機的な非対称角丸を「主役」だけに一貫適用（意匠の昇格候補・使いすぎない） --- */
+.about-photo, .director-photo, .voice-card--bubble { border-radius: var(--radius-organic); }
+
+/* --- CTAの所作を上質なイージングに統一（LINE緑＝行動色は不変） --- */
+.btn { transition: transform 0.3s var(--ease-soft), box-shadow 0.3s var(--ease-soft), background-color 0.2s ease; }
+.btn:hover { transform: translateY(-3px); }
