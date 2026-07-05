@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  送信完了ページ = CV計測の基準点（このURLは変えないこと）
+  - フォーム送信フラグ(lp_form_submitted)がある時だけ thanks_valid を発火する。
+    URL直打ち・ブックマーク・リロードでのページビュー誤CVを除外するため。
+  - GTM側は「カスタムイベント thanks_valid」トリガーでCVタグを発火させる（form_submit_successとの二重登録禁止）。
+-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- ▼▼ GTM（index.htmlと同じコンテナIDを設定。計測しないならブロックごと削除） VAR:GTM_ID ▼▼
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  ▲▲ GTM head ▲▲ -->
+
+  <title>送信が完了しました｜こざくら保育園 採用サイト</title><!-- VAR:FACILITY_NAME -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260703">
+  <style>
+    .thanks { max-width: 620px; margin: 0 auto; padding: 80px 20px 100px; text-align: center; }
+    .thanks h1 { font-family: var(--font-display); font-size: 26px; font-weight: 900; margin-bottom: 20px; }
+    .thanks p { font-size: 15px; line-height: 2; color: var(--color-ink-soft); margin-bottom: 14px; }
+    .thanks-mark { width: 76px; height: 76px; margin: 0 auto 24px; }
+    .thanks-line { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 14px 26px;
+      background: var(--color-line-active); color: #fff; text-decoration: none; border-radius: 999px;
+      font-family: var(--font-display); font-weight: 700; box-shadow: 0 8px 20px rgba(6,199,85,0.28); }
+    .thanks-back { display: inline-block; margin-top: 28px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <!-- ▼▼ GTM noscript（GTM有効化時にコメントを外す） VAR:GTM_ID ▼▼
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  ▲▲ GTM body ▲▲ -->
+
+  <main class="thanks">
+    <svg class="thanks-mark" viewBox="0 0 76 76" role="img" aria-label="送信完了">
+      <circle cx="38" cy="38" r="36" fill="none" stroke="#E4566E" stroke-width="3"/>
+      <path d="M23 39l10 10 20-22" fill="none" stroke="#E4566E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <h1>送信が完了しました</h1>
+    <p>お問い合わせありがとうございます。<br>園の採用担当より、いただいたご連絡先へ折り返しご連絡します。</p>
+    <p>お急ぎの方、すぐに質問したい方は、<br>LINEからでもお気軽にどうぞ。</p>
+    <!-- VAR:LINE_URL -->
+    <a class="thanks-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="thanks">LINEで相談する</a>
+    <br>
+    <a class="thanks-back" href="index.html">採用ページにもどる</a>
+  </main>
+
+  <script>
+    // 誤CV除外: フォーム送信フラグがある時だけ thanks_valid を発火し、フラグは即消費する
+    (function () {
+      try {
+        if (sessionStorage.getItem('lp_form_submitted') === '1') {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'thanks_valid' });
+          sessionStorage.removeItem('lp_form_submitted');
+        }
+      } catch (e) { /* ストレージ不可でもページは表示する */ }
+    })();
+  </script>
+</body>
+</html>
