@@ -340,6 +340,34 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 
 /* ============ レスポンシブ安全策（グリッド/フレックス子のはみ出し防止） ============ */
 .hero .wrap>*,.about-in>*,.feature-card>*,.day-in>*,.director-in>*,.apply-grid>*,.access-in>*,.timeline li>.tl-body{min-width:0}
+
+/* ============ 効かせ色の切替（レビュー用） ============
+   ヒトトナリ流は「--accent系トークンの差し替えだけで着替わる」設計。
+   桜モチーフ(花びら/バッジ/ロゴ)と写真プレースホルダも効かせ色に追従させ、全体を調和させる。
+   ※LINE緑(--line-green)＝行動色は全色で固定。 */
+.sakura-mark g,.spin-badge .badge-core g{fill:var(--accent-sub)}
+.sakura-mark circle,.spin-badge .badge-core circle{fill:var(--accent-2nd)}
+.spin-badge > svg.rot > circle{stroke:var(--accent)}
+.spin-badge > svg.rot text{fill:var(--accent)}
+.photo-ph{background:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.20) 0 16px,transparent 16px 32px),
+  linear-gradient(140deg,var(--accent-sub),var(--accent) 62%,var(--accent-2nd))}
+.voice-face{background:linear-gradient(135deg,var(--accent-sub),var(--accent))}
+/* 藍（青・知的／中途向け） */
+body[data-hue="ai"]{--accent:#2A5C8F;--accent-deep:#1C3E63;--accent-sub:#5E8DBE;--accent-2nd:#CF9A3C;--accent-2nd-deep:#A97C22;--pale-1:#EAF2F9;--pale-3:#EEF4FA;--line:#D8E2ED}
+/* 若葉（緑・自然） */
+body[data-hue="wakaba"]{--accent:#3B7A57;--accent-deep:#265239;--accent-sub:#6FAC88;--accent-2nd:#CF9A3C;--accent-2nd-deep:#A97C22;--pale-1:#E9F3EC;--pale-3:#EDF5EF;--line:#D6E4DA}
+/* 金茶（茶金・和／創立58年の歴史。第2アクセントは桜にして温かみを残す） */
+body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99A4E;--accent-2nd:#B8324F;--accent-2nd-deep:#7E2138;--pale-1:#F6EEDD;--pale-3:#F5EFE0;--line:#E7DAC2}
+
+/* 色ピッカー（レビュー専用・本番には出さない） */
+.hue-picker{position:fixed;left:12px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:400;display:grid;gap:6px;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:14px;padding:8px 11px;box-shadow:0 6px 20px rgba(0,0,0,.16);font-family:var(--gothic)}
+.hue-picker .hp-label{font-size:10px;font-weight:700;color:var(--gray);letter-spacing:.08em}
+.hue-picker .hp-row{display:flex;gap:6px;flex-wrap:wrap;max-width:214px}
+.hue-picker button{font-family:inherit;font-size:12px;font-weight:700;color:#5A4A50;background:#F3ECEE;border:1px solid transparent;border-radius:999px;padding:5px 11px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;min-height:32px}
+.hue-picker button .sw{width:11px;height:11px;border-radius:50%;display:inline-block}
+.hue-picker button.on{background:#2B2B3A;color:#fff}
+@media(min-width:1040px){.hue-picker{bottom:16px}}
 </style>
 </head>
 <body>
@@ -819,6 +847,26 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
     LINEで気軽に相談
   </a>
 </div>
+
+<!-- ===== 効かせ色ピッカー（レビュー専用） ===== -->
+<div class="hue-picker" role="group" aria-label="効かせ色の切替（レビュー用）">
+  <span class="hp-label">効かせ色</span>
+  <div class="hp-row" id="huePicker">
+    <button type="button" data-hue="" class="on"><span class="sw" style="background:#B8324F"></span>桜</button>
+    <button type="button" data-hue="ai"><span class="sw" style="background:#2A5C8F"></span>藍</button>
+    <button type="button" data-hue="wakaba"><span class="sw" style="background:#3B7A57"></span>若葉</button>
+    <button type="button" data-hue="kincha"><span class="sw" style="background:#A9772C"></span>金茶</button>
+  </div>
+</div>
+<script>
+document.querySelectorAll('#huePicker button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var v = b.getAttribute('data-hue');
+    if (v) document.body.setAttribute('data-hue', v); else document.body.removeAttribute('data-hue');
+    document.querySelectorAll('#huePicker button').forEach(function (x) { x.classList.toggle('on', x === b); });
+  });
+});
+</script>
 
 </body>
 </html>
