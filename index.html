@@ -1891,6 +1891,11 @@ body[data-style="tsumugi"] {
   cursor: pointer;
 }
 .theme-picker button.on { background: #2B2B3A; color: #FFF; }
+.tp-altrow { border-top: 1px solid #E5DCCB; margin-top: 3px; padding-top: 7px; }
+.tp-altlink {
+  font-size: 11.5px; font-weight: 700; color: #7E2138; text-decoration: none;
+  border: 1px solid #E4566E; border-radius: 999px; padding: 5px 11px; background: #FCEEF1;
+}
 @media (min-width: 768px) { .theme-picker { left: 20px; bottom: 20px; } }
 
 </style>
@@ -2446,16 +2451,21 @@ body[data-style="tsumugi"] {
   <script src="js/main.js?v=20260703" defer></script>
 
 
-<!-- レビュー用: スタイル比較スイッチャー（キュレーション済み5案。本番LPには存在しない） -->
+<!-- レビュー用: スタイル比較スイッチャー（キュレーション済み6案。本番LPには存在しない）
+     ＋ パターンB（別デザイン=ヒトトナリ流）へのリンク -->
 <div class="theme-picker" role="group" aria-label="スタイルの比較（レビュー用）">
   <div class="tp-row" data-attr="data-style">
-    <span class="tp-label">スタイル</span>
+    <span class="tp-label">パターンA｜配色</span>
     <button type="button" data-v="" class="on" title="桜×生成り×丸ゴ｜基準・新卒中途共通｜暖色広告向き">さくら</button>
     <button type="button" data-v="shirozakura" title="桜×白×M PLUS Rounded×Nunito｜清潔モダン・共通｜中立広告向き">しろざくら</button>
     <button type="button" data-v="tokiiro" title="桜ピンク地×Fredoka｜いちばん甘い・新卒向け配信用｜暖色広告向き">ときいろ</button>
     <button type="button" data-v="ruri" title="薄群青地×角ゴ×Montserrat｜知的・中途/複合職種向け｜寒色広告とセットで">るり</button>
     <button type="button" data-v="wakaba" title="薄ミント地×深緑×Baloo 2｜自然・共通｜緑系広告向き">わかば</button>
     <button type="button" data-v="tsumugi" title="金生成り×こげ茶×明朝×Jost｜和・上質｜創立58年の歴史訴求と好相性">つむぎ</button>
+  </div>
+  <div class="tp-row tp-altrow">
+    <span class="tp-label">別デザイン</span>
+    <a class="tp-altlink" href="hitotonari.html" title="明朝×手書き英字×効かせ色×有機的な丸の別パターン（骨格ちがい）">B：ひととなり（明朝・和）→</a>
   </div>
 </div>
 <script>
