@@ -109,6 +109,7 @@ nav.g a:hover::after{width:100%}
 .hero-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
 .hero-cta .btn-note{flex-basis:100%;font-size:11.5px;color:var(--gray);margin-top:-2px;letter-spacing:.02em}
 .hero-visual{position:relative}
+/* 運用: 実写真<img>への差し替え時もaspect-ratio指定を維持するか、width/height属性を必ず付与すること（CLS対策） */
 .photo-ph{background:
   repeating-linear-gradient(45deg,rgba(255,255,255,.20) 0 16px,transparent 16px 32px),
   linear-gradient(140deg,#E88BA0,#B8324F 62%,#CF9A3C);
@@ -330,7 +331,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 .sticky-cta .s-tel{border:1.5px solid var(--line);color:var(--accent-deep);background:#fff;width:52px;padding:0}
 .sticky-cta .s-line{flex:1 1 auto;background:var(--line-green);color:#fff}
 .sticky-cta .s-line .ico{width:18px;height:18px}
-@media(max-width:1040px){.sticky-cta{display:flex}main{padding-bottom:0}}
+@media(max-width:1040px){.sticky-cta{display:flex}main{padding-bottom:0}footer{padding-bottom:calc(114px + env(safe-area-inset-bottom))}}
 
 /* ============ A/Bパターン比較バー（レビュー専用・本番には出さない） ============ */
 .pattern-bar{background:#2B2B3A;color:#fff;font-size:12px;text-align:center;padding:8px 12px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;letter-spacing:.03em;line-height:1.8}
@@ -373,15 +374,18 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
 <body>
 
 <!-- ===== A/Bパターン比較バー（レビュー専用） ===== -->
+<!-- REVIEW-ONLY: 本番公開前に削除 -->
 <div class="pattern-bar" role="navigation" aria-label="デザイン比較">
   <span class="pb-label">デザイン比較（検討用）</span>
   <a href="./">A：さくら（丸ゴ・6配色）</a>
   <span class="cur">B：ひととなり（明朝・和）</span>
 </div>
+<!-- /REVIEW-ONLY -->
 
 <!-- ===== 共通インラインSVG defs（桜モチーフ＝こざくらのブランド意匠） ===== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
+    <!-- ※未適用（評価指摘あり）: #softDropは現在どのCSSからもfilter:url(#softDrop)で参照されておらず未使用。活用/削除は目視ゲート後に判断 -->
     <filter id="softDrop" x="-25%" y="-25%" width="150%" height="150%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
       <feOffset dx="0" dy="3"/>
@@ -778,10 +782,10 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
           <h4><span class="num2">2</span>フォームで問い合わせる</h4>
           <p>電話やLINEが使いにくい方は、こちらからでも大丈夫です。「見学だけ」「質問だけ」でもかまいません。</p>
           <form onsubmit="this.querySelector('.form-done').hidden=false;this.querySelector('button').disabled=true;return false;" style="margin-top:14px">
-            <div class="f-row"><label>お名前<span class="req">必須</span></label><input type="text" placeholder="例）本庄 さくら" required autocomplete="name"></div>
-            <div class="f-row"><label>ご連絡先（電話 または メール）<span class="req">必須</span></label><input type="text" placeholder="例）090-0000-0000 ／ your@example.jp" required></div>
-            <div class="f-row"><label>ご応募の区分<span class="req">必須</span></label>
-              <select required>
+            <div class="f-row"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" name="f-name" placeholder="例）本庄 さくら" required autocomplete="name"></div>
+            <div class="f-row"><label for="f-contact">ご連絡先（電話 または メール）<span class="req">必須</span></label><input type="text" id="f-contact" name="f-contact" placeholder="例）090-0000-0000 ／ your@example.jp" required></div>
+            <div class="f-row"><label for="f-type">ご応募の区分<span class="req">必須</span></label>
+              <select id="f-type" name="f-type" required>
                 <option value="">選択してください</option>
                 <option>新卒</option>
                 <option>中途</option>
@@ -789,7 +793,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
                 <option>見学・質問のみ</option>
               </select>
             </div>
-            <div class="f-row"><label>お問い合わせ内容</label><textarea placeholder="気になっていること、聞きにくいこと、何でもどうぞ。"></textarea></div>
+            <div class="f-row"><label for="f-message">お問い合わせ内容</label><textarea id="f-message" name="f-message" placeholder="気になっていること、聞きにくいこと、何でもどうぞ。"></textarea></div>
             <button class="btn btn-form" type="submit">この内容で送信する</button>
             <p class="form-note form-done" hidden>（ドラフト用デモ）実装時はサーバーへ送信し、園の採用担当へ通知します。ありがとうございました。</p>
             <p class="form-note">送信後、園の採用担当より折り返しご連絡します。現在の勤務先へ連絡することは一切ありません。</p>
@@ -849,6 +853,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
 </div>
 
 <!-- ===== 効かせ色ピッカー（レビュー専用） ===== -->
+<!-- REVIEW-ONLY: 本番公開前に削除（このdivと直後のscriptタグを含む） -->
 <div class="hue-picker" role="group" aria-label="効かせ色の切替（レビュー用）">
   <span class="hp-label">効かせ色</span>
   <div class="hp-row" id="huePicker">
@@ -867,6 +872,7 @@ document.querySelectorAll('#huePicker button').forEach(function (b) {
   });
 });
 </script>
+<!-- /REVIEW-ONLY -->
 
 </body>
 </html>
