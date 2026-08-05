@@ -116,6 +116,8 @@ nav.g a:hover::after{width:100%}
   display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-align:center;line-height:1.9;padding:20px}
 .hero-visual .photo-ph{aspect-ratio:5/4;border-radius:8rem 3rem 3rem 3rem}
 .ph-note{font-size:10.5px;letter-spacing:.04em;opacity:.9;display:block;margin-top:6px;font-weight:400}
+/* 実写真差し替え済みスロット: プレースホルダ用paddingを打ち消し、枠形状は維持してcoverで敷き詰める */
+img.photo-ph{object-fit:cover;width:100%;height:auto;padding:0;display:block}
 /* 回転バッジ（桜色・中央に桜マーク） */
 .spin-badge{position:absolute;right:-26px;bottom:-30px;width:132px;height:132px;z-index:3}
 .spin-badge .rot{animation:rotation 20s linear infinite;transform-origin:50% 50%}
@@ -464,7 +466,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
       </div>
     </div>
     <div class="hero-visual">
-      <div class="photo-ph">写真差し込み枠<br>［保育士と子どもの自然なカット・縦位置］<span class="ph-note">※撮影後に実写真へ差し替え（仮）</span></div>
+      <img class="photo-ph" src="images/hero-b.webp?v=20260805" width="1750" height="1400" alt="こざくら保育園の園舎前で笑顔でジャンプする先生たち" fetchpriority="high">
       <div class="spin-badge" aria-hidden="true">
         <svg viewBox="0 0 128 128" class="rot">
           <defs><path id="circPath" d="M64,64 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
@@ -503,7 +505,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         <p>こざくら保育園は<strong>昭和43年（1968年）創立</strong>。定員200名・職員約50名、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。月1回の音体教育（マーチング・太鼓・器楽合奏）も特色です。</p>
         <p>規模が大きいからこそ、複数担任制やシフトの柔軟さ、保育を離れて事務作業をする時間など、<strong class="marker">「先生が長く続けられる仕組み」に人員を割ける</strong>のが私たちの強みです。同じ敷地には子育て支援センターと高齢者デイサービスが併設され、多世代が行き交う環境です。<span class="req-sub">※職員数・肩書きの正式表記は【園確認中】</span></p>
       </div>
-      <div class="fade-up"><div class="photo-ph">写真差し込み枠<br>［園舎外観 または 保育のようす］<span class="ph-note">※撮影後に実写真へ差し替え（仮）</span></div></div>
+      <div class="fade-up"><img class="photo-ph" src="images/facade.webp?v=20260805" width="1600" height="1200" alt="こざくら保育園の園舎外観" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -528,7 +530,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
 
     <div class="feature-list">
       <article class="feature-card" id="f1">
-        <div class="feature-media"><div class="photo-ph">写真差し込み枠<br>［連携し合う2人の保育士］<span class="ph-note">※仮</span></div></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-1.webp?v=20260805" width="1600" height="1200" alt="タブレットを見ながら連携・相談し合う2人の保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">01<span class="who">全員に</span></p>
           <h3>複数担任制<span class="sub">人間関係の安心・ひとりで抱えない</span></h3>
@@ -537,7 +539,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         </div>
       </article>
       <article class="feature-card" id="f2">
-        <div class="feature-media"><div class="photo-ph">写真差し込み枠<br>［昼過ぎに退勤する保育士］<span class="ph-note">※仮</span></div></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-2.webp?v=20260805" width="1600" height="1200" alt="早番を終えて昼過ぎに退勤する保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">02<span class="who">中途の方に</span></p>
           <h3>時差出勤（早番・遅番）<span class="sub">早番の日は昼過ぎに退勤</span></h3>
@@ -546,7 +548,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         </div>
       </article>
       <article class="feature-card" id="f3">
-        <div class="feature-media"><div class="photo-ph">写真差し込み枠<br>［事務スペースで書類作成］<span class="ph-note">※仮</span></div></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-3.webp?v=20260805" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">03<span class="who">中途の方に</span></p>
           <h3>内勤制度<span class="sub">月数日、保育を離れて書類・制作の時間</span></h3>
@@ -555,7 +557,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         </div>
       </article>
       <article class="feature-card" id="f4">
-        <div class="feature-media"><div class="photo-ph">写真差し込み枠<br>［先輩の隣で学ぶ新任］<span class="ph-note">※仮</span></div></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-4.webp?v=20260805" width="1600" height="1200" alt="先輩に教わりながら学ぶ新任保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">04<span class="who">新卒の方に</span></p>
           <h3>新人サポート<span class="sub">1年目は担任なし＋半年の研修期間</span></h3>
@@ -564,7 +566,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         </div>
       </article>
       <article class="feature-card" id="f5">
-        <div class="feature-media"><div class="photo-ph">写真差し込み枠<br>［子育てと両立する保育士］<span class="ph-note">※仮</span></div></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-5.webp?v=20260805" width="1600" height="1200" alt="わが子とハイタッチする子育て中の保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">05<span class="who">中途の方に</span></p>
           <h3>子育て両立支援<span class="sub">結婚・出産後も、経験を活かして働ける</span></h3>
@@ -601,8 +603,8 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         <li><span class="t">17:00</span><div class="tl-body"><h4>退勤（中番）</h4><p>引き継ぎをして退勤。持ち帰りの荷物はありません。</p></div></li>
       </ol>
       <div class="day-photos">
-        <div class="photo-ph">写真差し込み枠<br>［午前の主活動］<span class="ph-note">※仮</span></div>
-        <div class="photo-ph">写真差し込み枠<br>［午後のあそび］<span class="ph-note">※仮</span></div>
+        <img class="photo-ph" src="images/daily-1.webp?v=20260805" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy">
+        <img class="photo-ph" src="images/daily-2.webp?v=20260805" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy">
       </div>
     </div>
     <p class="sec-note">※時間帯は例です。公開前に園のシフト実態に合わせて確定してください【園確認中】。</p>
@@ -738,23 +740,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
   </div>
 </section>
 
-<!-- ===== (9) 理事長メッセージ ===== -->
-<section class="director">
-  <div class="wrap">
-    <div class="director-in">
-      <div class="fade-up"><div class="photo-ph director-photo">写真差し込み枠<br>［理事長ポートレート・縦位置］<span class="ph-note">※仮</span></div></div>
-      <div class="director-body">
-        <div class="sec-head">
-          <span class="hand">message</span>
-          <h2>理事長からあなたへ</h2>
-        </div>
-        <p>保育士が長く続けられないのは、本人の頑張りが足りないからではなく、<strong class="marker">仕組みの問題</strong>だと考えてきました。複数担任制も、時差出勤も、内勤制度も——こざくらの5つの制度は、そのための答えです。</p>
-        <p>この園で長く働いている先生たちが、いちばんの証明です。応募を決めていなくてもかまいません。まずはLINEで、気軽に話しかけてください。</p>
-        <p class="director-name">社会福祉法人こざくら福祉会 理事長<em>根岸 幸運</em><span class="req-sub">（※読み・メッセージ本文は【園確認中】のたたき台）</span></p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ===== (9) 理事長メッセージは園の意向で非掲載（2026-08-05 社長指示） ===== -->
 
 <!-- ===== (10) 応募（効かせ色地・LINE主役） ===== -->
 <section class="apply" id="apply">

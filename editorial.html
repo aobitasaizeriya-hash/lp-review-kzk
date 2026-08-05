@@ -294,6 +294,8 @@ ul,ol{margin:0;padding:0;list-style:none}
 .ph--wide{aspect-ratio:16/10}
 .ph .ph-cap{position:absolute;left:10px;bottom:8px;font-size:10.5px;color:var(--weak);letter-spacing:.02em}
 .ph .ph-mark{width:34px;height:34px;color:var(--sakura);opacity:.5}
+/* 実写真差し替え済みスロット: 枠線・角丸は維持し、coverで敷き詰める */
+img.ph{object-fit:cover;width:100%;display:block}
 .voice-q{font-family:var(--display);font-weight:700;font-size:clamp(17px,3.4vw,22px);line-height:1.65;margin-bottom:14px}
 .voice-q .qm{color:var(--sakura);font-family:var(--num);font-weight:800;margin-right:8px;font-size:.86em}
 .voice-a{color:var(--ink);max-width:36em}
@@ -583,14 +585,10 @@ if (location.search.indexOf('static') > -1) {
       <div data-reveal>
         <p class="sec-lead">こざくら保育園は昭和43年（1968年）創立。定員200名・職員約50名、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。基本理念は「自主独立の精神を養う保育」。月1回、専任講師による音体教育（マーチング・太鼓・器楽合奏）があるのも特色です。</p>
         <p class="sec-lead" style="margin-top:1.5em">規模が大きいからこそ、複数担任制やシフトの柔軟さ、保育を離れて事務作業をする時間など、「先生が長く続けられる仕組み」に人員を割けるのが私たちの強みです。同じ敷地には子育て支援センターと高齢者デイサービスが併設され、多世代が行き交う環境です。</p>
-        <p class="sec-lead" style="margin-top:1.5em">理事長の根岸幸運は保育推進連盟の事務局長も務め、「保育士の働く環境を変える」ことを園の外でも仕事にしています。</p>
         <p class="sec-note">※職員数・肩書きの正式表記は園確認中</p>
       </div>
     </div>
-    <div class="ph ph--wide" style="margin-top:40px" data-reveal>
-      <svg class="ph-mark" viewBox="-30 -30 60 60" aria-hidden="true"><use href="#flower" fill="currentColor"/></svg>
-      <span class="ph-cap">※写真は準備中です（撮影後に差し替え）</span>
-    </div>
+    <img class="ph ph--wide" style="margin-top:40px" data-reveal src="images/group.webp?v=20260805" width="1600" height="1200" alt="こざくら保育園の園舎前に集まった先生たち" loading="lazy">
   </div>
 </section>
 
@@ -756,7 +754,7 @@ if (location.search.indexOf('static') > -1) {
     <h2 class="sec-title" data-reveal>入職前の不安と、<em>実際</em></h2>
 
     <div class="voice" data-reveal>
-      <div class="ph ph--sq"><svg class="ph-mark" viewBox="-30 -30 60 60" aria-hidden="true"><use href="#flower" fill="currentColor"/></svg><span class="ph-cap">※写真は準備中です</span></div>
+      <img class="ph ph--sq" src="images/staff-1.webp?v=20260805" width="900" height="1200" alt="新任1年目の保育士" loading="lazy">
       <div>
         <p class="voice-q"><span class="qm">Q.</span>1年目からいきなり担任を持つのが、正直こわかった。</p>
         <p class="voice-a"><span class="am">A.</span>こざくらは1年目は担任を持たない決まりで、半年の研修期間があります。先輩の保育をじっくり観察してから関われるので、安心してスタートできました。</p>
@@ -764,7 +762,7 @@ if (location.search.indexOf('static') > -1) {
       </div>
     </div>
     <div class="voice" data-reveal>
-      <div class="ph ph--sq"><svg class="ph-mark" viewBox="-30 -30 60 60" aria-hidden="true"><use href="#flower" fill="currentColor"/></svg><span class="ph-cap">※写真は準備中です</span></div>
+      <img class="ph ph--sq" src="images/staff-2.webp?v=20260805" width="900" height="1200" alt="新任2年目の保育士" loading="lazy">
       <div>
         <p class="voice-q"><span class="qm">Q.</span>実習と現場のギャップについていけるか不安でした。</p>
         <p class="voice-a"><span class="am">A.</span>隣にいつも先輩がいる複数担任制なので、その場で聞けます。「困ったら言ってね」が仕組みになっている感じです。</p>
@@ -772,7 +770,7 @@ if (location.search.indexOf('static') > -1) {
       </div>
     </div>
     <div class="voice" data-reveal>
-      <div class="ph ph--sq"><svg class="ph-mark" viewBox="-30 -30 60 60" aria-hidden="true"><use href="#flower" fill="currentColor"/></svg><span class="ph-cap">※写真は準備中です</span></div>
+      <img class="ph ph--sq" src="images/staff-3.webp?v=20260805" width="900" height="1200" alt="中途入職の保育士" loading="lazy">
       <div>
         <p class="voice-q"><span class="qm">Q.</span>平日に役所や病院へ行けない生活に、限界を感じていました。</p>
         <p class="voice-a"><span class="am">A.</span>早番の日は昼過ぎに退勤できます。通院もランチも行けるようになって、体がずいぶん楽になりました。</p>
@@ -780,7 +778,7 @@ if (location.search.indexOf('static') > -1) {
       </div>
     </div>
     <div class="voice" data-reveal>
-      <div class="ph ph--sq"><svg class="ph-mark" viewBox="-30 -30 60 60" aria-hidden="true"><use href="#flower" fill="currentColor"/></svg><span class="ph-cap">※写真は準備中です</span></div>
+      <img class="ph ph--sq" src="images/staff-4.webp?v=20260805" width="900" height="1200" alt="ベテラン保育士" loading="lazy">
       <div>
         <p class="voice-q"><span class="qm">Q.</span>前の職場では、書類を持ち帰るのが当たり前でした。</p>
         <p class="voice-a"><span class="am">A.</span>月に数日、保育を離れて書類や制作に集中できる内勤日があります。記録が滞らないので、気持ちにも余裕ができました。</p>
@@ -788,7 +786,7 @@ if (location.search.indexOf('static') > -1) {
       </div>
     </div>
     <div class="voice" data-reveal>
-      <div class="ph ph--sq"><svg class="ph-mark" viewBox="-30 -30 60 60" aria-hidden="true"><use href="#flower" fill="currentColor"/></svg><span class="ph-cap">※写真は準備中です</span></div>
+      <img class="ph ph--sq" src="images/staff-5.webp?v=20260805" width="900" height="1200" alt="子育て中の保育士" loading="lazy">
       <div>
         <p class="voice-q"><span class="qm">Q.</span>出産後、保育士に戻れるのか自信がありませんでした。</p>
         <p class="voice-a"><span class="am">A.</span>自分の子どもの行事で休めるし、経験を必要としてもらえる。「戻ってきてよかった」と思える職場です。</p>
@@ -910,27 +908,12 @@ if (location.search.indexOf('static') > -1) {
   </div>
 </section>
 
-<!-- ===== 理事長メッセージ (Message) ===== -->
-<section class="section section--pale" id="message">
-  <div class="wrap">
-    <p class="kicker" data-reveal><span class="k-ja">理事長より</span><span class="k-en">MESSAGE</span><span class="k-rule"></span><span class="k-no">09</span></p>
-    <div class="director-grid">
-      <p class="vcatch" data-reveal>先生の毎日を、<br>制度で支える園。</p>
-      <div data-reveal>
-        <h2 class="sec-title">理事長からあなたへ</h2>
-        <p class="sec-lead">保育士が長く続けられないのは、本人の頑張りが足りないからではなく、仕組みの問題だと考えてきました。複数担任制も、時差出勤も、内勤制度も——こざくらの5つの制度は、そのための答えです。</p>
-        <p class="sec-lead" style="margin-top:1.5em">この園で長く働いている先生たちが、いちばんの証明です。応募を決めていなくてもかまいません。まずはLINEで、気軽に話しかけてください。</p>
-        <p class="sign">社会福祉法人こざくら福祉会　理事長　根岸 幸運
-          <small>※読み・メッセージ本文は園確認中のたたき台です。</small></p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ===== 理事長メッセージは園の意向で非掲載（2026-08-05 社長指示） ===== -->
 
 <!-- ===== お問い合わせフォーム (Contact) ＝ LINEが使いにくい方向けの第2導線 ===== -->
 <section class="section" id="contact">
   <div class="wrap narrow" style="margin-inline:auto">
-    <p class="kicker" data-reveal><span class="k-ja">お問い合わせ</span><span class="k-en">CONTACT</span><span class="k-rule"></span><span class="k-no">10</span></p>
+    <p class="kicker" data-reveal><span class="k-ja">お問い合わせ</span><span class="k-en">CONTACT</span><span class="k-rule"></span><span class="k-no">09</span></p>
     <h2 class="sec-title" data-reveal>フォームでのお問い合わせ</h2>
     <div data-reveal>
       <p class="sec-lead">いちばん早いのはLINEですが、電話やLINEが使いにくい方は、こちらのフォームからでもかまいません。「見学だけ」「質問だけ」でも大丈夫です。</p>
@@ -977,7 +960,7 @@ if (location.search.indexOf('static') > -1) {
 <!-- ===== アクセス・ご応募 (Access) ※id="apply" はスティッキーCTA制御が参照 ===== -->
 <section class="section section--pale2" id="apply">
   <div class="wrap">
-    <p class="kicker" data-reveal><span class="k-ja">アクセス・ご応募</span><span class="k-en">ACCESS</span><span class="k-rule"></span><span class="k-no">11</span></p>
+    <p class="kicker" data-reveal><span class="k-ja">アクセス・ご応募</span><span class="k-en">ACCESS</span><span class="k-rule"></span><span class="k-no">10</span></p>
     <h2 class="sec-title" data-reveal>アクセス</h2>
     <div class="access" data-reveal>
       <dl>
