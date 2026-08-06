@@ -1400,9 +1400,11 @@ sup { font-size: 0.55em; }
   backdrop-filter: blur(8px);
   box-shadow: 0 -4px 20px rgba(43, 43, 58, 0.14);
   transform: translateY(110%);
-  transition: transform 0.3s ease;
+  /* visibility切替: 隠れている間はキーボードフォーカスも到達させない（2026-08-06 Codex反証対応） */
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s 0.3s;
 }
-.sticky-cta.is-visible { transform: translateY(0); }
+.sticky-cta.is-visible { transform: translateY(0); visibility: visible; transition: transform 0.3s ease, visibility 0s 0s; }
 .sticky-btn {
   display: flex;
   align-items: center;
@@ -1974,6 +1976,18 @@ body { font-size: 17px; line-height: 1.9; }
   letter-spacing: 0.02em;
 }
 
+/* 1b) 写真入りflow-step対応（2026-08-06 Codex反証で発覚した崩れの修正）:
+      写真はカード上端に満幅ブリード・番号は写真の左上に重なるバッジ化（旧: 左72pxガター+上下中央の番号は写真なし前提だった） */
+.flow-step { padding: 18px 20px 16px; overflow: hidden; }
+.flow-step .flow-photo { margin: -18px -20px 12px; width: calc(100% + 40px); max-width: none; border-radius: 0; }
+.flow-num { top: 10px; left: 10px; transform: none; box-shadow: 0 2px 8px rgba(43, 43, 58, 0.25); }
+.flow-step h3 { margin-top: 2px; }
+@media (min-width: 900px) {
+  .flow-step { padding: 18px 22px 20px; text-align: left; }
+  .flow-step .flow-photo { margin: -18px -22px 14px; width: calc(100% + 44px); }
+  .flow-num { left: 10px; top: 10px; transform: none; }
+}
+
 /* 3) 最終CTA直前の顔: 「LINEの先に人がいる」の視覚化（重なり円・声の3人を再登場させる） */
 .cta-faces { text-align: center; margin-bottom: 10px; }
 .cta-faces img {
@@ -2152,7 +2166,7 @@ body[data-style="tsumugi"] {
         <picture>
           <!-- VAR:HERO_IMAGE（PC=園舎前でジャンプする先生たち／SP=先生の縦ポートレート。2026-08-05実写真差し替え済み） -->
           <source media="(max-width: 767px)" srcset="images/hero-sp.webp?v=20260806" width="1200" height="1500">
-          <img src="images/hero.webp?v=20260806" width="2000" height="1250" alt="こざくら保育園の園舎前で笑顔でジャンプする先生たち" fetchpriority="high">
+          <img src="images/hero.webp?v=20260806" width="2000" height="1250" alt="こざくら保育園の先生たち" fetchpriority="high">
         </picture>
       </div>
       <div class="hero-inner">
@@ -2292,7 +2306,7 @@ body[data-style="tsumugi"] {
             </div>
           </article>
           <article class="feature-card" id="f4">
-            <img src="images/feature-4.webp?v=20260806" width="1600" height="1200" alt="先輩に教わりながら学ぶ新任保育士" loading="lazy">
+            <img src="images/feature-4.webp?v=20260806" width="1600" height="1200" alt="先輩と一緒に事務作業を進める保育士" loading="lazy">
             <div class="feature-body">
               <p class="feature-tags"><span class="tag-num">04</span><span>新卒の方に</span></p>
               <h3>新人サポート<span class="feature-sub">1年目は担任なし＋半年の研修期間</span></h3>
@@ -2301,7 +2315,7 @@ body[data-style="tsumugi"] {
             </div>
           </article>
           <article class="feature-card" id="f5">
-            <img src="images/feature-5.webp?v=20260806" width="1600" height="1200" alt="わが子とハイタッチする子育て中の保育士" loading="lazy">
+            <img src="images/feature-5.webp?v=20260806" width="1600" height="1200" alt="子どもとハイタッチする保育士" loading="lazy">
             <div class="feature-body">
               <p class="feature-tags"><span class="tag-num">05</span><span>中途の方に</span></p>
               <h3>子育て両立支援<span class="feature-sub">結婚・出産後も、経験を活かして働ける</span></h3>
@@ -2363,7 +2377,7 @@ body[data-style="tsumugi"] {
         <h2 class="sec-title"><span class="sec-eyebrow">Snapshots</span>ふだんのこざくら</h2>
         <p class="snaps-lead">2026年7月撮影。飾らない日常を、横にスワイプしてご覧ください。</p>
       </div>
-      <div class="snaps-strip" role="region" aria-label="園の日常写真ギャラリー（横スクロール）">
+      <div class="snaps-strip" role="region" tabindex="0" aria-label="園の日常写真ギャラリー（横スクロール）">
         <figure><img src="images/gallery-1.webp?v=20260806" width="640" height="640" alt="青空の下でピースをする先生たち" loading="lazy"><figcaption>屋上にて、担任の先生たち</figcaption></figure>
         <figure><img src="images/gallery-2.webp?v=20260806" width="640" height="640" alt="いただきますをする2人の先生" loading="lazy"><figcaption>お昼ごはん、いただきます</figcaption></figure>
         <figure><img src="images/gallery-3.webp?v=20260806" width="640" height="640" alt="行事のメダルを手づくりする先生" loading="lazy"><figcaption>行事のメダルは手づくり</figcaption></figure>
@@ -2444,9 +2458,9 @@ body[data-style="tsumugi"] {
         <h2 class="sec-title"><span class="sec-eyebrow">Steps</span>採用までの流れ</h2>
         <!-- VAR:FLOW_STEPS（写真=園が事前設計した指定カット。2026-08-06追加） -->
         <ol class="flow-steps">
-          <li class="flow-step"><img class="flow-photo" src="images/flow-1.webp?v=20260806" width="800" height="600" alt="スマホで公式LINEに相談する保育士" loading="lazy"><span class="flow-num">1</span><h3>公式LINEで相談</h3><p>友だち追加は30秒。「見学だけ」「質問だけ」でもかまいません。</p></li>
-          <li class="flow-step"><img class="flow-photo" src="images/flow-2.webp?v=20260806" width="800" height="600" alt="書類を手渡しで提出する様子" loading="lazy"><span class="flow-num">2</span><h3>書類のご提出</h3><p>必要な書類はLINEでご案内します。かしこまった志望動機は不要です。</p></li>
-          <li class="flow-step"><img class="flow-photo" src="images/flow-3.webp?v=20260806" width="800" height="600" alt="なごやかな雰囲気の面接の様子" loading="lazy"><span class="flow-num">3</span><h3>面接・園見学</h3><p>私服でどうぞ。見学だけで帰ってもまったく問題ありません。</p></li>
+          <li class="flow-step"><img class="flow-photo" src="images/flow-1.webp?v=20260806" width="800" height="600" alt="スマホでLINEを操作するイメージ" loading="lazy"><span class="flow-num">1</span><h3>公式LINEで相談</h3><p>友だち追加は30秒。「見学だけ」「質問だけ」でもかまいません。</p></li>
+          <li class="flow-step"><img class="flow-photo" src="images/flow-2.webp?v=20260806" width="800" height="600" alt="書類を手渡しするイメージ" loading="lazy"><span class="flow-num">2</span><h3>書類のご提出</h3><p>必要な書類はLINEでご案内します。かしこまった志望動機は不要です。</p></li>
+          <li class="flow-step"><img class="flow-photo" src="images/flow-3.webp?v=20260806" width="800" height="600" alt="面接のイメージ" loading="lazy"><span class="flow-num">3</span><h3>面接・園見学</h3><p>私服でどうぞ。見学だけで帰ってもまったく問題ありません。</p></li>
           <li class="flow-step"><img class="flow-photo" src="images/group.webp?v=20260806" width="1600" height="1200" alt="園舎前に集まったこざくら保育園の先生たち" loading="lazy"><span class="flow-num">4</span><h3>内定</h3><p>入職日はご都合に合わせて調整します（I・Uターンの方もご相談を）。</p></li>
         </ol>
       </div>

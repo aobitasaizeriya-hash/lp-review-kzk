@@ -418,7 +418,7 @@ footer a{color:var(--sakura-ink)}
   border-top:1px solid var(--rule);padding:9px 14px calc(9px + env(safe-area-inset-bottom));
   display:flex;gap:10px;align-items:center;
   transform:translateY(0);opacity:1;transition:transform .4s var(--e-out),opacity .4s var(--e-out)}
-.sticky.is-hide{transform:translateY(112%);opacity:0;pointer-events:none}
+.sticky.is-hide{transform:translateY(112%);opacity:0;pointer-events:none;visibility:hidden}
 .sticky .s-tel{display:inline-flex;align-items:center;justify-content:center;width:54px;min-height:48px;flex:0 0 auto;
   border:1px solid var(--rule);border-radius:var(--r-pill);color:var(--sakura-ink);text-decoration:none}
 .sticky .s-line{flex:1 1 auto;min-height:48px;font-size:15.5px;padding:0 16px}
@@ -454,6 +454,7 @@ footer a{color:var(--sakura-ink)}
 .static *,.static *::before,.static *::after{animation-duration:0s!important;animation-delay:0s!important;transition:none!important}
 .static [data-reveal]{opacity:1!important;transform:none!important}
 </style>
+<noscript><style>[data-reveal]{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
 <script>
@@ -923,11 +924,11 @@ if (location.search.indexOf('static') > -1) {
       <form class="form-grid" id="applyForm" novalidate>
         <div class="field">
           <label for="f-name">お名前<span class="req-mk">必須</span><span class="en">NAME</span></label>
-          <input type="text" id="f-name" name="name" autocomplete="name">
+          <input type="text" id="f-name" name="name" autocomplete="name" required aria-required="true">
         </div>
         <div class="field">
           <label for="f-contact">ご連絡先（電話またはメール）<span class="req-mk">必須</span><span class="en">CONTACT</span></label>
-          <input type="text" id="f-contact" name="contact" autocomplete="tel">
+          <input type="text" id="f-contact" name="contact" required aria-required="true">
           <span class="sec-note" style="margin-top:6px;display:block">つながりやすい方を1つご記入ください。</span>
         </div>
         <fieldset class="field" style="border:0;padding:0;margin:0">

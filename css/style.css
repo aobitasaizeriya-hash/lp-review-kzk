@@ -1219,9 +1219,11 @@ sup { font-size: 0.55em; }
   backdrop-filter: blur(8px);
   box-shadow: 0 -4px 20px rgba(43, 43, 58, 0.14);
   transform: translateY(110%);
-  transition: transform 0.3s ease;
+  /* visibility切替: 隠れている間はキーボードフォーカスも到達させない（2026-08-06 Codex反証対応） */
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0s 0.3s;
 }
-.sticky-cta.is-visible { transform: translateY(0); }
+.sticky-cta.is-visible { transform: translateY(0); visibility: visible; transition: transform 0.3s ease, visibility 0s 0s; }
 .sticky-btn {
   display: flex;
   align-items: center;
@@ -1791,6 +1793,18 @@ body { font-size: 17px; line-height: 1.9; }
   margin-top: 8px;
   opacity: 0.75;
   letter-spacing: 0.02em;
+}
+
+/* 1b) 写真入りflow-step対応（2026-08-06 Codex反証で発覚した崩れの修正）:
+      写真はカード上端に満幅ブリード・番号は写真の左上に重なるバッジ化（旧: 左72pxガター+上下中央の番号は写真なし前提だった） */
+.flow-step { padding: 18px 20px 16px; overflow: hidden; }
+.flow-step .flow-photo { margin: -18px -20px 12px; width: calc(100% + 40px); max-width: none; border-radius: 0; }
+.flow-num { top: 10px; left: 10px; transform: none; box-shadow: 0 2px 8px rgba(43, 43, 58, 0.25); }
+.flow-step h3 { margin-top: 2px; }
+@media (min-width: 900px) {
+  .flow-step { padding: 18px 22px 20px; text-align: left; }
+  .flow-step .flow-photo { margin: -18px -22px 14px; width: calc(100% + 44px); }
+  .flow-num { left: 10px; top: 10px; transform: none; }
 }
 
 /* 3) 最終CTA直前の顔: 「LINEの先に人がいる」の視覚化（重なり円・声の3人を再登場させる） */
