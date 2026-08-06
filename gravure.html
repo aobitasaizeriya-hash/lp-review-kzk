@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  こざくら保育園 採用LP — 検討用ドラフト D案「グラフ誌グラビア型」
+  ============================================================
+  コンセプト: 雑誌のグラビアページのように、大判写真＋たっぷりの余白＋図版番号
+  キャプションで構成。C案（白桜特集号）の罫線・番号文法「数字が主役・写真が図版」
+  を反転させ、「写真が主役・数字と文章はキャプション」にする。
+  写真の下に薄い罫線＋斜体の図版番号（Pl. 01…）＋小さな説明文、という統一文法を
+  全篇で貫く。先輩ポートレート5枚（staff-1〜5）は独立した「連作ページ」として扱う。
+  コピー・数値・JSON-LDは index.html から流用（新しい事実は書いていない）。
+  【園確認中】の数値・条件は公開前に必ず園の最終確認値へ差し替えること。
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
+<title>こざくら保育園 保育士採用｜写真で見る、5つの制度（検討用ドラフト D案）</title>
+<meta name="description" content="埼玉県本庄市・創立58年・定員200名のこざくら保育園の保育士採用ページ。複数担任制・時差出勤・内勤制度・新人サポート・子育て両立支援の5つの制度で長く働ける園。家賃補助 最大4.7万円/月（市制度）。まずはLINEで気軽に相談OK。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,500;1,600&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+<!-- ヒーロー画像の優先読み込み（LCP対策。lazyは絶対に付けない） -->
+<link rel="preload" as="image" href="images/hero-sp.webp?v=20260806" media="(max-width: 767px)" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero.webp?v=20260806" media="(min-width: 768px)" fetchpriority="high">
+
+<!-- ===== 構造化データ 1/3: JobPosting（index.htmlより移植・本文と完全一致） ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "JobPosting",
+  "title": "保育士（正社員）",
+  "description": "<p>埼玉県本庄市で最大規模・定員200名の認可保育園「こざくら保育園」にて、保育業務全般をお任せします。複数担任制・時差出勤（早番は昼過ぎ退勤）・内勤制度（月数日、保育を離れて書類や制作の時間）・新人サポート（1年目は担任なし＋半年の研修期間）・子育て両立支援の5つの制度で、長く働ける環境を整えています。</p><p>【必須】保育士資格（取得見込み含む）</p><p>【歓迎】新卒・中途とも歓迎。I・Uターンのご相談も可能です。</p>",
+  "identifier": { "@type": "PropertyValue", "name": "こざくら保育園", "value": "KZKR-2026-001" },
+  "datePosted": "2026-07-02",
+  "validThrough": "2026-12-31T23:59:00+09:00",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "社会福祉法人こざくら福祉会",
+    "sameAs": "https://kosodate-web.com/kozakura/01/"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "栄3-6-34",
+      "addressLocality": "本庄市",
+      "addressRegion": "埼玉県",
+      "postalCode": "367-0046",
+      "addressCountry": "JP"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "JPY",
+    "value": { "@type": "QuantitativeValue", "minValue": 220500, "maxValue": 272500, "unitText": "MONTH" }
+  },
+  "educationRequirements": { "@type": "EducationalOccupationalCredential", "credentialCategory": "保育士資格" },
+  "experienceRequirements": { "@type": "OccupationalExperienceRequirements", "monthsOfExperience": 0 },
+  "jobBenefits": "賞与年2回（計2.6〜4.1ヶ月・実績による）、家賃補助 最大47,000円/月（本庄市保育士宿舎借上支援・最長5年・本庄市に住民票のある方対象）、保育料補助 27,000円/月（1年間）、退職金制度、社会保険完備、マイカー通勤可。複数担任制、時差出勤（早番・遅番）、内勤制度、新人サポート（1年目は担任なし＋半年の研修期間）、子育て両立支援。",
+  "workHours": "7:00〜19:00の間のシフト制（実働8時間・休憩60分。時差出勤：早番・遅番あり、早番は昼過ぎ退勤）",
+  "directApply": true
+}
+</script>
+
+<!-- ===== 構造化データ 2/3: FAQPage（本文FAQと文言完全一致） ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "車で通勤できますか？", "acceptedAnswer": { "@type": "Answer", "text": "できます。マイカー通勤可で、JR高崎線「本庄駅」から徒歩23分の立地のため、車・自転車通勤の職員が多数です。" } },
+    { "@type": "Question", "name": "I・Uターンでの就職も相談できますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい、歓迎します。本庄市に住民票を移して勤務する場合、市の制度による家賃補助（最大47,000円/月・最長5年）の対象になります。本庄駅周辺の家賃相場は都心より大幅に低く、新幹線なら東京駅まで約50分です。まずはLINEでご状況をお聞かせください。" } },
+    { "@type": "Question", "name": "ブランクがあっても大丈夫ですか？", "acceptedAnswer": { "@type": "Answer", "text": "大丈夫です。全クラス複数担任制のため、一人で抱え込まずに再スタートできます。研修期間で少しずつ感覚を取り戻せます。" } },
+    { "@type": "Question", "name": "持ち帰り仕事は多くないですか？", "acceptedAnswer": { "@type": "Answer", "text": "内勤制度（月数日、保育を離れて書類・制作・事務にあてる時間）で持ち帰り仕事を減らしています。記録が滞らない仕組みです。" } },
+    { "@type": "Question", "name": "応募する前に、匿名で質問だけすることはできますか？", "acceptedAnswer": { "@type": "Answer", "text": "できます。LINEでは名乗らずに質問だけでもかまいません。応募や見学の意思が固まっていなくても、給与や休日など聞きにくいことこそ気軽にお尋ねください。" } }
+  ]
+}
+</script>
+
+<!-- ===== 構造化データ 3/3: Organization ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Organization",
+  "name": "社会福祉法人こざくら福祉会",
+  "url": "https://kosodate-web.com/kozakura/01/",
+  "contactPoint": { "@type": "ContactPoint", "telephone": "+81-495-22-5812", "contactType": "recruiting" }
+}
+</script>
+
+<style>
+/* ==========================================================================
+   こざくら保育園 採用LP ／ D案「グラフ誌グラビア型」
+   骨格: 大判写真＝版面の主役／文章と数字は写真の下に添える図版キャプション
+   文法: すべての図版が「写真（bleed）→ 細罫線 → 斜体の図版番号 + 説明文」の
+         同一パターンで統一される（C案の数字文法を写真主役に反転させたもの）
+   リズム: 見開き大判 → 小写真2枚組 → 大判、を随所で反復
+   行動色: LINE緑 #06C755 のみ（固定・変更不可）。桜色はCTAには使わない
+   JS依存ゼロ: 開閉は<details>ネイティブ、演出はCSSのみ（未対応環境は常時表示）
+   ========================================================================== */
+
+:root{
+  --paper:#F7F4EE;
+  --paper-deep:#EFE9DD;
+  --panel:#FFFFFF;
+  --ink:#221E19;
+  --ink-soft:#5B5449;
+  --ink-faint:#928A7B;
+  --rule:#DAD0BE;
+  --rule-soft:#EAE3D4;
+
+  --sakura:#FF5C8A;
+  --sakura-ink:#AC2C56;
+  --sakura-deep:#7E2138;
+  --sakura-pale:#FFF1F3;
+
+  --green:#06C755;
+  --green-dark:#05A648;
+
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;
+  --plate:"EB Garamond","Shippori Mincho",serif;
+
+  --read:700px;      /* 文章の版面幅（読ませる列） */
+  --stage:1040px;     /* 目次・表など広めの版面幅 */
+  --bleed:1360px;     /* 大判写真の上限幅（等倍原寸を超えて拡大させない） */
+  --portrait:520px;   /* 連作ポートレートの上限幅 */
+
+  --e-out:cubic-bezier(.19,1,.22,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:66px}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16.5px;line-height:1.88;letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;padding-bottom:64px;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.42;letter-spacing:.02em;margin:0;word-break:keep-all}
+p{margin:0}
+p,li,dd{text-wrap:pretty}
+ul,ol{margin:0;padding:0;list-style:none}
+.num{font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--sakura-ink);outline-offset:3px}
+
+/* ---------- 版面（レイアウト基本単位） ---------- */
+.stage{width:100%;max-width:var(--read);margin-inline:auto;padding-inline:22px}
+.stage--wide{max-width:var(--stage)}
+.bleed{width:100%;max-width:var(--bleed);margin-inline:auto}
+.bleed img{width:100%;height:auto;display:block}
+.bleed--portrait{max-width:var(--portrait)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(6px,2.2vw,16px);width:100%;max-width:var(--bleed);margin-inline:auto}
+.duo figure{margin:0}
+.duo img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
+.duo-caps{display:grid;grid-template-columns:1fr 1fr;gap:clamp(6px,2.2vw,16px);max-width:var(--bleed);margin-inline:auto;padding-inline:22px}
+
+/* ---------- 図版キャプション文法（写真の下＝細罫線＋斜体番号＋説明。全篇共通） ---------- */
+.plate-cap{display:flex;gap:11px;align-items:baseline;padding-top:11px;margin-top:14px;border-top:1px solid var(--rule)}
+.plate-cap .no{font-family:var(--plate);font-style:italic;font-weight:600;color:var(--sakura-ink);font-size:14.5px;white-space:nowrap;flex:0 0 auto}
+.plate-cap .tx{font-size:12.5px;color:var(--ink-soft);letter-spacing:.01em}
+.duo-caps .plate-cap{flex-direction:column;align-items:flex-start;gap:3px;padding-top:10px;margin-top:0}
+
+/* ---------- セクション見出し（きっかけの文字は小さく＝写真より控えめに） ---------- */
+.section{padding:clamp(52px,10vw,104px) 0}
+.eyebrow{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+.eyebrow .ja{font-family:var(--serif);font-weight:700;font-size:14px;letter-spacing:.07em;color:var(--sakura-ink);white-space:nowrap}
+.eyebrow .en{font-family:var(--plate);font-style:italic;font-size:11.5px;letter-spacing:.08em;color:var(--ink-faint);white-space:nowrap}
+.eyebrow .rl{flex:1 1 auto;height:1px;background:var(--rule);min-width:14px}
+.eyebrow .no{font-family:var(--plate);font-style:italic;font-size:12px;color:var(--ink-faint)}
+.sec-title{font-size:clamp(22px,5.6vw,32px);margin-bottom:18px}
+.sec-title em{font-style:normal;color:var(--sakura-ink)}
+.sec-lead{max-width:32em;color:var(--ink-soft)}
+.sec-lead+.sec-lead{margin-top:1.4em}
+.sec-note{font-size:12px;color:var(--ink-faint);margin-top:16px;line-height:1.8}
+strong{font-weight:700;color:var(--ink)}
+.marker{background:linear-gradient(transparent 62%, var(--sakura-pale) 62%)}
+
+/* ---------- ボタン（行動色＝LINE緑のみ固定） ---------- */
+.btn{display:inline-flex;flex-direction:column;align-items:center;gap:3px;min-height:52px;padding:13px 28px;border-radius:999px;font-weight:700;font-size:15.5px;text-align:center;transition:background .18s var(--e-out)}
+.btn .ico{width:19px;height:19px;margin-right:2px;vertical-align:-4px}
+.btn-line{background:var(--green);color:#fff;box-shadow:0 6px 18px -8px rgba(6,199,85,.55)}
+.btn-line:hover{background:var(--green-dark)}
+.btn .sub{font-weight:500;font-size:11px;opacity:.92;letter-spacing:.01em}
+.btn-line-mini{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:9px 18px;border-radius:999px;background:var(--green);color:#fff;font-weight:700;font-size:13.5px;margin-top:10px}
+.btn-line-mini:hover{background:var(--green-dark)}
+.cta-wrap{margin-top:44px;padding-top:34px;border-top:1px solid var(--rule);display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+
+/* ---------- 装飾フェード（CSSネイティブのみ。未対応・reduce-motionは常時表示） ---------- */
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .reveal{animation:plateIn linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+    @keyframes plateIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  }
+}
+
+/* ---------- 断り帯（検討用ドラフトの明示） ---------- */
+.notice-bar{background:var(--sakura-pale);color:var(--sakura-deep);font-size:11.5px;text-align:center;padding:8px 16px;line-height:1.7}
+
+/* ---------- ヘッダー ---------- */
+.site-header{position:sticky;top:0;z-index:100;background:var(--panel);border-bottom:1px solid var(--rule-soft)}
+.hd-in{display:flex;align-items:center;gap:12px;min-height:56px;padding:6px 20px}
+.logo{display:flex;flex-direction:column;line-height:1.2;white-space:nowrap;flex-shrink:0}
+.logo b{font-family:var(--serif);font-weight:700;font-size:15.5px;letter-spacing:.03em}
+.logo span{font-family:var(--plate);font-style:italic;font-size:9.5px;letter-spacing:.09em;color:var(--ink-faint)}
+.nav-dd{margin-left:auto;position:relative}
+.nav-dd summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 10px;font-size:12.5px;font-weight:700}
+.nav-dd summary::-webkit-details-marker{display:none}
+.nav-dd .bars{display:grid;gap:3.5px;width:16px}
+.nav-dd .bars i{display:block;height:1.5px;background:var(--ink)}
+.nav-list{position:absolute;right:0;top:calc(100% + 8px);background:var(--panel);border:1px solid var(--rule-soft);border-radius:10px;padding:8px;min-width:190px;display:grid}
+.nav-list a{display:block;padding:9px 12px;font-size:13.5px;border-radius:6px}
+.nav-list a:hover{background:var(--sakura-pale)}
+.hd-cta{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 15px;background:var(--green);color:#fff;font-weight:700;font-size:13px;border-radius:999px}
+.hd-cta:hover{background:var(--green-dark)}
+.hd-cta .ico{width:15px;height:15px}
+@media(min-width:1000px){
+  .nav-dd summary{display:none}
+  .nav-list{position:static;border:0;padding:0;min-width:0;display:flex;gap:2px}
+  .nav-list a{padding:8px 11px;font-size:13px}
+}
+
+/* ---------- ヒーロー（表紙）: 写真フルベッド＋下部にコピーを重ねる ---------- */
+.hero-media{position:relative;width:100%;max-width:var(--bleed);margin-inline:auto;overflow:hidden}
+.hero-media img{width:100%;height:auto;display:block}
+.hero-scrim{position:absolute;inset:auto 0 0 0;height:58%;background:linear-gradient(to top, rgba(18,14,12,.86), rgba(18,14,12,0));pointer-events:none}
+.hero-stamp{position:absolute;right:16px;top:16px;width:clamp(62px,13vw,82px);height:auto;filter:drop-shadow(0 4px 10px rgba(0,0,0,.28))}
+.hero-overlay{position:absolute;left:0;right:0;bottom:0;padding:26px 22px 22px;color:#fff}
+.hero-eyebrow{display:flex;flex-wrap:wrap;gap:4px;font-size:11.5px;letter-spacing:.08em;margin-bottom:11px;opacity:.94}
+.hero-eyebrow span:first-child::after{content:"／";margin:0 7px;opacity:.65}
+.hero-copy{font-size:clamp(25px,7.6vw,42px);color:#fff}
+.hero-plate{margin-top:15px;display:flex;gap:9px;align-items:baseline;font-size:11.5px;opacity:.92}
+.hero-plate .no{font-family:var(--plate);font-style:italic}
+.hero-foot{padding-top:24px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:24px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
+.hero-stats li{display:flex;flex-direction:column;gap:2px}
+.hero-stats .v{font-family:var(--plate);font-style:italic;font-weight:600;font-size:25px;color:var(--sakura-ink);line-height:1}
+.hero-stats .l{font-size:10.5px;color:var(--ink-soft)}
+.hero-note{font-size:10.5px;color:var(--ink-faint);margin-top:11px}
+.hero-cta{margin-top:24px}
+
+/* ---------- 目次インデックス（不安→制度。5制度セクションの見出し代わり） ---------- */
+.fear-index{border-top:1px solid var(--rule);margin-bottom:44px}
+.fear-index li{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.fear-index .q{font-size:12.5px;color:var(--ink-soft);flex:1 1 220px}
+.fear-index a{display:flex;align-items:baseline;gap:7px;font-weight:700;font-size:13.5px;white-space:nowrap}
+.fear-index a .no{font-family:var(--plate);font-style:italic;color:var(--sakura-ink)}
+
+/* ---------- 図版テキスト（制度の説明ブロック。写真bleedの直後・stage内） ---------- */
+.plate-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;color:var(--sakura-ink);background:var(--sakura-pale);padding:3px 10px;border-radius:999px;margin-bottom:11px}
+.plate-title{font-size:clamp(19px,4.6vw,25px)}
+.plate-title .sub{display:block;font-family:var(--sans);font-weight:500;font-size:12px;color:var(--ink-soft);margin-top:7px;letter-spacing:.01em}
+.plate-desc{color:var(--ink-soft);margin-top:13px;max-width:36em}
+.plate-voice{margin-top:16px;padding-left:14px;border-left:2px solid var(--sakura);font-family:var(--serif);font-size:14px;color:var(--ink)}
+.plate-voice span{display:block;font-family:var(--sans);font-size:11px;color:var(--ink-faint);margin-top:7px}
+
+/* ---------- 数字ストリップ（数字で見る＝控えめな帯。写真の対に文字量を絞る） ---------- */
+.stat-strip{display:flex;flex-wrap:wrap;gap:26px 34px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0;margin-bottom:22px}
+.stat-chip{display:flex;flex-direction:column;gap:4px;min-width:120px;flex:1 1 150px}
+.stat-chip .v{font-family:var(--plate);font-style:italic;font-weight:600;font-size:30px;color:var(--sakura-ink);line-height:1}
+.stat-chip .v.is-text{font-size:20px}
+.stat-chip .l{font-size:12px;font-weight:700}
+.stat-chip .d{font-size:11.5px;color:var(--ink-soft);line-height:1.7}
+.stat-chip.is-tentative .v{color:var(--ink-faint)}
+.stat-flag{display:inline-block;font-size:10px;color:var(--ink-faint);border:1px solid var(--rule);border-radius:999px;padding:1px 8px;margin-left:6px;white-space:nowrap}
+.disclosure{font-family:var(--serif);font-size:14.5px;color:var(--ink-soft);border-left:2px solid var(--sakura);padding-left:14px;margin-top:26px}
+
+/* ---------- 1日の流れ（タイムライン。数字は控えめ・小さく） ---------- */
+.tl{border-top:1px solid var(--rule)}
+.tl li{display:flex;gap:18px;padding:15px 0;border-bottom:1px solid var(--rule)}
+.tl li.hi{background:var(--sakura-pale);margin-inline:-22px;padding:15px 22px;border-radius:2px;border-bottom-color:transparent}
+.tl-time{font-family:var(--plate);font-style:italic;font-weight:600;font-size:15.5px;color:var(--sakura-ink);flex:0 0 54px}
+.tl-body h3{font-size:14px;margin-bottom:4px}
+.tl-body p{font-size:12.5px;color:var(--ink-soft)}
+
+/* ---------- コンタクトシート（ふだんのこざくら。フィルムのコマ番号のように） ---------- */
+.contact-lead{max-width:32em;color:var(--ink-soft);font-size:13.5px;margin-bottom:20px}
+.contact-sheet{display:flex;gap:12px;overflow-x:auto;padding:2px 22px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+/* SPは印画のコンタクトシートらしく2列グリッドで一覧（横スクロール任せにしない・審査CVRレンズ指摘） */
+@media(max-width:767px){
+  .contact-sheet{display:grid;grid-template-columns:1fr 1fr;overflow:visible;scroll-snap-type:none}
+  .contact-sheet .frame{width:auto}
+}
+.contact-sheet::-webkit-scrollbar{height:5px}
+.contact-sheet::-webkit-scrollbar-thumb{background:var(--rule);border-radius:99px}
+.frame{flex:0 0 auto;width:148px;scroll-snap-align:start}
+.frame-photo{position:relative;background:var(--ink)}
+.frame-photo img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;opacity:.97}
+.frame-no{position:absolute;top:8px;left:8px;background:rgba(255,255,255,.94);color:var(--ink);font-family:var(--plate);font-style:italic;font-size:9.5px;padding:2px 6px;border-radius:3px;letter-spacing:.02em}
+.frame figcaption{margin-top:8px;font-size:11px;color:var(--ink-soft);line-height:1.6}
+
+/* ---------- 連作ページ（先輩の声＝ポートレート5枚のシリーズ） ---------- */
+.serial-note{max-width:32em;color:var(--ink-soft);margin-bottom:8px}
+.serial{margin-top:40px;display:flex;flex-direction:column;gap:52px}
+.serial-item{display:flex;flex-direction:column}
+.serial-no{font-family:var(--plate);font-style:italic;font-size:12.5px;color:var(--sakura-ink);margin-bottom:10px;display:block}
+.serial-meta{font-size:11.5px;color:var(--ink-faint);margin-bottom:12px}
+.serial-meta b{color:var(--ink-soft);font-weight:700}
+.serial-q{font-family:var(--serif);font-size:15.5px;margin-bottom:9px}
+.serial-q::before{content:"Q";font-family:var(--plate);font-style:italic;font-weight:600;color:var(--sakura-ink);margin-right:8px}
+.serial-a{color:var(--ink-soft);font-size:14px}
+/* SPでは扉1枚＋目録4件に圧縮（連作の長さ対策・審査CVRレンズ指摘。PCは5枚フルの連作を維持） */
+@media(max-width:767px){
+  .serial{gap:30px}
+  .serial-item:nth-child(n+2){display:grid;grid-template-columns:116px 1fr;gap:14px;align-items:start;padding-inline:22px}
+  .serial-item:nth-child(n+2) .bleed{margin:0;max-width:116px}
+  .serial-item:nth-child(n+2) .bleed img{aspect-ratio:4/5;object-fit:cover}
+  .serial-item:nth-child(n+2) .stage{padding-inline:0;margin:0;max-width:none}
+  .serial-item:nth-child(n+2) .serial-q{font-size:14px}
+  .serial-item:nth-child(n+2) .serial-a{font-size:13px}
+}
+.serial-a::before{content:"A";font-family:var(--plate);font-style:italic;font-weight:600;color:var(--sakura-ink);margin-right:8px}
+
+/* ---------- CTAバンド ---------- */
+.cta-band{background:var(--sakura-deep);color:#fff;padding:52px 0;text-align:center}
+.cta-band .stage{display:flex;flex-direction:column;align-items:center;gap:18px}
+.cta-mini{display:flex}
+.cta-mini img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.55);margin-left:-10px}
+.cta-mini img:first-child{margin-left:0}
+.cta-band-copy{font-family:var(--serif);font-size:clamp(19px,5vw,27px);line-height:1.6}
+.cta-band-copy em{font-style:normal;color:#FFD3DE}
+.cta-band .btn-line{background:#fff;color:var(--sakura-deep)}
+.cta-band .btn-line:hover{background:#FFE7EC}
+.cta-band-note{font-size:11.5px;opacity:.85}
+
+/* ---------- 採用までの流れ ---------- */
+.flow-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:26px 22px;margin-top:8px}
+.flow-photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:3px;margin-bottom:11px}
+.flow-num{font-family:var(--plate);font-style:italic;color:var(--sakura-ink);font-size:13px;display:block;margin-bottom:5px}
+.flow-step h3{font-size:14.5px;margin-bottom:5px}
+.flow-step p{font-size:12px;color:var(--ink-soft)}
+
+/* ---------- 募集要項（版面の巻末データページ） ---------- */
+.req-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+.req-table th,.req-table td{text-align:left;padding:14px 6px;border-bottom:1px solid var(--rule);vertical-align:top}
+.req-table th{width:32%;font-weight:700;color:var(--ink);font-family:var(--serif);font-size:13px}
+.req-table td{color:var(--ink-soft)}
+.req-sub{display:block;font-size:11px;color:var(--ink-faint);margin-top:5px;line-height:1.7}
+@media(max-width:579px){
+  .req-table,.req-table tbody,.req-table tr,.req-table th,.req-table td{display:block;width:auto}
+  .req-table tr{padding:14px 0;border-bottom:1px solid var(--rule)}
+  .req-table th,.req-table td{padding:0;border:0}
+  .req-table th{padding-bottom:5px;color:var(--sakura-ink);font-size:11.5px;letter-spacing:.03em}
+}
+.req-parttime{margin-top:48px;padding-top:36px;border-top:1px solid var(--rule)}
+.tag-pt{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--sakura-ink);border:1px solid var(--sakura-ink);border-radius:999px;padding:2px 9px;margin-right:8px;vertical-align:2px}
+.req-parttime-title{font-size:18px;margin-bottom:12px}
+.req-parttime-lead{color:var(--ink-soft);margin-bottom:6px;max-width:32em}
+.req-parttime-nudge{margin-top:20px;font-size:13px;color:var(--ink-soft)}
+
+/* ---------- FAQ ---------- */
+.faq-list{border-top:1px solid var(--rule);margin-top:8px}
+.faq-item{border-bottom:1px solid var(--rule)}
+.faq-item summary{padding:17px 2px;font-weight:700;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-family:var(--plate);font-style:italic;font-size:21px;font-weight:600;color:var(--sakura-ink);flex:0 0 auto;line-height:1}
+.faq-item[open] summary::after{content:"–"}
+.faq-item p{padding:0 2px 19px;font-size:13.5px;color:var(--ink-soft);max-width:34em}
+
+/* ---------- アクセス ---------- */
+.access-info{display:grid;gap:0;margin-bottom:8px;border-top:1px solid var(--rule)}
+.access-info div{display:flex;flex-direction:column;gap:5px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.access-info dt{font-family:var(--plate);font-style:italic;font-size:12px;color:var(--sakura-ink)}
+.access-info dd{margin:0;font-size:14px;color:var(--ink-soft)}
+.cta-faces{display:flex;justify-content:center;margin-bottom:20px}
+.cta-faces img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--panel);margin-left:-14px}
+.cta-faces img:first-child{margin-left:0}
+.access-cta{text-align:center;padding-top:40px}
+.access-cta-note{font-size:12px;color:var(--ink-faint);margin-top:12px}
+
+/* ---------- フッター ---------- */
+.site-footer{background:var(--paper-deep);padding:40px 0 32px;font-size:11.5px;color:var(--ink-soft);line-height:1.9}
+.footer-nav{margin:14px 0}
+.footer-nav a{text-decoration:underline;text-underline-offset:3px}
+.footer-demo-note{color:var(--ink-faint);margin-top:10px}
+.footer-copy{margin-top:14px;color:var(--ink-faint);font-size:11px}
+
+/* ---------- スティッキーCTA（LINE主導・常時表示。JS非依存） ---------- */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;display:grid;grid-template-columns:58px auto 1fr;gap:1px;background:var(--rule);box-shadow:0 -3px 14px rgba(0,0,0,.10)}
+.sticky-btn{display:flex;align-items:center;justify-content:center;gap:6px;min-height:58px;background:var(--panel);font-size:12.5px;font-weight:700;color:var(--ink)}
+.sticky-btn .ico{width:18px;height:18px;flex-shrink:0}
+.sticky-tel span{display:none}
+.sticky-apply{font-size:12px;color:var(--sakura-ink);white-space:nowrap;padding:0 12px}
+.sticky-line{background:var(--green);color:#fff}
+.sticky-line:hover{background:var(--green-dark)}
+@media(min-width:768px){
+  .sticky-cta{left:auto;right:26px;bottom:26px;max-width:360px;border-radius:16px;overflow:hidden}
+}
+
+/* ---------- レスポンシブ調整（広めの版面） ---------- */
+@media(min-width:640px){
+  .stage{padding-inline:32px}
+  .duo-caps{padding-inline:32px}
+  .contact-sheet{padding-inline:32px}
+}
+@media(min-width:1000px){
+  .section{padding:118px 0}
+  .hero-overlay{padding:44px 40px 36px}
+  .hero-stats{gap:40px}
+  body{padding-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 検討用の断り帯（noindex・数値は園確認前・声はサンプル） ===== -->
+<p class="notice-bar">※検討用ドラフト（D案・グラフ誌）です。数値・労働条件は園の最終確認前の暫定値、先輩の声はたたき台のサンプルです。｜デザイン比較: <a href="index.html" style="text-decoration:underline">A：さくら</a>　<a href="hitotonari.html" style="text-decoration:underline">B：ひととなり</a>　<a href="editorial.html" style="text-decoration:underline">C：特集号</a></p>
+
+<!-- ===== 共通インラインSVG defs（桜モチーフはブランド固定。アイコンも同梱） ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="softDrop" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".2"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g id="petal"><path d="M0 8 C -12 -4 -11 -20 -3 -27 L 0 -21 L 3 -27 C 11 -20 12 -4 0 8 Z"/></g>
+    <g id="flower">
+      <use href="#petal"/><use href="#petal" transform="rotate(72)"/><use href="#petal" transform="rotate(144)"/>
+      <use href="#petal" transform="rotate(216)"/><use href="#petal" transform="rotate(288)"/>
+    </g>
+    <symbol id="ico-line" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2C6.5 2 2 5.6 2 10c0 3.9 3.4 7.2 8 7.9.3.1.7.2.8.5.1.3.1.7 0 1l-.1.8c0 .2-.2.9.8.5s5.3-3.1 7.2-5.3C20.1 13.9 22 12.2 22 10c0-4.4-4.5-8-10-8z"/>
+    </symbol>
+    <symbol id="ico-tel" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M6.6 3.5h3l1.5 3.7-1.9 1.4a12.5 12.5 0 0 0 5.2 5.2l1.4-1.9 3.7 1.5v3a1.6 1.6 0 0 1-1.7 1.6A15.5 15.5 0 0 1 5 5.2a1.6 1.6 0 0 1 1.6-1.7z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== ヘッダー ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="hd-in">
+    <a class="logo" href="#top"><b>こざくら保育園</b><span>RECRUIT 2026</span></a>
+    <details class="nav-dd" id="navDd">
+      <summary aria-label="メニューを開く"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>MENU</summary>
+      <nav class="nav-list" aria-label="ページ内メニュー">
+        <a href="#about">園紹介</a>
+        <a href="#stats">数字で見る</a>
+        <a href="#features">5つの制度</a>
+        <a href="#day">1日の流れ</a>
+        <a href="#snaps">ふだんのこざくら</a>
+        <a href="#voices">先輩の声</a>
+        <a href="#flow">採用までの流れ</a>
+        <a href="#requirements">募集要項</a>
+        <a href="#faq">よくある質問</a>
+        <a href="#apply">アクセス</a>
+      </nav>
+    </details>
+    <!-- VAR:LINE_URL -->
+    <a class="hd-cta" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="header"><svg class="ico" aria-hidden="true"><use href="#ico-line"/></svg>LINEで相談</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== ヒーロー（表紙＝Pl. 01） ===== -->
+  <section id="top">
+    <div class="hero-media">
+      <picture>
+        <source media="(max-width: 767px)" srcset="images/hero-sp-768.webp?v=20260806 768w, images/hero-sp.webp?v=20260806 1200w" sizes="100vw" width="1200" height="1500">
+        <img src="images/hero.webp?v=20260806" srcset="images/hero-1080.webp?v=20260806 1080w, images/hero.webp?v=20260806 2000w" sizes="100vw" width="2000" height="1250" alt="こざくら保育園の先生たち" fetchpriority="high">
+      </picture>
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <svg class="hero-stamp" viewBox="-58 -58 116 116" role="img" aria-label="見学だけでも歓迎" filter="url(#softDrop)">
+        <circle r="52" fill="#FFFFFF"/>
+        <circle r="52" fill="none" stroke="#FF5C8A" stroke-width="1.4" stroke-dasharray="3 4.5"/>
+        <g transform="translate(0 -13) scale(.46)" fill="#FF5C8A"><use href="#flower"/></g>
+        <text x="0" y="24" text-anchor="middle" font-family="'Shippori Mincho',serif" font-weight="700" font-size="13" fill="#AC2C56">見学だけ</text>
+        <text x="0" y="40" text-anchor="middle" font-family="'Shippori Mincho',serif" font-weight="700" font-size="13" fill="#AC2C56">でも歓迎</text>
+      </svg>
+      <div class="hero-overlay">
+        <p class="hero-eyebrow"><span>本庄市・認可保育園</span><span>保育士募集（新卒・中途）</span></p>
+        <h1 class="hero-copy">“長く続けられる”には、<br>理由があります。</h1>
+        <p class="hero-plate"><span class="no">Pl. 01</span><span class="tx">こざくらの先生たち（2026年7月撮影）</span></p>
+      </div>
+    </div>
+    <div class="stage hero-foot">
+      <ul class="hero-stats">
+        <li><span class="v num">200<span style="font-size:15px">名</span></span><span class="l">定員・市内最大<sup>※1</sup></span></li>
+        <li><span class="v num">58<span style="font-size:15px">年</span></span><span class="l">1968年創立<sup>※2</sup></span></li>
+        <li><span class="v">昼過ぎ</span><span class="l">早番の退勤<sup>※3</sup></span></li>
+      </ul>
+      <p class="hero-note">※1 市公式一覧　※2 公式沿革　※3 園確認中</p>
+      <div class="hero-cta">
+        <!-- VAR:LINE_URL -->
+        <a class="btn btn-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="hero"><svg class="ico" aria-hidden="true"><use href="#ico-line"/></svg>まずはLINEで気軽に相談<span class="sub">応募じゃなくてOK・既読スルーもOK</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 園紹介（About）: 大判 → 小写真2枚組、のリズムの初出 ===== -->
+  <section class="section" id="about">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">園紹介</span><span class="en">ABOUT</span><span class="rl"></span><span class="no">02</span></p>
+      <h2 class="sec-title">本庄市で、<em>いちばん大きな</em>保育園です</h2>
+      <p class="sec-lead">こざくら保育園は昭和43年（1968年）創立。定員200名・職員約50名、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。基本理念は<strong>「自主独立の精神を養う保育」</strong>。月1回、専任講師による音体教育（マーチング・太鼓・器楽合奏）があるのも特色です。</p>
+      <p class="sec-lead">規模が大きいからこそ、複数担任制やシフトの柔軟さ、保育を離れて事務作業をする時間など、<strong class="marker">「先生が長く続けられる仕組み」に人員を割ける</strong>のが私たちの強みです。同じ敷地には子育て支援センターと高齢者デイサービスが併設され、多世代が行き交う環境です。</p>
+    </div>
+
+    <figure class="bleed reveal" style="margin-top:36px">
+      <img src="images/group.webp?v=20260806" width="1600" height="1200" alt="こざくら保育園の園舎前に集まった先生たち" loading="lazy">
+    </figure>
+    <div class="stage"><p class="plate-cap"><span class="no">Pl. 02</span><span class="tx">園舎前に集まった、こざくら保育園の先生たち</span></p></div>
+
+    <div class="duo reveal" style="margin-top:34px">
+      <figure><img src="images/scene-1.webp?v=20260806" width="1600" height="1200" alt="教材を前に相談し合うこざくら保育園の先生たち" loading="lazy"></figure>
+      <figure><img src="images/scene-2.webp?v=20260806" width="1600" height="1200" alt="ランチを見せ合いながら笑う2人の保育士" loading="lazy"></figure>
+    </div>
+    <div class="duo-caps">
+      <p class="plate-cap"><span class="no">Pl. 03</span><span class="tx">教材を前に相談し合う先生たち</span></p>
+      <p class="plate-cap"><span class="no">Pl. 04</span><span class="tx">お昼ごはんを見せ合いながら</span></p>
+    </div>
+  </section>
+
+  <!-- ===== 数字で見る（Numbers）: あえて控えめな帯として扱う（写真主役の反転文法） ===== -->
+  <section class="section" id="stats" style="padding-top:0">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">数字で見る</span><span class="en">NUMBERS</span><span class="rl"></span><span class="no">03</span></p>
+      <div class="stat-strip">
+        <div class="stat-chip">
+          <span class="v num">200</span>
+          <span class="l">定員</span>
+          <span class="d">本庄市で最大規模の認可保育園。規模があるから制度に人を割けます。</span>
+        </div>
+        <div class="stat-chip">
+          <span class="v num">58<span style="font-size:16px">年</span></span>
+          <span class="l">創立（1968年開設）</span>
+          <span class="d">半世紀を超えて本庄の子どもたちを預かってきた、地域に根ざした園です。</span>
+        </div>
+        <div class="stat-chip is-tentative">
+          <span class="v num">11<span style="font-size:16px">年</span></span>
+          <span class="l">平均勤続<span class="stat-flag">園確認前・暫定値</span></span>
+          <span class="d">長く続く職場であることが、いちばんの証明だと考えています。</span>
+        </div>
+        <div class="stat-chip">
+          <span class="v is-text">昼過ぎ</span>
+          <span class="l">早番の退勤</span>
+          <span class="d">時差出勤制度。早番の日は昼過ぎに退勤し、役所や病院にも行けます。</span>
+        </div>
+      </div>
+      <p class="disclosure">“ここに載せていない数字も、聞いていただければ答えます。都合のよい数字だけを選んで見せることはしません。”</p>
+      <p class="sec-note">※数値は2026年6月時点・園の最終確認前の暫定値を含みます。公開前に必ず差し替えてください。</p>
+    </div>
+  </section>
+
+  <!-- ===== 5つの制度（Systems）: この案の中核。大判→小写真2枚組→大判→大判 ===== -->
+  <section class="section" id="features">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">5つの制度</span><span class="en">SYSTEMS</span><span class="rl"></span><span class="no">04</span></p>
+      <h2 class="sec-title">働きやすさ ＝ <em>5つの制度</em></h2>
+
+      <!-- 5制度マップ＝図版への目次。省略不可（design-note原則） -->
+      <ul class="fear-index">
+        <li><span class="q">人間関係で消耗しない？ ひとりで抱え込まない？</span><a href="#f1"><span class="no">01</span>複数担任制</a></li>
+        <li><span class="q">平日にしかできない用事は、いつ済ませる？</span><a href="#f2"><span class="no">02</span>時差出勤</a></li>
+        <li><span class="q">書類の持ち帰り、また増えない？</span><a href="#f3"><span class="no">03</span>内勤制度</a></li>
+        <li><span class="q">1年目からいきなり担任は、こわい。</span><a href="#f4"><span class="no">04</span>新人サポート</a></li>
+        <li><span class="q">出産・子育てのあとも、続けられる？</span><a href="#f5"><span class="no">05</span>子育て両立支援</a></li>
+      </ul>
+    </div>
+
+    <!-- Pl.05: 01 複数担任制（大判） -->
+    <figure class="bleed reveal" id="f1"><img src="images/feature-1.webp?v=20260806" width="1600" height="1200" alt="タブレットを見ながら連携・相談し合う2人の保育士" loading="lazy"></figure>
+    <div class="stage">
+      <p class="plate-cap"><span class="no">Pl. 05</span><span class="tx">タブレットで連携し合う、朝のひとこま</span></p>
+      <div style="margin-top:28px">
+        <p class="plate-tag">01 ・ 全員に</p>
+        <h3 class="plate-title">複数担任制<span class="sub">人間関係の安心・ひとりで抱えない</span></h3>
+        <p class="plate-desc">クラスを複数の先生で受け持ちます。業務の負担が軽くなるだけでなく、保育観がひとりに偏らず、先生同士が学び合えます。</p>
+        <p class="plate-voice">「困ってもすぐ相談できるし、他の先生から学べます。休みも取りやすいです」<span>先輩保育士（※収録後に実コメントへ差し替え）</span></p>
+      </div>
+    </div>
+
+    <!-- Pl.06/07: 02 時差出勤 + 03 内勤制度（小写真2枚組） -->
+    <div class="duo reveal" style="margin-top:60px">
+      <figure id="f2"><img src="images/feature-2.webp?v=20260806" width="1600" height="1200" alt="早番を終えて昼過ぎに退勤する保育士" loading="lazy"></figure>
+      <figure id="f3"><img src="images/feature-3.webp?v=20260806" srcset="images/feature-3-800.webp?v=20260806 800w, images/feature-3.webp?v=20260806 1600w" sizes="(min-width:700px) 50vw, 50vw" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy"></figure>
+    </div>
+    <div class="duo-caps">
+      <p class="plate-cap"><span class="no">Pl. 06</span><span class="tx">早番の日、昼過ぎに退勤</span></p>
+      <p class="plate-cap"><span class="no">Pl. 07</span><span class="tx">内勤日、書類に向き合う時間</span></p>
+    </div>
+    <div class="duo-caps" style="margin-top:26px">
+      <div>
+        <p class="plate-tag">02 ・ 中途の方に</p>
+        <h3 class="plate-title" style="font-size:19px">時差出勤（早番・遅番）<span class="sub">早番の日は昼過ぎに退勤</span></h3>
+        <p class="plate-desc" style="font-size:13.5px">役所・病院・銀行——平日にしかできない用事を済ませる時間を、シフトの中で確保できます。</p>
+        <p class="plate-voice" style="font-size:13px">「通院にもランチにも行けるようになって、体が楽になりました」<span>先輩保育士（※収録後に差し替え）</span></p>
+      </div>
+      <div>
+        <p class="plate-tag">03 ・ 中途の方に</p>
+        <h3 class="plate-title" style="font-size:19px">内勤制度<span class="sub">月数日、保育を離れて書類・制作の時間</span></h3>
+        <p class="plate-desc" style="font-size:13.5px">書類・制作・事務のための時間を勤務の中に確保。持ち帰り仕事を減らすための、こざくらの答えです。</p>
+        <p class="plate-voice" style="font-size:13px">「持ち帰りが減って、記録も滞らなくなりました」<span>先輩保育士（※収録後に差し替え）</span></p>
+      </div>
+    </div>
+
+    <!-- Pl.08: 04 新人サポート（大判） -->
+    <figure class="bleed reveal" id="f4" style="margin-top:60px"><img src="images/feature-4.webp?v=20260806" width="1600" height="1200" alt="先輩と一緒に事務作業を進める保育士" loading="lazy"></figure>
+    <div class="stage">
+      <p class="plate-cap"><span class="no">Pl. 08</span><span class="tx">先輩と一緒に、事務作業を進める</span></p>
+      <div style="margin-top:28px">
+        <p class="plate-tag">04 ・ 新卒の方に</p>
+        <h3 class="plate-title">新人サポート<span class="sub">1年目は担任なし＋半年の研修期間</span></h3>
+        <p class="plate-desc">1年目から担任を持たせません。半年の研修期間で、先輩の保育をじっくり見て学んでからスタートできます。</p>
+        <p class="plate-voice">「子どもたちをじっくり観察できて、安心して始められました」<span>新任保育士（※収録後に差し替え）</span></p>
+      </div>
+    </div>
+
+    <!-- Pl.09: 05 子育て両立支援（大判・園児が写る唯一の1枚） -->
+    <figure class="bleed reveal" id="f5" style="margin-top:60px"><img src="images/feature-5.webp?v=20260806" width="1600" height="1200" alt="子どもとハイタッチする保育士" loading="lazy"></figure>
+    <div class="stage">
+      <p class="plate-cap"><span class="no">Pl. 09</span><span class="tx">子どもとハイタッチ</span></p>
+      <div style="margin-top:28px">
+        <p class="plate-tag">05 ・ 中途の方に</p>
+        <h3 class="plate-title">子育て両立支援<span class="sub">結婚・出産後も、経験を活かして働ける</span></h3>
+        <p class="plate-desc">ライフイベントの後も続けられるように。子育て中の先生が経験を活かして活躍しています。</p>
+        <p class="plate-voice">「自分の子の行事に行けるし、ここで必要とされている実感があります」<span>ママ先生（※収録後に差し替え）</span></p>
+      </div>
+      <div class="cta-wrap">
+        <!-- VAR:LINE_URL -->
+        <a class="btn btn-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="after-features"><svg class="ico" aria-hidden="true"><use href="#ico-line"/></svg>まずはLINEで質問してみる<span class="sub">5つの制度、気になるところだけでも</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 1日の流れ（Time table）: リストは小さく、写真2枚組で締める ===== -->
+  <section class="section" id="day">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">1日の流れ</span><span class="en">TIME TABLE</span><span class="rl"></span><span class="no">05</span></p>
+      <h2 class="sec-title">早番の日は、<em>ここで1日が終わります</em></h2>
+      <ol class="tl">
+        <li><span class="tl-time num">8:30</span><div class="tl-body"><h3>出勤・受け入れ</h3><p>複数担任なので、朝の受け入れも分担して落ち着いて対応できます。</p></div></li>
+        <li><span class="tl-time num">9:30</span><div class="tl-body"><h3>朝の会・主活動</h3><p>外あそびは近隣公園や屋上へ。準備も複数名で進めます。</p></div></li>
+        <li><span class="tl-time num">11:30</span><div class="tl-body"><h3>給食</h3><p>クラスごとに配膳・食事のサポート。</p></div></li>
+        <li><span class="tl-time num">12:45</span><div class="tl-body"><h3>午睡</h3><p>内勤日はこの時間帯に保育を離れ、書類・制作を進めます。</p></div></li>
+        <li class="hi"><span class="tl-time num">13:30</span><div class="tl-body"><h3>早番の先生は退勤</h3><p><strong>「お先に失礼します」——時差出勤の日は、ここで1日が終わります。</strong></p></div></li>
+        <li><span class="tl-time num">15:00</span><div class="tl-body"><h3>おやつ・自由あそび</h3><p>降園まで子どもとじっくり関わる時間。</p></div></li>
+        <li><span class="tl-time num">17:00</span><div class="tl-body"><h3>退勤（中番）</h3><p>引き継ぎをして退勤。持ち帰りの荷物はありません。</p></div></li>
+      </ol>
+    </div>
+
+    <div class="duo reveal" style="margin-top:40px">
+      <figure><img src="images/daily-1.webp?v=20260806" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy"></figure>
+      <figure><img src="images/daily-2.webp?v=20260806" srcset="images/daily-2-720.webp?v=20260806 720w, images/daily-2.webp?v=20260806 1200w" sizes="50vw" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy"></figure>
+    </div>
+    <div class="duo-caps">
+      <p class="plate-cap"><span class="no">Pl. 10</span><span class="tx">朝、壁面の飾りを整える</span></p>
+      <p class="plate-cap"><span class="no">Pl. 11</span><span class="tx">連絡帳を記入しながら</span></p>
+    </div>
+    <div class="stage"><p class="sec-note">※時間帯は例です。公開前に園のシフト実態に合わせて確定してください【園確認中】。</p></div>
+  </section>
+
+  <!-- ===== ふだんのこざくら（コンタクトシート＝フィルムのコマ番号のように） ===== -->
+  <section class="section" id="snaps">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">ふだんのこざくら</span><span class="en">SNAPSHOTS</span><span class="rl"></span><span class="no">06</span></p>
+      <p class="contact-lead">2026年7月撮影。飾らない日常を、横にスワイプしてご覧ください。</p>
+    </div>
+    <div class="contact-sheet" role="region" tabindex="0" aria-label="園の日常写真ギャラリー（横スクロール）">
+      <figure class="frame"><div class="frame-photo"><img src="images/gallery-1.webp?v=20260806" width="640" height="640" alt="青空の下でピースをする先生たち" loading="lazy"><span class="frame-no">01／08</span></div><figcaption>屋上にて、担任の先生たち</figcaption></figure>
+      <figure class="frame"><div class="frame-photo"><img src="images/gallery-2.webp?v=20260806" width="640" height="640" alt="いただきますをする2人の先生" loading="lazy"><span class="frame-no">02／08</span></div><figcaption>お昼ごはん、いただきます</figcaption></figure>
+      <figure class="frame"><div class="frame-photo"><img src="images/gallery-3.webp?v=20260806" width="640" height="640" alt="行事のメダルを手づくりする先生" loading="lazy"><span class="frame-no">03／08</span></div><figcaption>行事のメダルは手づくり</figcaption></figure>
+      <figure class="frame"><div class="frame-photo"><img src="images/gallery-4.webp?v=20260806" width="640" height="640" alt="保育室のロッカーを整える先生" loading="lazy"><span class="frame-no">04／08</span></div><figcaption>保育室の環境づくり</figcaption></figure>
+      <figure class="frame"><div class="frame-photo"><img src="images/gallery-5.webp?v=20260806" width="640" height="640" alt="カラフルな大型遊具のある園庭" loading="lazy"><span class="frame-no">05／08</span></div><figcaption>大型遊具のある園庭</figcaption></figure>
+      <figure class="frame"><div class="frame-photo"><img src="images/gallery-6.webp?v=20260806" width="640" height="640" alt="階段に飾られた歴代の共同制作" loading="lazy"><span class="frame-no">06／08</span></div><figcaption>階段には歴代の共同制作</figcaption></figure>
+      <figure class="frame"><div class="frame-photo"><img src="images/gallery-7.webp?v=20260806" width="640" height="640" alt="こざくら保育園の園名看板" loading="lazy"><span class="frame-no">07／08</span></div><figcaption>創立58年の園名看板</figcaption></figure>
+      <figure class="frame"><div class="frame-photo"><img src="images/gallery-8.webp?v=20260806" width="640" height="640" alt="玄関前でジャンプする先生たち" loading="lazy"><span class="frame-no">08／08</span></div><figcaption>撮影日のワンシーン</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ===== 先輩の声（連作ページ）: ポートレート5枚を独立したシリーズとして扱う ===== -->
+  <section class="section" id="voices">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">先輩の声</span><span class="en">SERIAL</span><span class="rl"></span><span class="no">07</span></p>
+      <h2 class="sec-title">入職前の不安と、<em>実際</em></h2>
+      <p class="serial-note">撮影日、5人の先生にそれぞれ聞きました。連作としてご覧ください。</p>
+    </div>
+
+    <div class="serial">
+      <article class="serial-item">
+        <figure class="bleed bleed--portrait reveal"><img src="images/staff-1.webp?v=20260806" width="900" height="1200" alt="新任1年目の保育士" loading="lazy"></figure>
+        <div class="stage">
+          <span class="serial-no">No. 01／05</span>
+          <p class="serial-meta"><b>新任</b>／1年目・新卒入職　—　④新人サポート</p>
+          <p class="serial-q">1年目からいきなり担任を持つのが、正直こわかった。</p>
+          <p class="serial-a">小桜は1年目は担任を持たない決まりで、半年の研修期間があります。先輩の保育をじっくり観察してから関われるので、安心してスタートできました。</p>
+        </div>
+      </article>
+
+      <article class="serial-item">
+        <figure class="bleed bleed--portrait reveal"><img src="images/staff-2.webp?v=20260806" width="900" height="1200" alt="新任2年目の保育士" loading="lazy"></figure>
+        <div class="stage">
+          <span class="serial-no">No. 02／05</span>
+          <p class="serial-meta"><b>新任</b>／2年目・新卒入職　—　①複数担任制</p>
+          <p class="serial-q">実習と現場のギャップについていけるか不安でした。</p>
+          <p class="serial-a">隣にいつも先輩がいる複数担任制なので、その場で聞けます。「困ったら言ってね」が仕組みになっている感じです。</p>
+        </div>
+      </article>
+
+      <article class="serial-item">
+        <figure class="bleed bleed--portrait reveal"><img src="images/staff-3.webp?v=20260806" width="900" height="1200" alt="中途入職の保育士" loading="lazy"></figure>
+        <div class="stage">
+          <span class="serial-no">No. 03／05</span>
+          <p class="serial-meta"><b>先輩</b>／中途入職　—　②時差出勤</p>
+          <p class="serial-q">平日に役所や病院へ行けない生活に、限界を感じていました。</p>
+          <p class="serial-a">早番の日は昼過ぎに退勤できます。通院もランチも行けるようになって、体がずいぶん楽になりました。</p>
+        </div>
+      </article>
+
+      <article class="serial-item">
+        <figure class="bleed bleed--portrait reveal"><img src="images/staff-4.webp?v=20260806" width="900" height="1200" alt="ベテラン保育士" loading="lazy"></figure>
+        <div class="stage">
+          <span class="serial-no">No. 04／05</span>
+          <p class="serial-meta"><b>先輩</b>／ベテラン　—　③内勤制度</p>
+          <p class="serial-q">前の職場では、書類を持ち帰るのが当たり前でした。</p>
+          <p class="serial-a">月に数日、保育を離れて書類や制作に集中できる内勤日があります。記録が滞らないので、気持ちにも余裕ができました。</p>
+        </div>
+      </article>
+
+      <article class="serial-item">
+        <figure class="bleed bleed--portrait reveal"><img src="images/staff-5.webp?v=20260806" width="900" height="1200" alt="子育て中の保育士" loading="lazy"></figure>
+        <div class="stage">
+          <span class="serial-no">No. 05／05</span>
+          <p class="serial-meta"><b>先輩</b>／ママ先生　—　⑤子育て両立支援</p>
+          <p class="serial-q">出産後、保育士に戻れるのか自信がありませんでした。</p>
+          <p class="serial-a">自分の子どもの行事で休めるし、経験を必要としてもらえる。「戻ってきてよかった」と思える職場です。</p>
+        </div>
+      </article>
+    </div>
+    <div class="stage"><p class="sec-note">※コメントはたたき台です。撮影日のインタビュー収録後、実名（園の意向により匿名可）・実コメントへ差し替えます。</p></div>
+  </section>
+
+  <!-- ===== CTAバンド ===== -->
+  <section class="cta-band">
+    <div class="stage">
+      <div class="cta-mini" aria-hidden="true">
+        <img src="images/staff-1.webp?v=20260806" width="900" height="1200" alt="" loading="lazy">
+        <img src="images/staff-2.webp?v=20260806" width="900" height="1200" alt="" loading="lazy">
+        <img src="images/staff-3.webp?v=20260806" width="900" height="1200" alt="" loading="lazy">
+        <img src="images/staff-4.webp?v=20260806" width="900" height="1200" alt="" loading="lazy">
+        <img src="images/staff-5.webp?v=20260806" width="900" height="1200" alt="" loading="lazy">
+      </div>
+      <p class="cta-band-copy">この先生たちと、<em>働いてみたい</em>と思ったら。</p>
+      <!-- VAR:LINE_URL -->
+      <a class="btn btn-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="after-voices"><svg class="ico" aria-hidden="true"><use href="#ico-line"/></svg>LINEで話を聞いてみる<span class="sub">まずは話を聞くところから</span></a>
+      <p class="cta-band-note">しつこい連絡は一切ありません。</p>
+    </div>
+  </section>
+
+  <!-- ===== 採用までの流れ（Steps） ===== -->
+  <section class="section" id="flow">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">採用までの流れ</span><span class="en">STEPS</span><span class="rl"></span><span class="no">08</span></p>
+      <h2 class="sec-title">採用までの<em>流れ</em></h2>
+      <div class="flow-steps">
+        <div class="flow-step"><img class="flow-photo" src="images/flow-1.webp?v=20260806" width="800" height="600" alt="スマホでLINEを操作するイメージ" loading="lazy"><span class="flow-num">1</span><h3>公式LINEで相談</h3><p>友だち追加は30秒。「見学だけ」「質問だけ」でもかまいません。</p></div>
+        <div class="flow-step"><img class="flow-photo" src="images/flow-2.webp?v=20260806" width="800" height="600" alt="書類を手渡しするイメージ" loading="lazy"><span class="flow-num">2</span><h3>書類のご提出</h3><p>必要な書類はLINEでご案内します。かしこまった志望動機は不要です。</p></div>
+        <div class="flow-step"><img class="flow-photo" src="images/flow-3.webp?v=20260806" width="800" height="600" alt="面接のイメージ" loading="lazy"><span class="flow-num">3</span><h3>面接・園見学</h3><p>私服でどうぞ。見学だけで帰ってもまったく問題ありません。</p></div>
+        <div class="flow-step"><img class="flow-photo" src="images/group.webp?v=20260806" width="1600" height="1200" alt="園舎前に集まったこざくら保育園の先生たち" loading="lazy"><span class="flow-num">4</span><h3>内定</h3><p>入職日はご都合に合わせて調整します（I・Uターンの方もご相談を）。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 募集要項（職業安定法11項目・削除不可） ===== -->
+  <section class="section" id="requirements">
+    <div class="stage stage--wide">
+      <p class="eyebrow"><span class="ja">募集要項</span><span class="en">REQUIREMENTS</span><span class="rl"></span><span class="no">09</span></p>
+      <table class="req-table">
+        <tbody>
+          <tr><th>募集職種</th><td>保育士（正社員／新卒・中途）</td></tr>
+          <tr><th>採用予定人数</th><td>新卒2名＋中途2〜3名（I・Uターン歓迎）</td></tr>
+          <tr><th>応募資格</th><td>保育士資格をお持ちの方（取得見込み含む）。経験・年齢は不問、ブランクのある方も歓迎します。</td></tr>
+          <tr><th>業務内容</th><td>保育業務全般<br><span class="req-sub">変更の範囲：法人が運営する保育事業における保育業務【園確認中】</span></td></tr>
+          <tr><th>就業場所</th><td>こざくら保育園（埼玉県本庄市栄3-6-34・本庄南小学校北隣）<br><span class="req-sub">変更の範囲は園確認後に記載【園確認中】</span></td></tr>
+          <tr><th>雇用形態・契約期間</th><td>正社員（期間の定めなし）【園確認中】</td></tr>
+          <tr><th>試用期間</th><td>【園確認中】</td></tr>
+          <tr><th>就業時間</th><td>7:00〜19:00の間で実働8時間（休憩60分）・シフト制（時差出勤：早番・遅番あり。早番は昼過ぎ退勤）<br><span class="req-sub">※媒体既出値・園確認前</span></td></tr>
+          <tr><th>休日</th><td>日曜・祝日、年末年始（土曜は月1〜2回程度の出勤）<span class="req-sub">※媒体既出値・園確認前</span></td></tr>
+          <tr><th>時間外労働</th><td>【園確認中】</td></tr>
+          <tr><th>賃金</th><td>月給220,500円〜272,500円（経験・能力を考慮）<br><span class="req-sub">※2026年7月時点の求人媒体既出値・園最終確認前。確定時はJobPosting構造化データも同時更新</span></td></tr>
+          <tr><th>賞与・昇給</th><td>賞与年2回（計2.6〜4.1ヶ月・実績による）／昇給年1回<span class="req-sub">※媒体既出値・園確認前</span></td></tr>
+          <tr><th>手当・福利厚生</th><td>家賃補助 最大47,000円/月（本庄市保育士宿舎借上支援・最長5年・本庄市に住民票のある方対象／市の年度予算による）、保育料補助 27,000円/月（1年間）、退職金制度、通勤手当、マイカー通勤可<span class="req-sub">※媒体既出値・園確認前</span></td></tr>
+          <tr><th>加入保険</th><td>健康保険・厚生年金・雇用保険・労災保険（社会保険完備）</td></tr>
+          <tr><th>受動喫煙防止措置</th><td>施設内全面禁煙<span class="req-sub">※媒体既出値・園確認前</span></td></tr>
+          <tr><th>募集者</th><td>社会福祉法人こざくら福祉会（埼玉県本庄市栄3-6-34）</td></tr>
+        </tbody>
+      </table>
+
+      <div class="req-parttime" id="parttime">
+        <h3 class="req-parttime-title"><span class="tag-pt">PART</span>パート保育士も募集しています</h3>
+        <p class="req-parttime-lead">「まずは短い時間から」「扶養の範囲で」——そんな働き方もご相談ください。時間帯・日数は柔軟に調整します。</p>
+        <table class="req-table">
+          <tbody>
+            <tr><th>募集職種</th><td>パート保育士（短時間勤務・保育補助）</td></tr>
+            <tr><th>時給</th><td>【園確認中】</td></tr>
+            <tr><th>勤務時間</th><td>【園確認中】（例：早朝 7:00〜9:00／夕方 16:00〜19:00 などの時間帯・応相談）</td></tr>
+            <tr><th>勤務日数</th><td>【園確認中】（週◯日〜・応相談。扶養内勤務のご相談も可）</td></tr>
+            <tr><th>仕事内容</th><td>保育補助（担任のサポート、朝夕の受け入れ・見守り、環境整備など）</td></tr>
+            <tr><th>応募資格</th><td>保育士資格をお持ちの方（ブランクのある方も歓迎）。資格の有無についてはご相談ください。</td></tr>
+            <tr><th>待遇</th><td>マイカー通勤可・施設内全面禁煙。社会保険は勤務時間により加入【園確認中】</td></tr>
+          </tbody>
+        </table>
+        <p class="req-parttime-nudge">パートのご相談もLINEで気軽にどうぞ<br>
+          <!-- VAR:LINE_URL -->
+          <a class="btn-line-mini" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="parttime"><svg class="ico" style="width:15px;height:15px" aria-hidden="true"><use href="#ico-line"/></svg>LINEで相談する</a>
+        </p>
+        <p class="sec-note">※パートの勤務条件は園の確定値へ差し替えてください【園確認中】。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ（本文とJSON-LDは文言完全一致） ===== -->
+  <section class="section" id="faq">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">よくある質問</span><span class="en">FAQ</span><span class="rl"></span><span class="no">10</span></p>
+      <div class="faq-list">
+        <details class="faq-item"><summary>車で通勤できますか？</summary><p>できます。マイカー通勤可で、JR高崎線「本庄駅」から徒歩23分の立地のため、車・自転車通勤の職員が多数です。</p></details>
+        <details class="faq-item"><summary>I・Uターンでの就職も相談できますか？</summary><p>はい、歓迎します。本庄市に住民票を移して勤務する場合、市の制度による家賃補助（最大47,000円/月・最長5年）の対象になります。本庄駅周辺の家賃相場は都心より大幅に低く、新幹線なら東京駅まで約50分です。まずはLINEでご状況をお聞かせください。</p></details>
+        <details class="faq-item"><summary>ブランクがあっても大丈夫ですか？</summary><p>大丈夫です。全クラス複数担任制のため、一人で抱え込まずに再スタートできます。研修期間で少しずつ感覚を取り戻せます。</p></details>
+        <details class="faq-item"><summary>持ち帰り仕事は多くないですか？</summary><p>内勤制度（月数日、保育を離れて書類・制作・事務にあてる時間）で持ち帰り仕事を減らしています。記録が滞らない仕組みです。</p></details>
+        <details class="faq-item"><summary>応募する前に、匿名で質問だけすることはできますか？</summary><p>できます。LINEでは名乗らずに質問だけでもかまいません。応募や見学の意思が固まっていなくても、給与や休日など聞きにくいことこそ気軽にお尋ねください。</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== アクセス（最終図版＝Pl. 12＝園舎外観で締める） ===== -->
+  <section class="section" id="apply">
+    <div class="stage">
+      <p class="eyebrow"><span class="ja">アクセス</span><span class="en">ACCESS</span><span class="rl"></span><span class="no">11</span></p>
+      <h2 class="sec-title">アクセス・<em>ご応募</em></h2>
+      <dl class="access-info">
+        <div><dt>所在地</dt><dd>〒367-0046 埼玉県本庄市栄3-6-34（本庄南小学校の北隣）</dd></div>
+        <div><dt>電車</dt><dd>JR高崎線「本庄駅」徒歩23分／上越新幹線「本庄早稲田駅」徒歩27分（東京駅まで新幹線約50分）</dd></div>
+        <div><dt>車・自転車</dt><dd>マイカー通勤可（関越道・本庄児玉ICからも近い車社会エリアです）</dd></div>
+      </dl>
+    </div>
+
+    <figure class="bleed reveal" style="margin-top:8px"><img src="images/facade.webp?v=20260806" width="1600" height="1200" alt="こざくら保育園の園舎外観" loading="lazy"></figure>
+    <div class="stage"><p class="plate-cap"><span class="no">Pl. 12</span><span class="tx">こざくら保育園 園舎（本庄市栄）</span></p></div>
+
+    <div class="stage access-cta">
+      <div class="cta-faces">
+        <img src="images/staff-3.webp?v=20260806" width="900" height="1200" alt="" loading="lazy">
+        <img src="images/staff-4.webp?v=20260806" width="900" height="1200" alt="" loading="lazy">
+        <img src="images/staff-5.webp?v=20260806" width="900" height="1200" alt="" loading="lazy">
+      </div>
+      <!-- VAR:LINE_URL -->
+      <a class="btn btn-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="final"><svg class="ico" aria-hidden="true"><use href="#ico-line"/></svg>LINEで友だち追加して相談を始める<span class="sub">友だち追加は30秒</span></a>
+      <p class="access-cta-note">しつこい連絡・在職先への連絡は一切ありません。</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== フッター ===== -->
+<footer class="site-footer">
+  <div class="stage">
+    <p>社会福祉法人こざくら福祉会／こざくら保育園<br>〒367-0046 埼玉県本庄市栄3-6-34</p>
+    <nav class="footer-nav"><a href="privacy.html">プライバシーポリシー</a></nav>
+    <p class="footer-demo-note">※本ページは検討用ドラフト（D案）です。数値・労働条件は園の最終確認前の暫定値を含みます。</p>
+    <p class="footer-copy">&copy; 2026 Kozakura Hoikuen</p>
+  </div>
+</footer>
+
+<!-- ===== スティッキーCTA（LINE主導・常時表示・JS非依存） ===== -->
+<div class="sticky-cta">
+  <a class="sticky-btn sticky-tel" href="tel:0495225812" aria-label="電話"><svg class="ico" aria-hidden="true"><use href="#ico-tel"/></svg><span>電話</span></a>
+  <a class="sticky-btn sticky-apply" href="#requirements" data-cta-location="sticky-requirements">募集要項</a>
+  <!-- VAR:LINE_URL -->
+  <a class="sticky-btn sticky-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="sticky"><svg class="ico" aria-hidden="true"><use href="#ico-line"/></svg>LINEで気軽に相談</a>
+</div>
+
+</body>
+</html>
