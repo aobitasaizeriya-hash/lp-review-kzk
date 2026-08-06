@@ -1644,8 +1644,9 @@ h1, h2, h3, h4 { letter-spacing: -0.01em; }   /* 見出しは本文(0.02em)と�
 .voice-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
 /* .voice-card img { width:100% } より詳細度を上げるため親クラスを付ける */
 .voice-card--bubble .voice-face {
-  width: 84px;
-  height: 84px;
+  /* 84px→112px: 実写真投入後、プロ撮影の表情が伝わるサイズへ拡大（2026-08-06） */
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(43, 43, 58, 0.18);
@@ -2086,8 +2087,8 @@ body[data-style="tsumugi"] {
       <div class="hero-media">
         <picture>
           <!-- VAR:HERO_IMAGE（PC=園舎前でジャンプする先生たち／SP=先生の縦ポートレート。2026-08-05実写真差し替え済み） -->
-          <source media="(max-width: 767px)" srcset="images/hero-sp.webp?v=20260805" width="1200" height="1500">
-          <img src="images/hero.webp?v=20260805" width="2000" height="1250" alt="こざくら保育園の園舎前で笑顔でジャンプする先生たち" fetchpriority="high">
+          <source media="(max-width: 767px)" srcset="images/hero-sp.webp?v=20260806" width="1200" height="1500">
+          <img src="images/hero.webp?v=20260806" width="2000" height="1250" alt="こざくら保育園の園舎前で笑顔でジャンプする先生たち" fetchpriority="high">
         </picture>
       </div>
       <div class="hero-inner">
@@ -2147,7 +2148,7 @@ body[data-style="tsumugi"] {
             <p>こざくら保育園は<strong>昭和43年（1968年）創立</strong>。定員200名・職員約50名、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。基本理念は<strong>「自主独立の精神を養う保育」</strong>。月1回、専任講師による音体教育（マーチング・太鼓・器楽合奏）があるのも特色です。</p>
             <p>規模が大きいからこそ、複数担任制やシフトの柔軟さ、保育を離れて事務作業をする時間など、<strong class="marker">「先生が長く続けられる仕組み」に人員を割ける</strong>のが私たちの強みです。同じ敷地には子育て支援センターと高齢者デイサービスが併設され、多世代が行き交う環境です。</p>
           </div>
-          <img class="about-photo" src="images/scene-1.webp?v=20260805" width="1600" height="1200" alt="教材を前に相談し合うこざくら保育園の先生たち" loading="lazy">
+          <img class="about-photo" src="images/scene-1.webp?v=20260806" width="1600" height="1200" alt="教材を前に相談し合うこざくら保育園の先生たち" loading="lazy">
         </div>
       </div>
     </section>
@@ -2200,7 +2201,7 @@ body[data-style="tsumugi"] {
         <!-- VAR:FEATURES（声はインタビュー収録後に実名コメントへ差し替え） -->
         <div class="feature-list">
           <article class="feature-card" id="f1">
-            <img src="images/feature-1.webp?v=20260805" width="1600" height="1200" alt="タブレットを見ながら連携・相談し合う2人の保育士" loading="lazy">
+            <img src="images/feature-1.webp?v=20260806" width="1600" height="1200" alt="タブレットを見ながら連携・相談し合う2人の保育士" loading="lazy">
             <div class="feature-body">
               <p class="feature-tags"><span class="tag-num">01</span><span>全員に</span></p>
               <h3>複数担任制<span class="feature-sub">人間関係の安心・ひとりで抱えない</span></h3>
@@ -2209,7 +2210,7 @@ body[data-style="tsumugi"] {
             </div>
           </article>
           <article class="feature-card" id="f2">
-            <img src="images/feature-2.webp?v=20260805" width="1600" height="1200" alt="早番を終えて昼過ぎに退勤する保育士" loading="lazy">
+            <img src="images/feature-2.webp?v=20260806" width="1600" height="1200" alt="早番を終えて昼過ぎに退勤する保育士" loading="lazy">
             <div class="feature-body">
               <p class="feature-tags"><span class="tag-num">02</span><span>中途の方に</span></p>
               <h3>時差出勤（早番・遅番）<span class="feature-sub">早番の日は昼過ぎに退勤</span></h3>
@@ -2218,7 +2219,7 @@ body[data-style="tsumugi"] {
             </div>
           </article>
           <article class="feature-card" id="f3">
-            <img src="images/feature-3.webp?v=20260805" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy">
+            <img src="images/feature-3.webp?v=20260806" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy">
             <div class="feature-body">
               <p class="feature-tags"><span class="tag-num">03</span><span>中途の方に</span></p>
               <h3>内勤制度<span class="feature-sub">月数日、保育を離れて書類・制作の時間</span></h3>
@@ -2227,7 +2228,7 @@ body[data-style="tsumugi"] {
             </div>
           </article>
           <article class="feature-card" id="f4">
-            <img src="images/feature-4.webp?v=20260805" width="1600" height="1200" alt="先輩に教わりながら学ぶ新任保育士" loading="lazy">
+            <img src="images/feature-4.webp?v=20260806" width="1600" height="1200" alt="先輩に教わりながら学ぶ新任保育士" loading="lazy">
             <div class="feature-body">
               <p class="feature-tags"><span class="tag-num">04</span><span>新卒の方に</span></p>
               <h3>新人サポート<span class="feature-sub">1年目は担任なし＋半年の研修期間</span></h3>
@@ -2236,7 +2237,7 @@ body[data-style="tsumugi"] {
             </div>
           </article>
           <article class="feature-card" id="f5">
-            <img src="images/feature-5.webp?v=20260805" width="1600" height="1200" alt="わが子とハイタッチする子育て中の保育士" loading="lazy">
+            <img src="images/feature-5.webp?v=20260806" width="1600" height="1200" alt="わが子とハイタッチする子育て中の保育士" loading="lazy">
             <div class="feature-body">
               <p class="feature-tags"><span class="tag-num">05</span><span>中途の方に</span></p>
               <h3>子育て両立支援<span class="feature-sub">結婚・出産後も、経験を活かして働ける</span></h3>
@@ -2284,8 +2285,8 @@ body[data-style="tsumugi"] {
             <li><time class="tl-time">17:00</time><div class="tl-body"><h3>退勤（中番）</h3><p>引き継ぎをして退勤。持ち帰りの荷物はありません。</p></div></li>
           </ol>
           <div class="day-photos">
-            <img src="images/daily-1.webp?v=20260805" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy">
-            <img src="images/daily-2.webp?v=20260805" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy">
+            <img src="images/daily-1.webp?v=20260806" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy">
+            <img src="images/daily-2.webp?v=20260806" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy">
           </div>
         </div>
         <p class="sec-note">※時間帯は例です。公開前に園のシフト実態に合わせて確定してください【園確認中】。</p>
@@ -2302,7 +2303,7 @@ body[data-style="tsumugi"] {
         <div class="voice-grid">
           <article class="voice-card voice-card--bubble">
             <div class="voice-head">
-              <img class="voice-face" src="images/staff-1.webp?v=20260805" width="900" height="1200" alt="新任1年目の保育士" loading="lazy">
+              <img class="voice-face" src="images/staff-1.webp?v=20260806" width="900" height="1200" alt="新任1年目の保育士" loading="lazy">
               <h3 class="voice-name">新任<span>／1年目・新卒入職<br>④新人サポート</span></h3>
             </div>
             <p class="voice-q">1年目からいきなり担任を持つのが、正直こわかった。</p>
@@ -2310,7 +2311,7 @@ body[data-style="tsumugi"] {
           </article>
           <article class="voice-card voice-card--bubble">
             <div class="voice-head">
-              <img class="voice-face" src="images/staff-2.webp?v=20260805" width="900" height="1200" alt="新任2年目の保育士" loading="lazy">
+              <img class="voice-face" src="images/staff-2.webp?v=20260806" width="900" height="1200" alt="新任2年目の保育士" loading="lazy">
               <h3 class="voice-name">新任<span>／2年目・新卒入職<br>①複数担任制</span></h3>
             </div>
             <p class="voice-q">実習と現場のギャップについていけるか不安でした。</p>
@@ -2318,7 +2319,7 @@ body[data-style="tsumugi"] {
           </article>
           <article class="voice-card voice-card--bubble">
             <div class="voice-head">
-              <img class="voice-face" src="images/staff-3.webp?v=20260805" width="900" height="1200" alt="中途入職の保育士" loading="lazy">
+              <img class="voice-face" src="images/staff-3.webp?v=20260806" width="900" height="1200" alt="中途入職の保育士" loading="lazy">
               <h3 class="voice-name">先輩<span>／中途入職<br>②時差出勤</span></h3>
             </div>
             <p class="voice-q">平日に役所や病院へ行けない生活に、限界を感じていました。</p>
@@ -2326,7 +2327,7 @@ body[data-style="tsumugi"] {
           </article>
           <article class="voice-card voice-card--bubble">
             <div class="voice-head">
-              <img class="voice-face" src="images/staff-4.webp?v=20260805" width="900" height="1200" alt="ベテラン保育士" loading="lazy">
+              <img class="voice-face" src="images/staff-4.webp?v=20260806" width="900" height="1200" alt="ベテラン保育士" loading="lazy">
               <h3 class="voice-name">先輩<span>／ベテラン<br>③内勤制度</span></h3>
             </div>
             <p class="voice-q">前の職場では、書類を持ち帰るのが当たり前でした。</p>
@@ -2334,7 +2335,7 @@ body[data-style="tsumugi"] {
           </article>
           <article class="voice-card voice-card--bubble">
             <div class="voice-head">
-              <img class="voice-face" src="images/staff-5.webp?v=20260805" width="900" height="1200" alt="子育て中の保育士" loading="lazy">
+              <img class="voice-face" src="images/staff-5.webp?v=20260806" width="900" height="1200" alt="子育て中の保育士" loading="lazy">
               <h3 class="voice-name">先輩<span>／ママ先生<br>⑤子育て両立支援</span></h3>
             </div>
             <p class="voice-q">出産後、保育士に戻れるのか自信がありませんでした。</p>
@@ -2550,7 +2551,7 @@ body[data-style="tsumugi"] {
     <a class="sticky-btn sticky-apply" href="#apply">応募・見学予約</a>
   </div>
 
-  <script src="js/main.js?v=20260805" defer></script>
+  <script src="js/main.js?v=20260806" defer></script>
 
 
 <!-- レビュー用: スタイル比較スイッチャー（キュレーション済み6案。本番LPには存在しない）

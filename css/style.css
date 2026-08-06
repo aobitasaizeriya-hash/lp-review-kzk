@@ -1463,8 +1463,9 @@ h1, h2, h3, h4 { letter-spacing: -0.01em; }   /* 見出しは本文(0.02em)と�
 .voice-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
 /* .voice-card img { width:100% } より詳細度を上げるため親クラスを付ける */
 .voice-card--bubble .voice-face {
-  width: 84px;
-  height: 84px;
+  /* 84px→112px: 実写真投入後、プロ撮影の表情が伝わるサイズへ拡大（2026-08-06） */
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(43, 43, 58, 0.18);

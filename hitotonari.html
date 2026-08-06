@@ -221,6 +221,9 @@ section{padding:88px 0}
 .voice-head{display:flex;align-items:center;gap:16px;margin-bottom:16px}
 .voice-face{width:78px;height:78px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#EDA9BA,#C64B6A);display:flex;align-items:center;justify-content:center;color:#fff;font-size:9.5px;font-weight:700;text-align:center;line-height:1.5;border:3px solid #fff;box-shadow:0 4px 12px rgba(184,50,79,.18);padding:6px}
 .voice-name{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--accent-deep);line-height:1.5}
+/* 実写真差し替え済み: 円形のまま写真をcoverで敷き詰める */
+img.voice-face{object-fit:cover;padding:0}
+@media(max-width:767px){ .hero-visual img.photo-ph{aspect-ratio:4/5} }
 .voice-name span{display:block;font-family:var(--gothic);font-size:10.5px;font-weight:700;color:var(--accent);margin-top:3px;letter-spacing:.02em}
 .voice-q{font-size:12.5px;color:#7a6169;font-weight:700;line-height:1.85;position:relative;padding-left:22px}
 .voice-q::before{content:"“";position:absolute;left:0;top:-4px;font-family:var(--serif);font-size:28px;color:var(--accent-sub);line-height:1}
@@ -410,8 +413,8 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
   </defs>
 </svg>
 
-<!-- ===== 検討用の断り帯（noindex・数値は園確認前・写真は仮・声はサンプル） ===== -->
-<div class="comp-note">採用LP デザインドラフト（ヒトトナリ流・検討用・<b>noindex</b>）｜数値・労働条件は<b>園の最終確認前の暫定値</b>を含みます｜写真は<b>仮の差し込み枠</b>・先輩の声は<b>サンプル文</b>です</div>
+<!-- ===== 検討用の断り帯（noindex・数値は園確認前・声はサンプル） ===== -->
+<div class="comp-note">採用LP デザインドラフト（ヒトトナリ流・検討用・<b>noindex</b>）｜数値・労働条件は<b>園の最終確認前の暫定値</b>を含みます｜先輩の声は<b>サンプル文</b>（実インタビュー収録後に差し替え）です</div>
 
 <!-- ===== (1) ヘッダー ===== -->
 <header class="site-header">
@@ -466,7 +469,10 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
       </div>
     </div>
     <div class="hero-visual">
-      <img class="photo-ph" src="images/hero-b.webp?v=20260805" width="1750" height="1400" alt="こざくら保育園の園舎前で笑顔でジャンプする先生たち" fetchpriority="high">
+      <picture>
+        <source media="(max-width: 767px)" srcset="images/hero-sp.webp?v=20260806" width="1200" height="1500">
+        <img class="photo-ph" src="images/hero-b.webp?v=20260806" width="1750" height="1400" alt="こざくら保育園の園舎前で笑顔でジャンプする先生たち" fetchpriority="high">
+      </picture>
       <div class="spin-badge" aria-hidden="true">
         <svg viewBox="0 0 128 128" class="rot">
           <defs><path id="circPath" d="M64,64 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
@@ -505,7 +511,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         <p>こざくら保育園は<strong>昭和43年（1968年）創立</strong>。定員200名・職員約50名、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。月1回の音体教育（マーチング・太鼓・器楽合奏）も特色です。</p>
         <p>規模が大きいからこそ、複数担任制やシフトの柔軟さ、保育を離れて事務作業をする時間など、<strong class="marker">「先生が長く続けられる仕組み」に人員を割ける</strong>のが私たちの強みです。同じ敷地には子育て支援センターと高齢者デイサービスが併設され、多世代が行き交う環境です。<span class="req-sub">※職員数・肩書きの正式表記は【園確認中】</span></p>
       </div>
-      <div class="fade-up"><img class="photo-ph" src="images/facade.webp?v=20260805" width="1600" height="1200" alt="こざくら保育園の園舎外観" loading="lazy"></div>
+      <div class="fade-up"><img class="photo-ph" src="images/facade.webp?v=20260806" width="1600" height="1200" alt="こざくら保育園の園舎外観" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -530,7 +536,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
 
     <div class="feature-list">
       <article class="feature-card" id="f1">
-        <div class="feature-media"><img class="photo-ph" src="images/feature-1.webp?v=20260805" width="1600" height="1200" alt="タブレットを見ながら連携・相談し合う2人の保育士" loading="lazy"></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-1.webp?v=20260806" width="1600" height="1200" alt="タブレットを見ながら連携・相談し合う2人の保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">01<span class="who">全員に</span></p>
           <h3>複数担任制<span class="sub">人間関係の安心・ひとりで抱えない</span></h3>
@@ -539,7 +545,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         </div>
       </article>
       <article class="feature-card" id="f2">
-        <div class="feature-media"><img class="photo-ph" src="images/feature-2.webp?v=20260805" width="1600" height="1200" alt="早番を終えて昼過ぎに退勤する保育士" loading="lazy"></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-2.webp?v=20260806" width="1600" height="1200" alt="早番を終えて昼過ぎに退勤する保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">02<span class="who">中途の方に</span></p>
           <h3>時差出勤（早番・遅番）<span class="sub">早番の日は昼過ぎに退勤</span></h3>
@@ -548,7 +554,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         </div>
       </article>
       <article class="feature-card" id="f3">
-        <div class="feature-media"><img class="photo-ph" src="images/feature-3.webp?v=20260805" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy"></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-3.webp?v=20260806" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">03<span class="who">中途の方に</span></p>
           <h3>内勤制度<span class="sub">月数日、保育を離れて書類・制作の時間</span></h3>
@@ -557,7 +563,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         </div>
       </article>
       <article class="feature-card" id="f4">
-        <div class="feature-media"><img class="photo-ph" src="images/feature-4.webp?v=20260805" width="1600" height="1200" alt="先輩に教わりながら学ぶ新任保育士" loading="lazy"></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-4.webp?v=20260806" width="1600" height="1200" alt="先輩に教わりながら学ぶ新任保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">04<span class="who">新卒の方に</span></p>
           <h3>新人サポート<span class="sub">1年目は担任なし＋半年の研修期間</span></h3>
@@ -566,7 +572,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         </div>
       </article>
       <article class="feature-card" id="f5">
-        <div class="feature-media"><img class="photo-ph" src="images/feature-5.webp?v=20260805" width="1600" height="1200" alt="わが子とハイタッチする子育て中の保育士" loading="lazy"></div>
+        <div class="feature-media"><img class="photo-ph" src="images/feature-5.webp?v=20260806" width="1600" height="1200" alt="わが子とハイタッチする子育て中の保育士" loading="lazy"></div>
         <div class="feature-body">
           <p class="num-label">05<span class="who">中途の方に</span></p>
           <h3>子育て両立支援<span class="sub">結婚・出産後も、経験を活かして働ける</span></h3>
@@ -603,8 +609,8 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
         <li><span class="t">17:00</span><div class="tl-body"><h4>退勤（中番）</h4><p>引き継ぎをして退勤。持ち帰りの荷物はありません。</p></div></li>
       </ol>
       <div class="day-photos">
-        <img class="photo-ph" src="images/daily-1.webp?v=20260805" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy">
-        <img class="photo-ph" src="images/daily-2.webp?v=20260805" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy">
+        <img class="photo-ph" src="images/daily-1.webp?v=20260806" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy">
+        <img class="photo-ph" src="images/daily-2.webp?v=20260806" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy">
       </div>
     </div>
     <p class="sec-note">※時間帯は例です。公開前に園のシフト実態に合わせて確定してください【園確認中】。</p>
@@ -621,7 +627,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
     <div class="voice-grid">
       <article class="voice-card fade-up">
         <div class="voice-head">
-          <span class="voice-face">写真<br>差し込み枠</span>
+          <img class="voice-face" src="images/staff-1.webp?v=20260806" width="900" height="1200" alt="新任1年目の保育士" loading="lazy">
           <h3 class="voice-name">新任<span>1年目・新卒／④新人サポート</span></h3>
         </div>
         <p class="voice-q">1年目からいきなり担任を持つのが、正直こわかった。</p>
@@ -629,7 +635,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
       </article>
       <article class="voice-card fade-up">
         <div class="voice-head">
-          <span class="voice-face">写真<br>差し込み枠</span>
+          <img class="voice-face" src="images/staff-2.webp?v=20260806" width="900" height="1200" alt="新任2年目の保育士" loading="lazy">
           <h3 class="voice-name">新任<span>2年目・新卒／①複数担任制</span></h3>
         </div>
         <p class="voice-q">実習と現場のギャップについていけるか不安でした。</p>
@@ -637,7 +643,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
       </article>
       <article class="voice-card fade-up">
         <div class="voice-head">
-          <span class="voice-face">写真<br>差し込み枠</span>
+          <img class="voice-face" src="images/staff-3.webp?v=20260806" width="900" height="1200" alt="中途入職の保育士" loading="lazy">
           <h3 class="voice-name">先輩<span>中途入職／②時差出勤</span></h3>
         </div>
         <p class="voice-q">平日に役所や病院へ行けない生活に、限界を感じていました。</p>
@@ -645,7 +651,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
       </article>
       <article class="voice-card fade-up">
         <div class="voice-head">
-          <span class="voice-face">写真<br>差し込み枠</span>
+          <img class="voice-face" src="images/staff-4.webp?v=20260806" width="900" height="1200" alt="ベテラン保育士" loading="lazy">
           <h3 class="voice-name">先輩<span>ベテラン／③内勤制度</span></h3>
         </div>
         <p class="voice-q">前の職場では、書類を持ち帰るのが当たり前でした。</p>
@@ -653,7 +659,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
       </article>
       <article class="voice-card fade-up">
         <div class="voice-head">
-          <span class="voice-face">写真<br>差し込み枠</span>
+          <img class="voice-face" src="images/staff-5.webp?v=20260806" width="900" height="1200" alt="子育て中の保育士" loading="lazy">
           <h3 class="voice-name">先輩<span>ママ先生／⑤子育て両立支援</span></h3>
         </div>
         <p class="voice-q">出産後、保育士に戻れるのか自信がありませんでした。</p>
