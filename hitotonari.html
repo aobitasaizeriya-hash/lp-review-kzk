@@ -181,6 +181,9 @@ section{padding:88px 0}
 .fear-map .fear-a .num{font-family:var(--num);font-weight:600;letter-spacing:.05em}
 @media(max-width:640px){.fear-map li{grid-template-columns:1fr;gap:10px}.fear-map .fear-a{justify-self:start}}
 /* --- 5制度のプルダウン化（2026-08-06）: 不安の行の直下に制度カードが開く。JS無効時は従来どおり全カード縦積み --- */
+/* 1行要約: 閉じた状態でも5制度の便益を比較できるようにする（Codex反証R2の妥協案） */
+.fear-sum{grid-column:1/-1;font-size:12px;color:var(--gray);letter-spacing:.03em;line-height:1.7;margin-top:-4px}
+.fear-sum::before{content:"— ";opacity:.6}
 .fear-hint{text-align:center;font-size:12.5px;color:var(--gray);margin:-40px auto 44px;letter-spacing:.04em}
 .features.is-drop .fear-map{margin-bottom:0}
 .features.is-drop .fear-hint{margin:18px auto 0}
@@ -558,11 +561,11 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
 
     <!-- fear-map: 不安 → それを消す制度 -->
     <ul class="fear-map">
-      <li><span class="fear-q">人間関係で消耗しない？ ひとりで抱え込まない？</span><a class="fear-a" href="#f1"><span class="num">01</span>複数担任制</a></li>
-      <li><span class="fear-q">平日にしかできない用事は、いつ済ませる？</span><a class="fear-a" href="#f2"><span class="num">02</span>時差出勤</a></li>
-      <li><span class="fear-q">書類の持ち帰り、また増えない？</span><a class="fear-a" href="#f3"><span class="num">03</span>内勤制度</a></li>
-      <li><span class="fear-q">1年目からいきなり担任は、こわい。</span><a class="fear-a" href="#f4"><span class="num">04</span>新人サポート</a></li>
-      <li><span class="fear-q">出産・子育てのあとも、続けられる？</span><a class="fear-a" href="#f5"><span class="num">05</span>子育て両立支援</a></li>
+      <li><span class="fear-q">人間関係で消耗しない？ ひとりで抱え込まない？</span><a class="fear-a" href="#f1"><span class="num">01</span>複数担任制</a><span class="fear-sum">クラスを複数の先生で受け持ち、ひとりで抱えない</span></li>
+      <li><span class="fear-q">平日にしかできない用事は、いつ済ませる？</span><a class="fear-a" href="#f2"><span class="num">02</span>時差出勤</a><span class="fear-sum">早番の日は昼過ぎに退勤できる</span></li>
+      <li><span class="fear-q">書類の持ち帰り、また増えない？</span><a class="fear-a" href="#f3"><span class="num">03</span>内勤制度</a><span class="fear-sum">月数日、保育を離れて書類・制作に集中できる</span></li>
+      <li><span class="fear-q">1年目からいきなり担任は、こわい。</span><a class="fear-a" href="#f4"><span class="num">04</span>新人サポート</a><span class="fear-sum">1年目は担任なし＋半年の研修期間</span></li>
+      <li><span class="fear-q">出産・子育てのあとも、続けられる？</span><a class="fear-a" href="#f5"><span class="num">05</span>子育て両立支援</a><span class="fear-sum">結婚・出産後も経験を活かして働ける</span></li>
     </ul>
     <p class="fear-hint">気になる不安をタップすると、答えになる制度がすぐ下に開きます</p>
 
