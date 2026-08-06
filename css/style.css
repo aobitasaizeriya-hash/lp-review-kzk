@@ -1743,3 +1743,67 @@ body { font-size: 17px; line-height: 1.9; }
 /* --- CTAの所作を上質なイージングに統一（LINE緑＝行動色は不変） --- */
 .btn { transition: transform 0.3s var(--ease-soft), box-shadow 0.3s var(--ease-soft), background-color 0.2s ease; }
 .btn:hover { transform: translateY(-3px); }
+
+/* ===== 写真の見せ方改修（2026-08-06: 実写真納品を受けた3点。詳細=docs/design-note.md） ===== */
+
+/* 1) 採用の流れ: 各ステップに園の指定カット（LINE連絡風・書類手元・面接風・集合） */
+.flow-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* 2) ふだんのこざくら: 横スワイプの正方形ギャラリー（scroll-snapのみ・JS不使用。
+      スマホのスワイプ操作前提＝GPS広告流入と相性。自動で流さない） */
+.snaps { overflow: hidden; }
+.snaps-lead { margin-top: -8px; margin-bottom: 18px; opacity: 0.8; font-size: 14px; }
+.snaps-strip {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  /* 左端をcontainerの文字端に揃えるフルブリード */
+  padding: 6px max(20px, calc((100vw - var(--container)) / 2 + 20px)) 18px;
+}
+.snaps-strip figure {
+  flex: 0 0 auto;
+  width: min(58vw, 240px);
+  margin: 0;
+  scroll-snap-align: start;
+}
+.snaps-strip img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  display: block;
+}
+.snaps-strip figcaption {
+  font-size: 12.5px;
+  margin-top: 8px;
+  opacity: 0.75;
+  letter-spacing: 0.02em;
+}
+
+/* 3) 最終CTA直前の顔: 「LINEの先に人がいる」の視覚化（重なり円・声の3人を再登場させる） */
+.cta-faces { text-align: center; margin-bottom: 10px; }
+.cta-faces img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: var(--shadow-tight);
+  display: inline-block;
+  vertical-align: middle;
+}
+.cta-faces img + img { margin-left: -12px; }
+.cta-faces-note { font-size: 13px; margin-top: 8px; opacity: 0.8; }
