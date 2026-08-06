@@ -178,6 +178,17 @@ section{padding:88px 0}
 .fear-map .fear-a:hover{background:var(--accent-deep);transform:translateY(-1px)}
 .fear-map .fear-a .num{font-family:var(--num);font-weight:600;letter-spacing:.05em}
 @media(max-width:640px){.fear-map li{grid-template-columns:1fr;gap:10px}.fear-map .fear-a{justify-self:start}}
+/* --- 5制度のタブ化（2026-08-06）: fear-mapの行がタブ。JS無効時は従来どおり全カード縦積み --- */
+.fear-hint{text-align:center;font-size:12.5px;color:var(--gray);margin:-40px auto 44px;letter-spacing:.04em}
+.features.is-tabbed .fear-map{margin-bottom:14px}
+.features.is-tabbed .fear-hint{margin:0 auto 26px}
+.features.is-tabbed .fear-map li{cursor:pointer;transition:border-color .3s var(--ease),background-color .3s var(--ease),box-shadow .3s var(--ease)}
+.features.is-tabbed .fear-map li.is-active{border-color:var(--accent);background:#fff;box-shadow:0 6px 18px rgba(43,43,58,.07)}
+.features.is-tabbed .fear-map li:not(.is-active) .fear-a{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.features.is-tabbed .fear-map li:not(.is-active) .fear-a:hover{background:var(--pale-3);transform:none}
+.features.is-tabbed .feature-card{display:none}
+.features.is-tabbed .feature-card.is-open{display:grid;animation:featIn .45s var(--ease) both}
+@keyframes featIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 /* feature cards */
 .feature-list{display:grid;gap:34px}
 .feature-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;scroll-margin-top:90px}
@@ -533,6 +544,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
       <li><span class="fear-q">1年目からいきなり担任は、こわい。</span><a class="fear-a" href="#f4"><span class="num">04</span>新人サポート</a></li>
       <li><span class="fear-q">出産・子育てのあとも、続けられる？</span><a class="fear-a" href="#f5"><span class="num">05</span>子育て両立支援</a></li>
     </ul>
+    <p class="fear-hint">気になる不安をタップすると、答えになる制度がすぐ下に開きます</p>
 
     <div class="feature-list">
       <article class="feature-card" id="f1">
@@ -867,5 +879,36 @@ document.querySelectorAll('#huePicker button').forEach(function (b) {
 </script>
 <!-- /REVIEW-ONLY -->
 
+<script>
+/* 5制度タブ（2026-08-06）: 不安の行をタップ→対応する制度カードをその場で開く。
+   JSが動かない環境では is-tabbed が付かず、従来どおり全カード表示＋#アンカーで動く（安全側） */
+(function () {
+  var sec = document.getElementById('features');
+  if (!sec) return;
+  var rows = [].slice.call(sec.querySelectorAll('.fear-map li'));
+  var cards = [].slice.call(sec.querySelectorAll('.feature-card'));
+  if (!rows.length || rows.length !== cards.length) return;
+  sec.classList.add('is-tabbed');
+  function open(i, scroll) {
+    rows.forEach(function (r, j) {
+      r.classList.toggle('is-active', i === j);
+      var a = r.querySelector('.fear-a');
+      if (a) a.setAttribute('aria-expanded', i === j ? 'true' : 'false');
+    });
+    cards.forEach(function (c, j) { c.classList.toggle('is-open', i === j); });
+    if (scroll) {
+      var rect = cards[i].getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < 70 || rect.top > vh * 0.6) {
+        cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  }
+  rows.forEach(function (row, i) {
+    row.addEventListener('click', function (e) { e.preventDefault(); open(i, true); });
+  });
+  open(0, false);
+})();
+</script>
 </body>
 </html>
