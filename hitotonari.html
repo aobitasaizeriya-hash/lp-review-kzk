@@ -62,7 +62,8 @@ img{max-width:100%;display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:99px;font-size:14px;padding:13px 28px;min-height:48px;transition:all .4s var(--ease);font-family:var(--gothic);letter-spacing:.06em;text-align:center;line-height:1.5}
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
 .btn:focus-visible{outline:3px solid var(--accent-sub);outline-offset:2px}
-.btn .btn-sub{display:block;font-size:11px;font-weight:400;opacity:.92;letter-spacing:.02em;margin-top:2px}
+.btn{flex-wrap:wrap}
+.btn .btn-sub{display:block;flex-basis:100%;font-size:11px;font-weight:400;opacity:.92;letter-spacing:.02em;margin-top:2px}
 /* LINE緑=主導線 */
 .btn-line-green{background:var(--line-green);color:#fff}
 .btn-line-green:hover{box-shadow:0 8px 22px rgba(6,199,85,.38)}
@@ -83,7 +84,8 @@ nav.g a{position:relative;padding:6px 0;color:var(--ink)}
 nav.g a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .4s var(--ease)}
 nav.g a:hover::after{width:100%}
 .hd-cta{display:flex;align-items:center;gap:10px}
-.hd-cta .btn{padding:10px 20px;font-size:13px;min-height:44px}
+.hd-cta .btn{padding:10px 20px;font-size:13px;min-height:44px;flex-wrap:nowrap}
+.hd-cta .btn .btn-sub{flex-basis:auto}
 @media(max-width:1040px){nav.g{display:none}}
 @media(max-width:520px){.logo{font-size:15px}.logo .r{display:none}.hd-cta .btn .btn-sub{display:none}}
 
@@ -178,17 +180,20 @@ section{padding:88px 0}
 .fear-map .fear-a:hover{background:var(--accent-deep);transform:translateY(-1px)}
 .fear-map .fear-a .num{font-family:var(--num);font-weight:600;letter-spacing:.05em}
 @media(max-width:640px){.fear-map li{grid-template-columns:1fr;gap:10px}.fear-map .fear-a{justify-self:start}}
-/* --- 5制度のタブ化（2026-08-06）: fear-mapの行がタブ。JS無効時は従来どおり全カード縦積み --- */
+/* --- 5制度のプルダウン化（2026-08-06）: 不安の行の直下に制度カードが開く。JS無効時は従来どおり全カード縦積み --- */
 .fear-hint{text-align:center;font-size:12.5px;color:var(--gray);margin:-40px auto 44px;letter-spacing:.04em}
-.features.is-tabbed .fear-map{margin-bottom:14px}
-.features.is-tabbed .fear-hint{margin:0 auto 26px}
-.features.is-tabbed .fear-map li{cursor:pointer;transition:border-color .3s var(--ease),background-color .3s var(--ease),box-shadow .3s var(--ease)}
-.features.is-tabbed .fear-map li.is-active{border-color:var(--accent);background:#fff;box-shadow:0 6px 18px rgba(43,43,58,.07)}
-.features.is-tabbed .fear-map li:not(.is-active) .fear-a{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
-.features.is-tabbed .fear-map li:not(.is-active) .fear-a:hover{background:var(--pale-3);transform:none}
-.features.is-tabbed .feature-card{display:none}
-.features.is-tabbed .feature-card.is-open{display:grid;animation:featIn .45s var(--ease) both}
-@keyframes featIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.features.is-drop .fear-map{margin-bottom:0}
+.features.is-drop .fear-hint{margin:18px auto 0}
+.features.is-drop .fear-map li{cursor:pointer;transition:border-color .3s var(--ease),background-color .3s var(--ease),box-shadow .3s var(--ease)}
+.features.is-drop .fear-map li.is-active{border-color:var(--accent);background:#fff;box-shadow:0 6px 18px rgba(43,43,58,.07)}
+.features.is-drop .fear-a::after{content:"▾";margin-left:8px;display:inline-block;transition:transform .3s var(--ease);font-size:12px}
+.features.is-drop li.is-active .fear-a::after{transform:rotate(180deg)}
+.features.is-drop .fear-map li:not(.is-active) .fear-a{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.features.is-drop .fear-map li:not(.is-active) .fear-a:hover{background:var(--pale-3);transform:none}
+.features.is-drop .fear-map li .feature-card{grid-column:1/-1;display:none;margin-top:16px;cursor:auto}
+.features.is-drop .fear-map li .feature-card.is-open{display:grid;animation:featIn .45s var(--ease) both}
+.features.is-drop .feature-list{display:none}
+@keyframes featIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 /* feature cards */
 .feature-list{display:grid;gap:34px}
 .feature-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;scroll-margin-top:90px}
@@ -880,34 +885,37 @@ document.querySelectorAll('#huePicker button').forEach(function (b) {
 <!-- /REVIEW-ONLY -->
 
 <script>
-/* 5制度タブ（2026-08-06）: 不安の行をタップ→対応する制度カードをその場で開く。
-   JSが動かない環境では is-tabbed が付かず、従来どおり全カード表示＋#アンカーで動く（安全側） */
+/* 5制度プルダウン（2026-08-06）: 不安の行をタップ→その行の直下に制度カードが開く（アコーディオン・同時に開くのは1つ）。
+   JSが動かない環境では is-drop が付かず、従来どおり全カード表示＋#アンカーで動く（安全側） */
 (function () {
   var sec = document.getElementById('features');
   if (!sec) return;
   var rows = [].slice.call(sec.querySelectorAll('.fear-map li'));
-  var cards = [].slice.call(sec.querySelectorAll('.feature-card'));
+  var cards = [].slice.call(sec.querySelectorAll('.feature-list .feature-card'));
   if (!rows.length || rows.length !== cards.length) return;
-  sec.classList.add('is-tabbed');
-  function open(i, scroll) {
+  rows.forEach(function (row, i) { row.appendChild(cards[i]); });
+  sec.classList.add('is-drop');
+  function toggle(i) {
+    var willOpen = !rows[i].classList.contains('is-active');
     rows.forEach(function (r, j) {
-      r.classList.toggle('is-active', i === j);
+      var on = willOpen && i === j;
+      r.classList.toggle('is-active', on);
+      cards[j].classList.toggle('is-open', on);
       var a = r.querySelector('.fear-a');
-      if (a) a.setAttribute('aria-expanded', i === j ? 'true' : 'false');
+      if (a) a.setAttribute('aria-expanded', on ? 'true' : 'false');
     });
-    cards.forEach(function (c, j) { c.classList.toggle('is-open', i === j); });
-    if (scroll) {
-      var rect = cards[i].getBoundingClientRect();
-      var vh = window.innerHeight || document.documentElement.clientHeight;
-      if (rect.top < 70 || rect.top > vh * 0.6) {
-        cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+    if (willOpen) {
+      var rect = rows[i].getBoundingClientRect();
+      if (rect.top < 60) rows[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
   rows.forEach(function (row, i) {
-    row.addEventListener('click', function (e) { e.preventDefault(); open(i, true); });
+    row.addEventListener('click', function (e) {
+      if (e.target.closest('.feature-card')) return; /* 開いたカード内の操作では閉じない */
+      e.preventDefault();
+      toggle(i);
+    });
   });
-  open(0, false);
 })();
 </script>
 </body>
