@@ -296,6 +296,16 @@ ul,ol{margin:0;padding:0;list-style:none}
 .ph .ph-mark{width:34px;height:34px;color:var(--sakura);opacity:.5}
 /* 実写真差し替え済みスロット: 枠線・角丸は維持し、coverで敷き詰める */
 img.ph{object-fit:cover;width:100%;display:block}
+/* 写真章（2026-08-06）: 3箇所だけ、本文と同じ罫線・番号の文法で写真を「組む」（Codex反証R2の3章案） */
+.pchap{margin:34px 0 0}
+.pchap-img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:var(--r-m);object-fit:cover}
+.pchap-cap{display:flex;align-items:baseline;gap:10px;margin-top:10px;font-size:12px;color:var(--weak);letter-spacing:.05em;line-height:1.7}
+.pchap-cap .no{font-family:var(--num);font-weight:800;font-size:13px;color:var(--sakura-ink);letter-spacing:.06em;flex-shrink:0}
+.pchap--hero{grid-column:1/-1;margin:10px 0 0}
+.pchap--hero .pchap-img{aspect-ratio:8/5}
+@media(max-width:767px){ .pchap--hero .pchap-img{aspect-ratio:4/5} }
+.pchap--feat{max-width:810px;margin:44px auto 48px}
+.pchap--day{max-width:720px;margin:36px auto 0}
 .voice-q{font-family:var(--display);font-weight:700;font-size:clamp(17px,3.4vw,22px);line-height:1.65;margin-bottom:14px}
 .voice-q .qm{color:var(--sakura);font-family:var(--num);font-weight:800;margin-right:8px;font-size:.86em}
 .voice-a{color:var(--ink);max-width:36em}
@@ -570,6 +580,14 @@ if (location.search.indexOf('static') > -1) {
       </div>
       <p class="sec-note" style="margin-top:12px">※1 市公式一覧　※2 公式沿革　※3 園確認中</p>
     </div>
+    <!-- 写真章1: コピーと数字の直後に「職場の顔」（PC=園舎前ジャンプ／SP=縦ポートレート） -->
+    <figure class="pchap pchap--hero" data-reveal>
+      <picture>
+        <source media="(max-width: 767px)" srcset="images/hero-sp-768.webp?v=20260806 768w, images/hero-sp.webp?v=20260806 1200w" sizes="calc(100vw - 40px)" width="1200" height="1500">
+        <img class="pchap-img" src="images/hero.webp?v=20260806" srcset="images/hero-1080.webp?v=20260806 1080w, images/hero.webp?v=20260806 2000w" sizes="(min-width:1120px) 1080px, calc(100vw - 40px)" width="2000" height="1250" alt="こざくら保育園の先生たち">
+      </picture>
+      <figcaption class="pchap-cap"><span class="no num">SCENE</span>こざくらの先生たち（2026年7月撮影）</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -696,6 +714,11 @@ if (location.search.indexOf('static') > -1) {
         <p class="feat-voice">「持ち帰りが減って、記録も滞らなくなりました」<b>先輩保育士</b>（※収録後に差し替え）</p>
       </div>
     </div>
+    <!-- 写真章2: 制度03と接続する図版 -->
+    <figure class="pchap pchap--feat" data-reveal>
+      <img class="pchap-img" src="images/feature-3.webp?v=20260806" srcset="images/feature-3-800.webp?v=20260806 800w, images/feature-3.webp?v=20260806 1600w" sizes="(min-width:900px) 810px, calc(100vw - 40px)" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy">
+      <figcaption class="pchap-cap"><span class="no num">03</span>内勤制度 — 保育を離れて、書類に集中する時間</figcaption>
+    </figure>
     <div class="feat" data-reveal>
       <p class="feat-no"><span class="out">04</span><span class="fill" aria-hidden="true">04</span></p>
       <div>
@@ -744,6 +767,11 @@ if (location.search.indexOf('static') > -1) {
       <li data-reveal><span class="t num">15:00</span><div><h3>おやつ・自由あそび</h3><p>降園まで子どもとじっくり関わる時間。</p></div></li>
       <li data-reveal><span class="t num">17:00</span><div><h3>退勤（中番）</h3><p>引き継ぎをして退勤。持ち帰りの荷物はありません。</p></div></li>
     </ul>
+    <!-- 写真章3: タイムライン「11:30 給食」と接続する図版 -->
+    <figure class="pchap pchap--day" data-reveal>
+      <img class="pchap-img" src="images/daily-2.webp?v=20260806" srcset="images/daily-2-720.webp?v=20260806 720w, images/daily-2.webp?v=20260806 1200w" sizes="(min-width:900px) 720px, calc(100vw - 40px)" width="1200" height="900" alt="給食を手に笑顔を見せる2人の保育士" loading="lazy">
+      <figcaption class="pchap-cap"><span class="no num">11:30</span>給食 — お昼をはさんで、午後の保育へ</figcaption>
+    </figure>
     <p class="sec-note">※時間帯は例です。公開前に園のシフト実態に合わせて確定してください【園確認中】。</p>
   </div>
 </section>
