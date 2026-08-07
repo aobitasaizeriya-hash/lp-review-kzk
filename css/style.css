@@ -13,7 +13,7 @@
 :root {
   /* カラー（紫グラデーション禁止） VAR:BRAND_COLORS — 小桜保育園ブランド: 桜色系に差し替え済み */
   --color-primary: #E4566E;        /* 桜レッド: CTA・大きい数字（18.66px以上の太字限定） */
-  --color-primary-dark: #C23A52;   /* 小さいテキスト用（白・クリーム地でWCAG AA 4.5:1超） */
+  --color-primary-dark: #CE3A5E;   /* 小さいテキスト用（白・クリーム地でWCAG AA 4.5:1超） */
   --color-primary-light: #FFB3C1;  /* 暗色背景（--color-ink）上の小テキスト用 */
   --color-primary-soft: #FBE7EB;
   --color-accent: #7E9C7B;         /* セージ: 図形・大きい数字用（小テキストには使わない） */
@@ -49,7 +49,7 @@
   --dot-tint-accent: rgba(126, 156, 123, 0.14);
   /* ブランドマーク色: 桜モチーフ（スタンプ・花びら・見出しアイコン）は園名由来の記号なので
      スタイル/配色を変えても桜色のまま固定する（ロゴと同じ扱い。VAR:BRAND_COLORSでも上書きしない） */
-  --brand-mark: #C23A52;   /* 桜スタンプ（落款のような赤桜） */
+  --brand-mark: #CE3A5E;   /* 桜スタンプ（落款のような赤桜） */
   --petal: #F3B7C6;        /* 花びら装飾・基本 */
   --petal-deep: #EFA0B5;   /* 花びら装飾・濃 */
   --marker-bg: #F9CFDA;    /* 蛍光マーカー */

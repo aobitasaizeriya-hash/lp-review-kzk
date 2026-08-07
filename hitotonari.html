@@ -17,8 +17,8 @@
    ============================================================ */
 :root{
   /* --- 効かせ色（深い桜）--- */
-  --accent:      #B8324F;   /* 主役 */
-  --accent-deep: #7E2138;   /* 主役の暗部（見出し文字・フッター） */
+  --accent:      #D5235E;   /* 主役 */
+  --accent-deep: #B9214C;   /* 主役の暗部（見出し文字・フッター） */
   --accent-sub:  #E4566E;   /* 主役の明部（下線・hand英字・マーカー） */
   --accent-2nd:  #CF9A3C;   /* 第2アクセント（金茶・控えめに） */
   --accent-2nd-deep:#A97C22;
@@ -114,7 +114,7 @@ nav.g a:hover::after{width:100%}
 /* 運用: 実写真<img>への差し替え時もaspect-ratio指定を維持するか、width/height属性を必ず付与すること（CLS対策） */
 .photo-ph{background:
   repeating-linear-gradient(45deg,rgba(255,255,255,.20) 0 16px,transparent 16px 32px),
-  linear-gradient(140deg,#E88BA0,#B8324F 62%,#CF9A3C);
+  linear-gradient(140deg,#E88BA0,#D5235E 62%,#CF9A3C);
   display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-align:center;line-height:1.9;padding:20px}
 .hero-visual .photo-ph{aspect-ratio:5/4;border-radius:8rem 3rem 3rem 3rem}
 .ph-note{font-size:10.5px;letter-spacing:.04em;opacity:.9;display:block;margin-top:6px;font-weight:400}
@@ -398,7 +398,7 @@ body[data-hue="ai"]{--accent:#2A5C8F;--accent-deep:#1C3E63;--accent-sub:#5E8DBE;
 /* 若葉（緑・自然） */
 body[data-hue="wakaba"]{--accent:#3B7A57;--accent-deep:#265239;--accent-sub:#6FAC88;--accent-2nd:#CF9A3C;--accent-2nd-deep:#A97C22;--pale-1:#E9F3EC;--pale-3:#EDF5EF;--line:#D6E4DA}
 /* 金茶（茶金・和／創立58年の歴史。第2アクセントは桜にして温かみを残す） */
-body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99A4E;--accent-2nd:#B8324F;--accent-2nd-deep:#7E2138;--pale-1:#F6EEDD;--pale-3:#F5EFE0;--line:#E7DAC2}
+body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99A4E;--accent-2nd:#D5235E;--accent-2nd-deep:#B9214C;--pale-1:#F6EEDD;--pale-3:#F5EFE0;--line:#E7DAC2}
 
 /* 色ピッカー（レビュー専用・本番には出さない） */
 .hue-picker{position:fixed;left:12px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:400;display:grid;gap:6px;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:14px;padding:8px 11px;box-shadow:0 6px 20px rgba(0,0,0,.16);font-family:var(--gothic)}
@@ -511,8 +511,8 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
       <div class="spin-badge" aria-hidden="true">
         <svg viewBox="0 0 128 128" class="rot">
           <defs><path id="circPath" d="M64,64 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
-          <circle cx="64" cy="64" r="62" fill="#fff" stroke="#B8324F" stroke-width="1.5"/>
-          <text font-family="Jost,sans-serif" font-size="11" letter-spacing="3" fill="#B8324F" font-weight="500"><textPath href="#circPath">JOIN US · KOZAKURA · RECRUIT · </textPath></text>
+          <circle cx="64" cy="64" r="62" fill="#fff" stroke="#D5235E" stroke-width="1.5"/>
+          <text font-family="Jost,sans-serif" font-size="11" letter-spacing="3" fill="#D5235E" font-weight="500"><textPath href="#circPath">JOIN US · KOZAKURA · RECRUIT · </textPath></text>
         </svg>
         <svg class="badge-core" viewBox="-28 -28 56 56"><g fill="#E4566E"><use href="#sakuraFlower" transform="scale(0.9)"/></g><circle r="4.5" fill="#CF9A3C"/></svg>
       </div>
@@ -886,7 +886,7 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
 <div class="hue-picker" role="group" aria-label="効かせ色の切替（レビュー用）">
   <span class="hp-label">効かせ色</span>
   <div class="hp-row" id="huePicker">
-    <button type="button" data-hue="" class="on"><span class="sw" style="background:#B8324F"></span>桜</button>
+    <button type="button" data-hue="" class="on"><span class="sw" style="background:#D5235E"></span>桜</button>
     <button type="button" data-hue="ai"><span class="sw" style="background:#2A5C8F"></span>藍</button>
     <button type="button" data-hue="wakaba"><span class="sw" style="background:#3B7A57"></span>若葉</button>
     <button type="button" data-hue="kincha"><span class="sw" style="background:#A9772C"></span>金茶</button>
