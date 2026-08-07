@@ -1042,8 +1042,16 @@ sup { font-size: 0.55em; }
 /* ===== LINE主導モード =====
    導線をLINE一本にする案件（GPS広告×LINE運用等）では <body data-cta="line"> を付ける。
    スティッキーCTAの主ボタンがLINEになり、フォームへのボタンは消える */
-[data-cta="line"] .sticky-cta { grid-template-columns: 64px 1fr; }  /* 電話は補助（園のtel運用確認後に要否判断） */
+/* 電話は補助（園のtel運用確認後に要否判断）。「給与・条件」は条件先行確認層の離脱防止（ペルソナ検証 2026-08-06） */
+[data-cta="line"] .sticky-cta { grid-template-columns: 60px auto 1fr; }
 [data-cta="line"] .sticky-apply { display: none; }
+.sticky-req {
+  white-space: nowrap;
+  padding: 0 12px;
+  font-size: 12.5px;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-soft);
+}
 [data-cta="line"] .sticky-line {
   font-size: 15px;
   box-shadow: 0 4px 14px rgba(6, 199, 85, 0.35);

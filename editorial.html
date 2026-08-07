@@ -430,6 +430,8 @@ footer a{color:var(--sakura-ink)}
   display:flex;gap:10px;align-items:center;
   transform:translateY(0);opacity:1;transition:transform .4s var(--e-out),opacity .4s var(--e-out)}
 .sticky.is-hide{transform:translateY(112%);opacity:0;pointer-events:none;visibility:hidden}
+.s-req{flex:0 0 auto;white-space:nowrap;font-size:12.5px;font-weight:700;color:var(--sakura-ink);
+  background:var(--pale-1);border:1px solid var(--rule);border-radius:var(--r-s,8px);padding:11px 12px;min-height:44px;display:flex;align-items:center}
 .sticky .s-tel{display:inline-flex;align-items:center;justify-content:center;width:54px;min-height:48px;flex:0 0 auto;
   border:1px solid var(--rule);border-radius:var(--r-pill);color:var(--sakura-ink);text-decoration:none}
 .sticky .s-line{flex:1 1 auto;min-height:48px;font-size:15.5px;padding:0 16px}
@@ -1031,6 +1033,8 @@ if (location.search.indexOf('static') > -1) {
 <!-- ===== スティッキーCTA ===== -->
 <div class="sticky" id="stickyCta">
   <a class="s-tel" href="tel:0495225812" aria-label="電話する"><svg width="20" height="20" aria-hidden="true"><use href="#ico-tel"/></svg></a>
+  <!-- 条件を先に確かめたい層の離脱を防ぐ直リンク（ペルソナ検証で中途層の最重要要望・2026-08-06追加） -->
+  <a class="s-req" href="#requirements" data-cta-location="sticky-requirements">給与・条件</a>
   <a class="btn-line s-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="sticky">
     <svg class="ico" aria-hidden="true"><use href="#ico-line"/></svg>LINEで気軽に相談する
   </a>
