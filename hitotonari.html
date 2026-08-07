@@ -408,6 +408,19 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
 .hue-picker button .sw{width:11px;height:11px;border-radius:50%;display:inline-block}
 .hue-picker button.on{background:#2B2B3A;color:#fff}
 @media(min-width:1040px){.hue-picker{bottom:16px}}
+/* スマホでは常時展開せず、小さなつまみをタップで開く（画面を塞いで「崩れて見える」のを防ぐ・2026-08-06 実機検証） */
+.hue-toggle-cb{position:absolute;opacity:0;pointer-events:none}
+.hue-toggle{position:fixed;left:12px;bottom:calc(76px + env(safe-area-inset-bottom));z-index:401;
+  display:none;align-items:center;gap:6px;background:rgba(255,255,255,.96);border:1px solid var(--line);
+  border-radius:999px;padding:7px 13px;font-size:11px;font-weight:700;color:var(--gray);cursor:pointer;
+  box-shadow:0 3px 12px rgba(43,43,58,.14);min-height:34px}
+.hue-toggle::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--accent)}
+@media(max-width:1039px){
+  .hue-toggle{display:inline-flex}
+  .hue-picker{display:none}
+  .hue-toggle-cb:checked ~ .hue-picker{display:grid;bottom:calc(120px + env(safe-area-inset-bottom))}
+  .hue-toggle-cb:checked ~ .hue-toggle{background:var(--accent);color:#fff;border-color:var(--accent)}
+}
 </style>
 </head>
 <body>
@@ -883,6 +896,8 @@ body[data-hue="kincha"]{--accent:#A9772C;--accent-deep:#7A5316;--accent-sub:#C99
 
 <!-- ===== 効かせ色ピッカー（レビュー専用） ===== -->
 <!-- REVIEW-ONLY: 本番公開前に削除（このdivと直後のscriptタグを含む） -->
+<input type="checkbox" id="hueToggle" class="hue-toggle-cb">
+<label for="hueToggle" class="hue-toggle">効かせ色</label>
 <div class="hue-picker" role="group" aria-label="効かせ色の切替（レビュー用）">
   <span class="hp-label">効かせ色</span>
   <div class="hp-row" id="huePicker">

@@ -2089,6 +2089,23 @@ body[data-style="tsumugi"] {
   border: 1px solid #E4566E; border-radius: 999px; padding: 5px 11px; background: #FCEEF1;
 }
 @media (min-width: 768px) { .theme-picker { left: 20px; bottom: 20px; } }
+/* スマホでは常時展開せず、小さなつまみをタップで開く（画面の22%を塞いで「崩れて見える」のを防ぐ・2026-08-06 実機検証） */
+.tp-toggle-cb { position: absolute; opacity: 0; pointer-events: none; }
+.tp-toggle {
+  position: fixed; left: 10px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 301;
+  display: none; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.96); border: 1px solid #DDD3C2; border-radius: 999px;
+  padding: 7px 13px; font-size: 11px; font-weight: 700; color: #5A5A6B; cursor: pointer;
+  box-shadow: 0 3px 12px rgba(43,43,58,0.14); min-height: 34px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.tp-toggle::before { content: ""; width: 11px; height: 11px; border-radius: 50%; background: #E4566E; }
+@media (max-width: 767px) {
+  .tp-toggle { display: inline-flex; }
+  .theme-picker { display: none; }
+  .tp-toggle-cb:checked ~ .theme-picker { display: grid; bottom: calc(130px + env(safe-area-inset-bottom)); }
+  .tp-toggle-cb:checked ~ .tp-toggle { background: #2B2B3A; color: #FFF; border-color: #2B2B3A; }
+}
 
 </style>
 </head>
@@ -2659,6 +2676,8 @@ body[data-style="tsumugi"] {
 
 <!-- レビュー用: スタイル比較スイッチャー（キュレーション済み6案。本番LPには存在しない）
      ＋ パターンB（別デザイン=ヒトトナリ流）へのリンク -->
+<input type="checkbox" id="tpToggle" class="tp-toggle-cb">
+<label for="tpToggle" class="tp-toggle">配色・他の案</label>
 <div class="theme-picker" role="group" aria-label="スタイルの比較（レビュー用）">
   <div class="tp-row" data-attr="data-style">
     <span class="tp-label">パターンA｜配色</span>
