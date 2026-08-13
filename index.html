@@ -620,6 +620,47 @@ sup { font-size: 0.55em; }
   }
 }
 
+
+/* ===== ヒーロー非対称スプリット（デスクトップ）=====
+   左コピー＋右実写の12カラム型（taste-skill CASE 27の処方: 中央寄せヒーローを非対称に）。
+   767px以下のFV構成・写真出し分け(hero-sp)・768〜1023pxの重ねカード構成は従来のまま。 */
+@media (min-width: 1024px) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 6.5fr);
+    gap: 56px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 32px 84px;
+  }
+  .hero-media { order: 2; }
+  .hero-media img {
+    height: auto;
+    max-height: none;
+    aspect-ratio: 4 / 3.4;
+    object-fit: cover;
+    object-position: center 30%;
+    border-radius: var(--radius-organic);
+  }
+  .hero-inner { order: 1; margin: 0; padding: 0; max-width: none; position: static; }
+  /* 後方の底上げレイヤー(.hero-cardの影・枠)より詳細度を上げて素の面に戻す */
+  .hero .hero-card {
+    position: static;               /* スタンプの基準を.hero(=セクション全体)へ移す */
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: 560px;
+  }
+  .hero-copy { font-size: clamp(38px, 3.4vw, 46px); line-height: 1.45; }
+  .hero-stats { max-width: 470px; }
+  .hero-cta .btn { max-width: 440px; }
+  /* 見学歓迎スタンプは右カラムの写真の右上に重ねる（誌面のシール感） */
+  .hero .hero-stamp { top: 44px; right: 44px; width: 116px; height: 116px; z-index: 2; }
+}
+
 /* ※未適用（評価指摘あり）: .empathy / .gallery・.workforce / .benefit-* / .apply-alt は
    index.html のどのクラスからも参照されていない（要目視ゲート後に採用/削除を判断） */
 

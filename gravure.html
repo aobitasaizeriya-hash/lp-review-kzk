@@ -275,12 +275,37 @@ strong{font-weight:700;color:var(--ink)}
 .disclosure{font-family:var(--serif);font-size:14.5px;color:var(--ink-soft);border-left:2px solid var(--sakura);padding-left:14px;margin-top:26px}
 
 /* ---------- 1日の流れ（タイムライン。数字は控えめ・小さく） ---------- */
-.tl{border-top:1px solid var(--rule)}
-.tl li{display:flex;gap:18px;padding:15px 0;border-bottom:1px solid var(--rule)}
-.tl li.hi{background:var(--sakura-pale);margin-inline:-22px;padding:15px 22px;border-radius:2px;border-bottom-color:transparent}
-.tl-time{font-family:var(--plate);font-style:italic;font-weight:600;font-size:15.5px;color:var(--sakura-ink);flex:0 0 54px}
-.tl-body h3{font-size:14px;margin-bottom:4px}
-.tl-body p{font-size:12.5px;color:var(--ink-soft)}
+/* ---------- 先生の一日（連作 Pl. 10 a-g: sticky写真ステージ、スクロールで時刻が進む） ----------
+   画面中央にあるステップだけを現在地とし、左（SPは上）の写真ステージが時刻に同期して切り替わる。
+   JSなしの環境では最初の1枚と全文がそのまま読める。 */
+.story{display:grid;grid-template-columns:1fr 1fr;width:100%;max-width:var(--bleed);margin:34px auto 0}
+.story-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--sakura-pale)}
+.story-frame{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .55s ease}
+.story-frame.is-on{opacity:1}
+.story-frame img{width:100%;height:100%;object-fit:cover}
+.story-cap{position:absolute;left:0;right:0;bottom:0;display:flex;gap:12px;align-items:baseline;padding:14px 20px 16px;background:linear-gradient(180deg,transparent,rgba(20,14,10,.58));color:#fff}
+.story-cap .no{font-family:var(--plate);font-style:italic;font-size:12px;opacity:.9}
+.story-cap .t{font-size:14.5px;font-weight:700}
+.story-steps{list-style:none;margin:0;padding:0}
+.story-step{min-height:82vh;min-height:82svh;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(26px,4.5vw,72px)}
+.story-js .story-step{opacity:.35;transition:opacity .4s ease}
+.story-js .story-step.is-on{opacity:1}
+.story-time{font-family:var(--plate);font-style:italic;font-weight:600;font-size:clamp(30px,3.4vw,44px);color:var(--sakura-ink);line-height:1;margin-bottom:12px}
+.story-step h3{font-size:17px;margin-bottom:8px}
+.story-step p{font-size:13.5px;color:var(--ink-soft);max-width:30em}
+.story-step.hi .story-time{color:var(--sakura-deep)}
+.story-step.hi h3::after{content:"";display:block;width:56px;height:3px;background:var(--sakura-deep);margin-top:10px}
+@media(max-width:899px){
+  .story{display:block;margin-top:26px}
+  .story-stage{height:60vh;height:60svh}
+  .story-steps{position:relative;z-index:2;margin-top:-12vh;margin-top:-12svh;padding:0 18px 8px}
+  .story-step,.story-js .story-step{min-height:0;margin-bottom:14px;padding:20px 22px;background:rgba(255,255,255,.97);border:1px solid var(--rule-soft);border-radius:10px;opacity:1;justify-content:flex-start}
+  .story-time{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  .story-frame{transition:none}
+  .story-js .story-step{transition:none;opacity:1}
+}
 
 /* ---------- コンタクトシート（ふだんのこざくら。フィルムのコマ番号のように） ---------- */
 .contact-lead{max-width:32em;color:var(--ink-soft);font-size:13.5px;margin-bottom:20px}
@@ -515,11 +540,11 @@ strong{font-weight:700;color:var(--ink)}
 
     <div class="duo reveal" style="margin-top:34px">
       <figure><img src="images/scene-1.webp?v=20260806" width="1600" height="1200" alt="教材を前に相談し合うこざくら保育園の先生たち" loading="lazy"></figure>
-      <figure><img src="images/scene-2.webp?v=20260806" width="1600" height="1200" alt="ランチを見せ合いながら笑う2人の保育士" loading="lazy"></figure>
+      <figure><img src="images/gallery-3.webp?v=20260806" width="640" height="640" style="width:100%;aspect-ratio:4/3;object-fit:cover" alt="行事のメダルを手づくりする先生" loading="lazy"></figure>
     </div>
     <div class="duo-caps">
       <p class="plate-cap"><span class="no">Pl. 03</span><span class="tx">教材を前に相談し合う先生たち</span></p>
-      <p class="plate-cap"><span class="no">Pl. 04</span><span class="tx">お昼ごはんを見せ合いながら</span></p>
+      <p class="plate-cap"><span class="no">Pl. 04</span><span class="tx">行事のメダルも、手づくりで</span></p>
     </div>
   </section>
 
@@ -640,24 +665,28 @@ strong{font-weight:700;color:var(--ink)}
     <div class="stage">
       <p class="eyebrow"><span class="ja">1日の流れ</span><span class="en">TIME TABLE</span><span class="rl"></span><span class="no">05</span></p>
       <h2 class="sec-title">早番の日は、<em>ここで1日が終わります</em></h2>
-      <ol class="tl">
-        <li><span class="tl-time num">8:30</span><div class="tl-body"><h3>出勤・受け入れ</h3><p>複数担任なので、朝の受け入れも分担して落ち着いて対応できます。</p></div></li>
-        <li><span class="tl-time num">9:30</span><div class="tl-body"><h3>朝の会・主活動</h3><p>外あそびは近隣公園や屋上へ。準備も複数名で進めます。</p></div></li>
-        <li><span class="tl-time num">11:30</span><div class="tl-body"><h3>給食</h3><p>クラスごとに配膳・食事のサポート。</p></div></li>
-        <li><span class="tl-time num">12:45</span><div class="tl-body"><h3>午睡</h3><p>内勤日はこの時間帯に保育を離れ、書類・制作を進めます。</p></div></li>
-        <li class="hi"><span class="tl-time num">13:30</span><div class="tl-body"><h3>早番の退勤</h3><p><strong>「お先に失礼します」——時差出勤の日は、ここで1日が終わります。</strong></p></div></li>
-        <li><span class="tl-time num">15:00</span><div class="tl-body"><h3>おやつ・自由あそび</h3><p>降園まで子どもとじっくり関わる時間。</p></div></li>
-        <li><span class="tl-time num">17:00</span><div class="tl-body"><h3>退勤（中番）</h3><p>引き継ぎをして退勤。持ち帰りの荷物はありません。</p></div></li>
-      </ol>
     </div>
 
-    <div class="duo reveal" style="margin-top:40px">
-      <figure><img src="images/daily-1.webp?v=20260806" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy"></figure>
-      <figure><img src="images/daily-2.webp?v=20260806" srcset="images/daily-2-720.webp?v=20260806 720w, images/daily-2.webp?v=20260806 1200w" sizes="50vw" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy"></figure>
-    </div>
-    <div class="duo-caps">
-      <p class="plate-cap"><span class="no">Pl. 10</span><span class="tx">朝、壁面の飾りを整える</span></p>
-      <p class="plate-cap"><span class="no">Pl. 11</span><span class="tx">連絡帳を記入しながら</span></p>
+    <!-- 連作 Pl. 10（a〜g）: コピー・時刻は旧タイムラインから流用（新しい事実は書いていない） -->
+    <div class="story" id="dayStory">
+      <div class="story-stage">
+        <figure class="story-frame is-on"><img src="images/daily-1.webp?v=20260806" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy" sizes="(min-width:900px) 50vw, 100vw"><figcaption class="story-cap"><span class="no">Pl. 10-a</span><span class="t num">8:30</span></figcaption></figure>
+        <figure class="story-frame"><img src="images/scene-1.webp?v=20260806" width="1600" height="1200" alt="教材を前に相談し合うこざくら保育園の先生たち" loading="lazy" sizes="(min-width:900px) 50vw, 100vw"><figcaption class="story-cap"><span class="no">Pl. 10-b</span><span class="t num">9:30</span></figcaption></figure>
+        <figure class="story-frame"><img src="images/gallery-2.webp?v=20260806" width="640" height="640" alt="いただきますをする2人の先生" loading="lazy" sizes="(min-width:900px) 50vw, 100vw"><figcaption class="story-cap"><span class="no">Pl. 10-c</span><span class="t num">11:30</span></figcaption></figure>
+        <figure class="story-frame"><img src="images/feature-3.webp?v=20260806" srcset="images/feature-3-800.webp?v=20260806 800w, images/feature-3.webp?v=20260806 1600w" sizes="(min-width:900px) 50vw, 100vw" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy"><figcaption class="story-cap"><span class="no">Pl. 10-d</span><span class="t num">12:45</span></figcaption></figure>
+        <figure class="story-frame"><img src="images/feature-2.webp?v=20260806" width="1600" height="1200" alt="早番を終えて昼過ぎに退勤する保育士" loading="lazy" sizes="(min-width:900px) 50vw, 100vw"><figcaption class="story-cap"><span class="no">Pl. 10-e</span><span class="t num">13:30</span></figcaption></figure>
+        <figure class="story-frame"><img src="images/feature-5.webp?v=20260806" width="1600" height="1200" alt="子どもとハイタッチする保育士" loading="lazy" sizes="(min-width:900px) 50vw, 100vw"><figcaption class="story-cap"><span class="no">Pl. 10-f</span><span class="t num">15:00</span></figcaption></figure>
+        <figure class="story-frame"><img src="images/daily-2.webp?v=20260806" srcset="images/daily-2-720.webp?v=20260806 720w, images/daily-2.webp?v=20260806 1200w" sizes="(min-width:900px) 50vw, 100vw" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy"><figcaption class="story-cap"><span class="no">Pl. 10-g</span><span class="t num">17:00</span></figcaption></figure>
+      </div>
+      <ol class="story-steps">
+        <li class="story-step is-on" data-step="0"><p class="story-time num">8:30</p><h3>出勤・受け入れ</h3><p>複数担任なので、朝の受け入れも分担して落ち着いて対応できます。</p></li>
+        <li class="story-step" data-step="1"><p class="story-time num">9:30</p><h3>朝の会・主活動</h3><p>外あそびは近隣公園や屋上へ。準備も複数名で進めます。</p></li>
+        <li class="story-step" data-step="2"><p class="story-time num">11:30</p><h3>給食</h3><p>クラスごとに配膳・食事のサポート。</p></li>
+        <li class="story-step" data-step="3"><p class="story-time num">12:45</p><h3>午睡</h3><p>内勤日はこの時間帯に保育を離れ、書類・制作を進めます。</p></li>
+        <li class="story-step hi" data-step="4"><p class="story-time num">13:30</p><h3>早番の退勤</h3><p><strong>「お先に失礼します」——時差出勤の日は、ここで1日が終わります。</strong></p></li>
+        <li class="story-step" data-step="5"><p class="story-time num">15:00</p><h3>おやつ・自由あそび</h3><p>降園まで子どもとじっくり関わる時間。</p></li>
+        <li class="story-step" data-step="6"><p class="story-time num">17:00</p><h3>退勤（中番）</h3><p>引き継ぎをして退勤。持ち帰りの荷物はありません。</p></li>
+      </ol>
     </div>
     <div class="stage"><p class="sec-note">※時間帯は例です。公開前に園のシフト実態へ合わせて確定してください。</p></div>
   </section>
@@ -835,7 +864,7 @@ strong{font-weight:700;color:var(--ink)}
     </div>
   </section>
 
-  <!-- ===== アクセス（最終図版＝Pl. 12＝園舎外観で締める） ===== -->
+  <!-- ===== アクセス（最終図版＝Pl. 11＝園舎外観で締める） ===== -->
   <section class="section" id="apply">
     <div class="stage">
       <p class="eyebrow"><span class="ja">アクセス</span><span class="en">ACCESS</span><span class="rl"></span><span class="no">11</span></p>
@@ -848,7 +877,7 @@ strong{font-weight:700;color:var(--ink)}
     </div>
 
     <figure class="bleed reveal" style="margin-top:8px"><img src="images/facade.webp?v=20260806" width="1600" height="1200" alt="こざくら保育園の園舎外観" loading="lazy"></figure>
-    <div class="stage"><p class="plate-cap"><span class="no">Pl. 12</span><span class="tx">こざくら保育園 園舎（本庄市栄）</span></p></div>
+    <div class="stage"><p class="plate-cap"><span class="no">Pl. 11</span><span class="tx">こざくら保育園 園舎（本庄市栄）</span></p></div>
 
     <div class="stage access-cta">
       <div class="cta-faces">
@@ -882,5 +911,25 @@ strong{font-weight:700;color:var(--ink)}
   <a class="sticky-btn sticky-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="sticky"><svg class="ico" aria-hidden="true"><use href="#ico-line"/></svg>LINEで気軽に相談する</a>
 </div>
 
+<script>
+/* 先生の一日: 画面中央のステップに同期して写真ステージを切り替える。
+   IntersectionObserver非対応・JSなしでは最初の1枚＋全文表示のまま(責務は演出のみ)。 */
+(function () {
+  var story = document.getElementById('dayStory');
+  if (!story || !('IntersectionObserver' in window)) return;
+  var steps = story.querySelectorAll('.story-step');
+  var frames = story.querySelectorAll('.story-frame');
+  story.classList.add('story-js');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var i = Number(entry.target.getAttribute('data-step'));
+      frames.forEach(function (f, j) { f.classList.toggle('is-on', j === i); });
+      steps.forEach(function (s, j) { s.classList.toggle('is-on', j === i); });
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  steps.forEach(function (s) { io.observe(s); });
+})();
+</script>
 </body>
 </html>
