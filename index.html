@@ -630,9 +630,8 @@ sup { font-size: 0.55em; }
     grid-template-columns: minmax(0, 6fr) minmax(0, 6.5fr);
     gap: 56px;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 72px 32px 84px;
+    /* セクションは全幅(背景グラデを切らない)。内容だけpaddingで1136pxに制約 */
+    padding: 72px max(32px, calc((100% - 1136px) / 2)) 84px;
   }
   .hero-media { order: 2; }
   .hero-media img {
@@ -654,11 +653,12 @@ sup { font-size: 0.55em; }
     padding: 0;
     max-width: 560px;
   }
-  .hero-copy { font-size: clamp(38px, 3.4vw, 46px); line-height: 1.45; }
+  .hero .hero-card > :not(.hero-stamp) { position: relative; z-index: 2; }
+  .hero .hero-copy { font-size: clamp(34px, 3.2vw, 42px); line-height: 1.45; }  /* 上限42px=左カラムに『長く続けられる』には、が1行で収まる値 */
   .hero-stats { max-width: 470px; }
   .hero-cta .btn { max-width: 440px; }
   /* 見学歓迎スタンプは右カラムの写真の右上に重ねる（誌面のシール感） */
-  .hero .hero-stamp { top: 44px; right: 44px; width: 116px; height: 116px; z-index: 2; }
+  .hero .hero-stamp { top: 44px; right: max(44px, calc((100% - 1136px) / 2 + 12px)); width: 116px; height: 116px; z-index: 2; }
 }
 
 /* ※未適用（評価指摘あり）: .empathy / .gallery・.workforce / .benefit-* / .apply-alt は
@@ -2427,7 +2427,7 @@ body[data-style="tsumugi"] {
           </ol>
           <div class="day-photos">
             <img src="images/daily-1.webp?v=20260806" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy">
-            <img src="images/daily-2.webp?v=20260806" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy">
+            <img src="images/daily-2.webp?v=20260806" width="1200" height="900" alt="給食を手に笑顔を見せる2人の保育士" loading="lazy">
           </div>
         </div>
         <p class="sec-note">※時間帯は例です。公開前に園のシフト実態へ合わせて確定してください。</p>
