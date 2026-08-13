@@ -1,5 +1,7 @@
 # AIデザイン10のクセ監査 — 4案チェック結果
 
+> **2026-08-13 追記: 本監査の処方箋を4案に適用済み。** 適用後の再スコア（`tools/check-ai-tells.py`）は A案 4.5→**1.5** ／ B案 5→**3.5** ／ C案 **1.5** ／ D案 **0.5**。B案の中央見出し（明朝×手書き様式）・タグの丸み、C案の花びら微アニメ・トークン管理されたピルは各案の設計意図として意図的に残した。以下の本文は適用前の監査記録。
+
 - 出典: [AI感のないデザイン 30の作り方](https://ai-design-7ways.vercel.app/index.html)（検証: KEITO @keitowebai）の「Common Tics —『AI感』の正体」10項目
 - 対象: A案 `index.html` ／ B案 `hitotonari.html` ／ C案 `editorial.html` ／ D案 `gravure.html`
 - 方法: 各案の埋め込みCSS・HTMLをパターン検索し、ヒット箇所を文脈まで精読して判定（実施日 2026-08-13）

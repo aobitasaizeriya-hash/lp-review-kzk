@@ -220,8 +220,8 @@
 
   --radius-card: 18px;
   /* 影3階層: 情報階層に従属させる（float=主役写真, card=浮くカード, tight=小要素）design-note.md P1 */
-  --shadow-float: 0 12px 32px rgba(43, 43, 58, 0.14);
-  --shadow-card: 0 4px 16px rgba(43, 43, 58, 0.07);
+  --shadow-float: 0 2px 4px rgba(43, 43, 58, 0.05), 0 12px 32px rgba(43, 43, 58, 0.10);
+  --shadow-card: 0 1px 2px rgba(43, 43, 58, 0.04), 0 8px 24px rgba(43, 43, 58, 0.06);
   --shadow-tight: 0 2px 8px rgba(43, 43, 58, 0.10);
   /* CTA影・背景ドットの色味（桜色系に更新済み） */
   --shadow-cta: 0 8px 20px rgba(228, 86, 110, 0.32);
@@ -307,7 +307,7 @@ sup { font-size: 0.55em; }
 .sec-title {
   font-size: 24px;
   font-weight: 900;
-  text-align: center;
+  text-align: left;
   margin-bottom: 36px;
 }
 .sec-title-left { text-align: left; }
@@ -335,7 +335,7 @@ sup { font-size: 0.55em; }
 .sec-note {
   font-size: 12px;
   color: var(--color-ink-soft);
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
 }
 .sec-cta { text-align: center; margin-top: 40px; }
@@ -399,10 +399,8 @@ sup { font-size: 0.55em; }
   transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 .site-header.is-scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 12px rgba(43, 43, 58, 0.10);
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--color-line);
 }
 .header-actions { display: flex; align-items: center; gap: 8px; }
 
@@ -523,7 +521,7 @@ sup { font-size: 0.55em; }
   letter-spacing: 0.03em;   /* 375px幅で2チップが1行に収まる詰め（FV内CTA死守のため） */
   color: var(--color-accent-dark);
   background: var(--color-accent-soft);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 3px 8px;
   white-space: nowrap;
 }
@@ -677,7 +675,7 @@ sup { font-size: 0.55em; }
 .stat-card {
   background: var(--color-paper);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-line);
   padding: 18px 14px 16px;
   display: flex;
   flex-direction: column;
@@ -711,9 +709,12 @@ sup { font-size: 0.55em; }
   text-align: left;
 }
 @media (min-width: 768px) {
-  .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .stat-card { padding: 26px 22px 22px; }
   .stat-value .num { font-size: 58px; }
+}
+@media (min-width: 1024px) {
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
   .stat-desc { font-size: 13px; }
 }
 
@@ -793,7 +794,7 @@ sup { font-size: 0.55em; }
 .voice-card {
   background: var(--color-paper);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-line);
   overflow: hidden;
   padding-bottom: 24px;
 }
@@ -1124,7 +1125,7 @@ sup { font-size: 0.55em; }
 .feature-card {
   background: var(--color-paper);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-line);
   overflow: hidden;
 }
 .feature-card img { width: 100%; }
@@ -1141,7 +1142,7 @@ sup { font-size: 0.55em; }
   font-weight: 700;
   color: var(--color-accent-dark);
   background: var(--color-accent-soft);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 3px 10px;
 }
 .feature-card h3 { font-size: 19px; font-weight: 900; margin-bottom: 8px; }
@@ -1248,7 +1249,7 @@ sup { font-size: 0.55em; }
   padding-bottom: 120px;
 }
 .apply-lead {
-  text-align: center;
+  text-align: left;
   font-size: 14.5px;
   margin-bottom: 32px;
 }
@@ -1363,7 +1364,7 @@ sup { font-size: 0.55em; }
 .btn-submit { width: 100%; }
 .form-note {
   font-size: 12px;
-  text-align: center;
+  text-align: left;
   color: var(--color-ink-soft);
 }
 
@@ -1403,10 +1404,8 @@ sup { font-size: 0.55em; }
   grid-template-columns: 76px 76px 1fr;
   gap: 8px;
   padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-  background: rgba(255, 255, 255, 0.92);
-  -webkit-backdrop-filter: blur(8px);   /* iOS Safari 17以前はプレフィックス必須 */
-  backdrop-filter: blur(8px);
-  box-shadow: 0 -4px 20px rgba(43, 43, 58, 0.14);
+  background: rgba(255, 255, 255, 0.98);
+  border-top: 1px solid var(--color-line);
   transform: translateY(110%);
   /* visibility切替: 隠れている間はキーボードフォーカスも到達させない（2026-08-06 Codex反証対応） */
   visibility: hidden;
@@ -1579,7 +1578,7 @@ h1, h2, h3, h4 { letter-spacing: -0.01em; }   /* 見出しは本文(0.02em)と�
   font-size: 12.5px;
   color: var(--color-accent-dark);
   background: var(--color-accent-soft);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 6px 13px;
   text-decoration: none;
   white-space: nowrap;
@@ -1659,7 +1658,8 @@ h1, h2, h3, h4 { letter-spacing: -0.01em; }   /* 見出しは本文(0.02em)と�
   height: 112px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(43, 43, 58, 0.18);
+  border: 3px solid #FFFFFF;
+  outline: 1px solid var(--color-line);
   flex: none;
 }
 .voice-card--bubble .voice-name { padding: 0; font-size: 17px; }
@@ -1767,7 +1767,7 @@ h1, h2, h3, h4 { letter-spacing: -0.01em; }   /* 見出しは本文(0.02em)と�
   letter-spacing: 0.08em;
   color: var(--color-accent-dark);
   background: var(--color-accent-soft);
-  border-radius: 999px;
+  border-radius: 8px;
   padding: 3px 11px;
 }
 .req-parttime-lead {
@@ -1920,12 +1920,9 @@ body { font-size: 17px; line-height: 1.9; }
 .sec-title { margin-bottom: 40px; }
 @media (min-width: 768px) { .sec-title { margin-bottom: 52px; } }
 
-/* --- 面の手触り: カードはホバーでそっと持ち上がる（影3階層: 通常card→ホバーfloat） --- */
+/* --- 面の手触り: カードは罫線区切り。hoverで浮かせない（リンクでない面は反応させない） --- */
 .feature-card, .voice-card, .stat-card, .flow-step {
-  transition: transform 0.35s var(--ease-soft), box-shadow 0.35s var(--ease-soft);
-}
-@media (hover: hover) {
-  .feature-card:hover, .voice-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-float); }
+  transition: border-color 0.3s var(--ease-soft);
 }
 
 /* --- 有機的な非対称角丸を「主役」だけに一貫適用（意匠の昇格候補・使いすぎない） --- */
@@ -1933,7 +1930,7 @@ body { font-size: 17px; line-height: 1.9; }
 
 /* --- CTAの所作を上質なイージングに統一（LINE緑＝行動色は不変） --- */
 .btn { transition: transform 0.3s var(--ease-soft), box-shadow 0.3s var(--ease-soft), background-color 0.2s ease; }
-.btn:hover { transform: translateY(-3px); }
+.btn:active { transform: translateY(0) scale(0.98); }
 
 /* ===== 写真の見せ方改修（2026-08-06: 実写真納品を受けた3点。詳細=docs/design-note.md） ===== */
 
