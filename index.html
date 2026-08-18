@@ -88,15 +88,17 @@ img{max-width:100%;display:block}
 .logo{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:800;font-size:18px;color:var(--accent-deep);letter-spacing:.08em;white-space:nowrap}
 .logo .r{font-family:var(--num);font-size:10.5px;letter-spacing:.18em;color:#fff;background:var(--accent);border-radius:99px;padding:3px 12px}
 .logo .sakura-mark{width:26px;height:26px;flex-shrink:0}
-nav.g ul{display:flex;gap:22px;list-style:none;font-size:13px;font-weight:700}
-nav.g a{position:relative;padding:6px 0;color:var(--ink)}
+nav.g ul{display:flex;gap:15px;list-style:none;font-size:12.5px;font-weight:700}
+nav.g a{position:relative;padding:6px 0;color:var(--ink);white-space:nowrap}
 nav.g a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .4s var(--ease)}
 nav.g a:hover::after{width:100%}
 .hd-cta{display:flex;align-items:center;gap:10px}
 .hd-cta .btn{padding:10px 20px;font-size:13px;min-height:44px;flex-wrap:nowrap}
 .hd-cta .btn .btn-sub{flex-basis:auto}
 @media(max-width:1040px){nav.g{display:none}}
-@media(max-width:520px){.logo{font-size:15px}.logo .r{display:none}.hd-cta .btn .btn-sub{display:none}}
+@media(max-width:1180px){.hd-cta .btn .btn-sub{display:none}} /* 狭いPC幅でヘッダーCTAが縦潰れしないよう補助文言を隠す */
+@media(max-width:1120px){nav.g ul{gap:11px;font-size:12px}.hd-cta .btn{white-space:nowrap}} /* 8項目ナビ＋CTAを1行維持 */
+@media(max-width:520px){.logo{font-size:15px}.logo .r{display:none}}
 
 /* ============ ヒーロー ============ */
 .hero{position:relative;padding:88px 0 76px;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--pale-1) 100%)}
