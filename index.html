@@ -456,8 +456,8 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 }
 </script>
 <!-- ▼公開時に有効化: JobPosting構造化データ。
-     賃金・就業時間・休日は現在【園確認中】の暫定値＝確定値が入るまで有効化しない（誇張・不一致防止）。
-     有効化の条件: ①募集要項テーブルが園の確定値になっている ②本文と完全一致 ③validThroughを実日付にする
+     賃金235,500〜285,500円は園公式求人サイト値（2026-08-19取得）で記入済み＝本文と一致。
+     有効化の条件: ①datePosted/validThroughを実日付にする ②全角＜＞placeholderの全置換 ③JSON.parseで機械検証
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -469,7 +469,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
   "employmentType": "FULL_TIME",
   "hiringOrganization": { "@type": "Organization", "name": "社会福祉法人こざくら福祉会" },
   "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "栄3-6-34", "addressLocality": "本庄市", "addressRegion": "埼玉県", "postalCode": "367-0046", "addressCountry": "JP" } },
-  "baseSalary": { "@type": "MonetaryAmount", "currency": "JPY", "value": { "@type": "QuantitativeValue", "minValue": ＜確定最低月給＞, "maxValue": ＜確定最高月給＞, "unitText": "MONTH" } }
+  "baseSalary": { "@type": "MonetaryAmount", "currency": "JPY", "value": { "@type": "QuantitativeValue", "minValue": 235500, "maxValue": 285500, "unitText": "MONTH" } }
 }
 </script>
 ▲JobPostingここまで -->
@@ -597,8 +597,8 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
           <span class="hand">about kozakura</span>
           <h2>本庄市で、<br>いちばん<em>大きな</em>保育園</h2>
         </div>
-        <p>こざくら保育園は<strong><span class="nw">昭和43年（1968年）創立</span></strong>。<span class="nw">定員200名</span>・<span class="nw">職員約50名</span>、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。月1回の音体教育（マーチング・太鼓・器楽合奏）も特色です。</p>
-        <p>規模が大きいからこそ、複数担任制、シフトの柔軟さ、保育を離れて事務にあてる時間といった<strong class="marker">「先生が長く続けられる仕組み」に人員を割ける</strong>のが私たちの強みです。同じ敷地には子育て支援センターと高齢者デイサービスが併設され、多世代が行き交う環境です。</p>
+        <p>こざくら保育園は<strong><span class="nw">昭和43年（1968年）創立</span></strong>。<span class="nw">定員200名</span>・<span class="nw">職員約50名</span>、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。保育目標は<strong>『がんばれ 未知の可能性』</strong>。月1回の音体教育（マーチング・太鼓・器楽合奏）も特色です。</p>
+        <p>規模が大きいからこそ、複数担任制、シフトの柔軟さ、保育を離れて事務にあてる時間といった<strong class="marker">「先生が長く続けられる仕組み」に人員を割ける</strong>のが私たちの強みです。同じ法人が子育て支援センターと学童クラブも運営しており、園を中心に子どもたちと家庭が行き交う環境です。</p>
       </div>
       <div class="fade-up"><img class="photo-ph" src="images/facade.webp?v=20260818" width="1600" height="1200" alt="こざくら保育園の園舎外観" loading="lazy"></div>
     </div>
@@ -805,19 +805,22 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
     <table class="req-table">
       <tbody>
         <tr><th>募集職種</th><td>保育士（正社員／新卒・中途）</td></tr>
-        <tr><th>採用予定人数</th><td>新卒2名＋中途2〜3名（I・Uターン歓迎）</td></tr>
+        <tr><th>採用予定人数</th><td>新卒2名程度＋中途は随時募集（I・Uターン歓迎）</td></tr>
         <tr><th>応募資格</th><td>保育士資格をお持ちの方（取得見込み含む）。経験・年齢は不問、ブランクのある方も歓迎します。</td></tr>
-        <!-- 公開前メモ: 就業時間・休日・賃金・賞与・手当・受動喫煙は2026年7月時点の求人媒体既出値。
-             公開前に園の確定値と突合する（launch-checklist参照）。賃金確定時はheadのJobPosting構造化データを有効化して同時更新。
-             「試用期間」「時間外労働」「変更の範囲（業務内容・就業場所）」は園確定後に行を追加する（職業安定法の明示項目・公開時必須） -->
+        <!-- 出典メモ（2026-08-19更新）: 就業時間・休日・賃金・賞与・手当・試用期間・時間外は
+             園公式求人サイト kozakura-recruit.jp（EntryPocket）＋新卒求人票PDFの値に更新済み。
+             出典間の食い違いと園への最終確認は docs/こざくら求人情報まとめ_20260819.xlsx シート2が正本。
+             残る園確定待ちは「変更の範囲（業務内容・就業場所）」のみ（職安法の明示項目・公開時必須） -->
         <tr><th>業務内容</th><td>保育業務全般</td></tr>
         <tr><th>就業場所</th><td>こざくら保育園（埼玉県本庄市栄3-6-34・本庄南小学校の北隣）</td></tr>
         <tr><th>雇用形態・契約期間</th><td>正社員（期間の定めなし）</td></tr>
-        <tr><th>就業時間</th><td>7:00〜19:00の間で実働8時間（休憩60分）・シフト制（時差出勤：早番・遅番あり。早番は昼過ぎ退勤）</td></tr>
-        <tr><th>休日</th><td>日曜・祝日、年末年始（土曜は月1〜2回程度の出勤）</td></tr>
-        <tr><th>賃金</th><td><strong>月給220,500円〜272,500円</strong>（経験・能力を考慮）<br><span class="req-sub">※2026年7月時点。最新の条件は面接時にご確認いただけます</span></td></tr>
-        <tr><th>賞与・昇給</th><td>賞与年2回（計2.6〜4.1ヶ月・実績による）／昇給年1回</td></tr>
-        <tr><th>手当・福利厚生</th><td>家賃補助 最大47,000円/月（本庄市保育士宿舎借上支援・最長5年・本庄市に住民票のある方対象／市の年度予算による）、保育料補助 27,000円/月（1年間）、退職金制度、通勤手当、マイカー通勤可</td></tr>
+        <tr><th>試用期間</th><td>なし</td></tr>
+        <tr><th>就業時間</th><td>7:00〜19:00の間でシフト制・実働7.5時間（休憩60分）。時差出勤：早番・遅番あり。早番は昼過ぎ退勤</td></tr>
+        <tr><th>休日・休暇</th><td>週休2日制（日曜・祝日ほかシフトによる）・年末年始（土曜は月1〜2回程度の出勤）／年次有給休暇 初年度10日</td></tr>
+        <tr><th>時間外労働</th><td>あり（残業手当は法定どおり別途支給）</td></tr>
+        <tr><th>賃金</th><td><strong>月給235,500円〜285,500円</strong>＋交通費（経験・能力を考慮）<br><span class="req-sub">※2026年8月時点の園公式求人掲載値（基本給＋各種手当。新卒・中途で内訳が異なります）</span></td></tr>
+        <tr><th>賞与・昇給</th><td>賞与年2回（計3.5〜4.2ヶ月程度・実績による）／昇給年1回（毎年4月）</td></tr>
+        <tr><th>手当・福利厚生</th><td>住宅手当 最大42,000円/月（最長5年）、入職祝い金 最大30万円、保育料補助、退職金制度（福祉医療機構退職共済）、通勤手当（実費支給）、マイカー通勤可（無料駐車場）<br><span class="req-sub">※本庄市の保育士宿舎借上支援制度の対象になる場合があります（要件あり・面接時にご確認ください）</span></td></tr>
         <tr><th>加入保険</th><td>健康保険・厚生年金・雇用保険・労災保険（社会保険完備）</td></tr>
         <tr><th>受動喫煙防止措置</th><td>施設内全面禁煙</td></tr>
         <tr><th>募集者</th><td>社会福祉法人こざくら福祉会（埼玉県本庄市栄3-6-34）</td></tr>
@@ -830,13 +833,14 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
       <table class="req-table req-table--pt">
         <tbody>
           <tr><th>募集職種</th><td>パート保育士（短時間勤務・保育補助）</td></tr>
-          <!-- 公開前メモ: パートの時給・勤務時間・勤務日数は園確定値待ち（launch-checklist参照）。確定後は具体値へ差し替える -->
-          <tr><th>時給</th><td>経験・時間帯により決定（面談時にご提示します）</td></tr>
-          <tr><th>勤務時間</th><td>早朝 7:00〜9:00／夕方 16:00〜19:00 などの時間帯で応相談</td></tr>
-          <tr><th>勤務日数</th><td>週の日数・扶養内勤務など、働き方はご相談ください</td></tr>
+          <!-- 出典メモ（2026-08-19）: 時給・時間・日数は園公式求人サイトのパート保育士求人（M0000078/79）の値に更新済み -->
+          <tr><th>時給</th><td><strong>1,250円〜1,350円</strong>＋交通費（昇給年1回）</td></tr>
+          <tr><th>契約期間</th><td>1年ごとの契約（更新あり）</td></tr>
+          <tr><th>勤務時間</th><td>週2日・1日3.5時間から。時間帯はシフト例（8:15〜16:30／8:30〜12:30／12:30〜16:30 など）をもとに相談できます</td></tr>
+          <tr><th>勤務日数</th><td>週2日から。扶養内勤務のご相談も可</td></tr>
           <tr><th>仕事内容</th><td>保育補助（担任のサポート、朝夕の受け入れ・見守り、環境整備など）</td></tr>
           <tr><th>応募資格</th><td>保育士資格をお持ちの方（取得見込み含む）。ブランクのある方も歓迎します。</td></tr>
-          <tr><th>待遇</th><td>マイカー通勤可・施設内全面禁煙。社会保険は勤務時間により加入</td></tr>
+          <tr><th>待遇</th><td>社員登用制度あり・マイカー通勤可・施設内全面禁煙。社会保険は勤務時間により加入</td></tr>
         </tbody>
       </table>
       <p class="sec-note">※パートの詳しい条件は、LINEかお電話でお尋ねください。</p>
