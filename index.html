@@ -115,7 +115,10 @@ nav.g a:hover::after{width:100%}
 @keyframes sway{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(10deg)}}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;position:relative;z-index:2}
 .hero .hand{font-size:34px;margin-bottom:12px}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(28px,4.4vw,45px);color:var(--accent-deep);line-height:1.72;letter-spacing:.09em}
+/* 改行設計: 『長く続けられる』/には、理由があります。の2行固定（<br>）。
+   サイズはこの2行が360px〜PCカラム(約515px)に収まる上限で決めている＝変えるときは両幅で再確認 */
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(25px,4.4vw,42px);color:var(--accent-deep);line-height:1.72;letter-spacing:.09em}
+@media(max-width:430px){.hero h1{font-size:24px;letter-spacing:.05em}} /* 360pxでも「には、理由があります。」を1行に収める（末尾1文字の泣き別れ防止） */
 .hero h1 em{font-style:normal;color:var(--accent);border-bottom:3px solid rgba(228,86,110,.5);padding-bottom:2px}
 .hero .lead{margin-top:22px;font-size:14.5px;color:#63525a;line-height:2}
 .hero .lead strong{color:var(--accent-deep);font-weight:700}
@@ -143,7 +146,7 @@ img.photo-ph{object-fit:cover;width:100%;height:auto;padding:0;display:block}
 section{padding:88px 0}
 .sec-head{margin-bottom:44px}
 .sec-head .hand{margin-bottom:2px;font-size:28px}
-.sec-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(23px,3vw,33px);color:var(--accent-deep);letter-spacing:.1em;line-height:1.7}
+.sec-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(23px,3vw,33px);color:var(--accent-deep);letter-spacing:.1em;line-height:1.7;text-wrap:balance}
 .sec-head h2 em{font-style:normal;color:var(--accent);position:relative}
 .sec-head h2 em::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:6px;background:rgba(228,86,110,.22);border-radius:99px;z-index:-1}
 .sec-head.center{text-align:center}
@@ -543,8 +546,8 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
   <div class="wrap">
     <div>
       <span class="hand">work with us at kozakura</span>
-      <h1>『長く続けられる』<span class="nw">には、</span><br><em>理由</em>があります。</h1>
-      <p class="lead">埼玉県本庄市で<strong>いちばん大きな認可保育園</strong>。<strong>創立58年（1968年）・定員200名</strong>のこざくら保育園で、5つの制度に支えられて長く働く仲間を募集しています。</p>
+      <h1>『長く続けられる』<br>には、<em>理由</em>があります。</h1>
+      <p class="lead">埼玉県本庄市で<strong><span class="nw">いちばん大きな認可保育園</span></strong>。<strong><span class="nw">創立58年（1968年）</span>・<span class="nw">定員200名</span></strong>の<span class="nw">こざくら保育園</span>で、5つの制度に支えられて長く働く仲間を<span class="nw">募集しています。</span></p>
       <div class="hero-cta">
         <a class="btn btn-line-green" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="hero">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
@@ -577,9 +580,9 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
       <div class="num-card fade-up"><div class="k">定員</div><div class="v">200<small>名</small></div><div class="d">本庄市で最大規模の認可保育園<sup>※1</sup></div></div>
       <div class="num-card fade-up"><div class="k">創立</div><div class="v">58<small>年</small></div><div class="d">1968年開設・地域に根ざした園<sup>※2</sup></div></div>
       <div class="num-card fade-up"><div class="k">平均勤続</div><div class="v">11<small>年</small></div><div class="d">先生たちが、長く働き続けている園<sup>※3</sup></div></div>
-      <div class="num-card fade-up"><div class="k">早番の退勤</div><div class="v txt">昼過ぎ</div><div class="d">役所や病院に行ける、時差出勤の仕組み<sup>※3</sup></div></div>
+      <div class="num-card fade-up"><div class="k">早番の退勤</div><div class="v txt">昼過ぎ</div><div class="d">役所や病院に行ける、<span class="nw">時差出勤の仕組み</span><sup>※3</sup></div></div>
     </div>
-    <p class="disclosure">ここに載せていない数字も、聞いていただければお答えします。</p>
+    <p class="disclosure">ここに載せていない数字も、<span class="nw">聞いていただければお答えします。</span></p>
     <p class="num-note">※1 本庄市公式一覧より　※2 園公式サイト沿革より　※3 園ヒアリングより（2026年時点）</p>
   </div>
 </div>
@@ -591,9 +594,9 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
       <div class="about-body">
         <div class="sec-head">
           <span class="hand">about kozakura</span>
-          <h2>本庄市で、いちばん<em>大きな</em>保育園</h2>
+          <h2>本庄市で、<br>いちばん<em>大きな</em>保育園</h2>
         </div>
-        <p>こざくら保育園は<strong>昭和43年（1968年）創立</strong>。定員200名・職員約50名、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。月1回の音体教育（マーチング・太鼓・器楽合奏）も特色です。</p>
+        <p>こざくら保育園は<strong><span class="nw">昭和43年（1968年）創立</span></strong>。<span class="nw">定員200名</span>・<span class="nw">職員約50名</span>、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。月1回の音体教育（マーチング・太鼓・器楽合奏）も特色です。</p>
         <p>規模が大きいからこそ、複数担任制、シフトの柔軟さ、保育を離れて事務にあてる時間といった<strong class="marker">「先生が長く続けられる仕組み」に人員を割ける</strong>のが私たちの強みです。同じ敷地には子育て支援センターと高齢者デイサービスが併設され、多世代が行き交う環境です。</p>
       </div>
       <div class="fade-up"><img class="photo-ph" src="images/facade.webp?v=20260818" width="1600" height="1200" alt="こざくら保育園の園舎外観" loading="lazy"></div>
@@ -730,7 +733,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
   <div class="wrap">
     <div class="sec-head center">
       <span class="hand">voices</span>
-      <h2>先輩に聞いた、入職前の不安と実際</h2>
+      <h2>先輩に聞いた、<span class="nw">入職前の不安と実際</span></h2>
     </div>
     <div class="voice-grid">
       <article class="voice-card fade-up">
@@ -783,7 +786,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 <!-- ===== CTAバンド（効かせ色地・全幅） ===== -->
 <section class="cta-band">
   <div class="wrap">
-    <p class="copy">この先生たちと、<em>働いてみたい</em>と思ったら。</p>
+    <p class="copy">この先生たちと、<span class="nw"><em>働いてみたい</em>と思ったら。</span></p>
     <a class="btn btn-line-green" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="voices-band">
       <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
       LINEで話を聞いてみる
