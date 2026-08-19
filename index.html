@@ -321,7 +321,7 @@ details.faq-item p{padding:0 24px 20px 52px;font-size:13px;color:#5c4b52;line-he
 .apply .wrap{position:relative;z-index:2}
 .apply .sec-head .hand{color:#FFD1DC}
 .apply .sec-head h2{color:#fff}
-.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center} /* フォーム撤去後は電話箱1つ=縦中央でバランスを取る */
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
 /* 主役=LINE */
 .apply-line{background:#fff;border-radius:2.4rem;padding:38px 34px;color:var(--ink);text-align:center}
 .apply-line .lg-mark{width:60px;height:60px;margin:0 auto 14px}
@@ -335,8 +335,17 @@ details.faq-item p{padding:0 24px 20px 52px;font-size:13px;color:#5c4b52;line-he
 .apply-box h4{font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.05em;display:flex;align-items:center;gap:8px}
 .apply-box .num2{font-family:var(--num);font-size:12px;background:rgba(255,255,255,.22);border-radius:99px;padding:2px 11px;font-weight:600;letter-spacing:.06em}
 .apply-box p{font-size:12.5px;opacity:.92;margin-top:8px;line-height:1.85}
-/* フォーム系CSSは撤去済み（リクレボ仕様=LINE一本化・2026-08-19） */
+.f-row{margin-bottom:14px}
+.f-row label{display:block;font-size:12px;font-weight:700;margin-bottom:6px}
+.f-row label .req{color:#FFE3EA;font-size:10px;margin-left:6px}
+.f-row input,.f-row select,.f-row textarea{width:100%;border:1.5px solid rgba(255,255,255,.4);border-radius:.9rem;padding:12px 15px;font-size:16px;font-family:var(--gothic);background:rgba(255,255,255,.96);color:var(--ink)}
+.f-row input:focus,.f-row select:focus,.f-row textarea:focus{outline:2px solid #fff;border-color:#fff}
+.f-row textarea{resize:vertical;min-height:74px}
+.apply-box .btn{margin-top:6px}
+.apply-box .btn-form{width:100%;background:#fff;color:var(--accent-deep);font-size:14px;padding:14px}
+.apply-box .btn-form:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
 .apply-box .tel-num{font-family:var(--num);font-size:22px;font-weight:600;letter-spacing:.04em;margin-top:6px;display:inline-block}
+.form-note{font-size:10.5px;opacity:.82;margin-top:12px;text-align:center;line-height:1.7}
 @media(max-width:820px){.apply-grid{grid-template-columns:1fr}.apply{border-radius:4rem 4rem 0 0}}
 
 /* ============ アクセス ============ */
@@ -916,11 +925,33 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
         </a>
         <p class="safe">しつこい連絡・在職先への連絡は一切ありません。いただいた内容は採用のご連絡以外に使いません。</p>
       </div>
-      <!-- 第2導線: 電話のみ（フォームはリクレボ仕様「応募導線はLINE一本化」により撤去・2026-08-19社長裁定。復活時はgit履歴から） -->
+      <!-- 第2導線: フォーム / 第3導線: 電話（2026-08-19後段: 「フォーム必要」へ方針転換→復活） -->
       <div class="apply-secondary">
         <div class="apply-box">
-          <h4><span class="num2">2</span>電話で問い合わせる</h4>
-          <p>LINEが使いにくい方はお電話でどうぞ。「採用ページを見た」とお伝えください。</p>
+          <h4><span class="num2">2</span>フォームで問い合わせる</h4>
+          <p>電話やLINEが使いにくい方は、こちらからどうぞ。</p>
+          <form action="javascript:void(0)" onsubmit="this.querySelector('.form-done').hidden=false;this.querySelector('button').disabled=true;return false;" style="margin-top:14px">
+            <div class="f-row"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" name="f-name" placeholder="例）本庄 さくら" required autocomplete="name"></div>
+            <div class="f-row"><label for="f-contact">ご連絡先（電話 または メール）<span class="req">必須</span></label><input type="text" id="f-contact" name="f-contact" placeholder="例）090-0000-0000 ／ your@example.jp" required></div>
+            <div class="f-row"><label for="f-type">ご応募の区分<span class="req">必須</span></label>
+              <select id="f-type" name="f-type" required>
+                <option value="">選択してください</option>
+                <option>新卒</option>
+                <option>中途</option>
+                <option>パート</option>
+                <option>見学・質問のみ</option>
+              </select>
+            </div>
+            <div class="f-row"><label for="f-message">お問い合わせ内容</label><textarea id="f-message" name="f-message" placeholder="気になっていること、聞きにくいこと、何でもどうぞ。"></textarea></div>
+            <button class="btn btn-form" type="submit">この内容で送信する</button>
+            <!-- 公開前メモ: フォームは未接続（画面上の受付表示のみ）。公開前に送信先＋受信メールへの接続が必須（launch-checklist A12/B3参照） -->
+            <p class="form-note form-done" hidden>※フォームからの送信は、ページの正式公開と同時にご利用いただけます。お急ぎの場合はLINEまたはお電話（0495-22-5812）でご連絡ください。</p>
+            <p class="form-note">送信後、園の採用担当より折り返しご連絡します。</p>
+          </form>
+        </div>
+        <div class="apply-box">
+          <h4><span class="num2">3</span>電話で問い合わせる</h4>
+          <p>「採用ページを見た」とお伝えください。</p>
           <a class="tel-num" href="tel:0495225812">0495-22-5812</a>
         </div>
       </div>
