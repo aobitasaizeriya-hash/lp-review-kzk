@@ -126,6 +126,7 @@ nav.g a:hover::after{width:100%}
 .hero .lead strong{color:var(--accent-deep);font-weight:700}
 .hero-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
 .hero-cta .btn-note{flex-basis:100%;font-size:11.5px;color:var(--gray);margin-top:-2px;letter-spacing:.02em}
+@media(max-width:767px){.hero-cta{justify-content:center}} /* SPは2段目の見学ボタンを中央に（リクレボ指示2026-08-20） */
 .hero-visual{position:relative}
 /* 運用: 実写真<img>への差し替え時もaspect-ratio指定を維持するか、width/height属性を必ず付与すること（CLS対策） */
 .photo-ph{background:
@@ -171,7 +172,6 @@ section{padding:88px 0}
 .num-card .d{font-size:11.5px;font-weight:400;color:#6b5a61;margin-top:8px;line-height:1.7}
 .num-card sup{font-size:9px;color:var(--gray)}
 .numbers .disclosure{max-width:840px;margin:34px auto 0;text-align:center;font-family:var(--serif);font-size:15px;color:var(--accent-deep);line-height:2;letter-spacing:.04em}
-.numbers .num-note{text-align:center;font-size:11px;color:var(--gray);margin-top:12px}
 @media(max-width:900px){.num-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:460px){.num-grid{grid-template-columns:1fr}}
 
@@ -334,7 +334,7 @@ details.faq-item p{padding:0 24px 20px 52px;font-size:13px;color:#5c4b52;line-he
 .apply-line .safe{font-size:11px;color:var(--gray);margin-top:14px;line-height:1.8}
 /* 第2導線=フォーム / 第3=電話 */
 .apply-secondary{display:flex;flex-direction:column;gap:18px}
-.apply-box{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);border-radius:2rem;padding:26px 26px}
+.apply-box{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);border-radius:2rem;padding:26px 26px;scroll-margin-top:84px}
 .apply-box h4{font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.05em;display:flex;align-items:center;gap:8px}
 .apply-box .num2{font-family:var(--num);font-size:12px;background:rgba(255,255,255,.22);border-radius:99px;padding:2px 11px;font-weight:600;letter-spacing:.06em}
 .apply-box p{font-size:12.5px;opacity:.92;margin-top:8px;line-height:1.85}
@@ -557,7 +557,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
           まずはLINEで気軽に相談してみる<span class="btn-sub">応募じゃなくてOK</span>
         </a>
-        <a class="btn btn-outline" href="#access">まず見学したい</a>
+        <a class="btn btn-outline" href="#contact">まず見学したい</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -581,13 +581,13 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 <div class="numbers">
   <div class="wrap">
     <div class="num-grid">
-      <div class="num-card fade-up"><div class="k">定員</div><div class="v">200<small>名</small></div><div class="d">本庄市で最大規模の認可保育園<sup>※1</sup></div></div>
-      <div class="num-card fade-up"><div class="k">創立</div><div class="v">58<small>年</small></div><div class="d">1968年開設・地域に根ざした園<sup>※2</sup></div></div>
-      <div class="num-card fade-up"><div class="k">平均勤続</div><div class="v">11<small>年</small></div><div class="d">先生たちが、長く働き続けている園<sup>※3</sup></div></div>
-      <div class="num-card fade-up"><div class="k">早番の退勤</div><div class="v txt">昼過ぎ</div><div class="d">役所や病院に行ける、<span class="nw">時差出勤の仕組み</span><sup>※3</sup></div></div>
+      <div class="num-card fade-up"><div class="k">定員</div><div class="v">200<small>名</small></div><div class="d">本庄市で最大規模の認可保育園</div></div>
+      <div class="num-card fade-up"><div class="k">創立</div><div class="v">58<small>年</small></div><div class="d">1968年開設・地域に根ざした園</div></div>
+      <div class="num-card fade-up"><div class="k">平均勤続</div><div class="v">11<small>年</small></div><div class="d">先生たちが、長く働き続けている園</div></div>
+      <div class="num-card fade-up"><div class="k">早番の退勤</div><div class="v txt">昼過ぎ</div><div class="d">役所や病院に行ける、<span class="nw">時差出勤の仕組み</span></div></div>
     </div>
     <p class="disclosure">ここに載せていない数字も、<span class="nw">聞いていただければお答えします。</span></p>
-    <p class="num-note">※1 本庄市公式一覧より　※2 園公式サイト沿革より　※3 園ヒアリングより（2026年時点）</p>
+    <!-- 出典注記※1〜3はリクレボ指示（2026-08-20）で削除。出典の控え: 定員=本庄市公式一覧／創立=園公式サイト沿革／平均勤続・早番=園ヒアリング2026年時点（launch-checklist A8=勤続実データ裏取りが未了のまま断り書きが消えた点に注意） -->
   </div>
 </div>
 
@@ -821,7 +821,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
         <tr><th>就業時間</th><td>7:00〜19:00の間でシフト制・実働7.5時間（休憩60分）。時差出勤：早番・遅番あり。早番は昼過ぎ退勤</td></tr>
         <tr><th>休日・休暇</th><td>週休2日制（日曜・祝日ほかシフトによる）・年末年始（土曜は月1〜2回程度の出勤）／年次有給休暇 初年度10日</td></tr>
         <tr><th>時間外労働</th><td>あり（残業手当は法定どおり別途支給）</td></tr>
-        <tr><th>賃金</th><td><strong>月給235,500円〜285,500円</strong>＋交通費（経験・能力を考慮）<br><span class="req-sub">※2026年8月時点の園公式求人掲載値（基本給＋各種手当。新卒・中途で内訳が異なります）</span></td></tr>
+        <tr><th>賃金</th><td><strong>月給235,500円〜285,500円</strong>＋交通費（経験・能力を考慮）<br>想定年収：約350万円〜450万円<br><span class="req-sub">※2026年8月時点の園公式求人掲載値（基本給＋各種手当。新卒・中途で内訳が異なります）。想定年収は月給12ヶ月分＋賞与実績から算出した目安です</span></td></tr>
         <tr><th>賞与・昇給</th><td>賞与年2回（計3.5〜4.2ヶ月程度・実績による）／昇給年1回（毎年4月）</td></tr>
         <tr><th>手当・福利厚生</th><td>住宅手当 最大42,000円/月（最長5年）、入職祝い金 最大30万円、保育料補助、退職金制度（福祉医療機構退職共済）、通勤手当（実費支給）、マイカー通勤可（無料駐車場）<br><span class="req-sub">※本庄市の保育士宿舎借上支援制度の対象になる場合があります（要件あり・面接時にご確認ください）</span></td></tr>
         <tr><th>加入保険</th><td>健康保険・厚生年金・雇用保険・労災保険（社会保険完備）</td></tr>
@@ -934,7 +934,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
       </div>
       <!-- 第2導線: フォーム / 第3導線: 電話（2026-08-19後段: 「フォーム必要」へ方針転換→復活） -->
       <div class="apply-secondary">
-        <div class="apply-box">
+        <div class="apply-box" id="contact">
           <h4><span class="num2">2</span>フォームで問い合わせる</h4>
           <p>電話やLINEが使いにくい方は、こちらからどうぞ。</p>
           <form action="javascript:void(0)" onsubmit="this.querySelector('.form-done').hidden=false;this.querySelector('button').disabled=true;return false;" style="margin-top:14px">
