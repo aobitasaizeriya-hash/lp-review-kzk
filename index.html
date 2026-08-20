@@ -88,19 +88,19 @@ img{max-width:100%;display:block}
 .site-header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid var(--line)}
 .hd-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1160px;margin:0 auto;padding:0 22px;gap:16px}
 .logo{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:800;font-size:18px;color:var(--accent-deep);letter-spacing:.08em;white-space:nowrap}
+.logo .logo-img{height:38px;width:auto;display:block}
 .logo .r{font-family:var(--num);font-size:10.5px;letter-spacing:.18em;color:#fff;background:var(--accent);border-radius:99px;padding:3px 12px}
-.logo .sakura-mark{width:26px;height:26px;flex-shrink:0}
 nav.g ul{display:flex;gap:15px;list-style:none;font-size:12.5px;font-weight:700}
 nav.g a{position:relative;padding:6px 0;color:var(--ink);white-space:nowrap}
 nav.g a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .4s var(--ease)}
 nav.g a:hover::after{width:100%}
 .hd-cta{display:flex;align-items:center;gap:10px}
-.hd-cta .btn{padding:10px 20px;font-size:13px;min-height:44px;flex-wrap:nowrap}
+.hd-cta .btn{padding:10px 20px;font-size:13px;min-height:44px;flex-wrap:nowrap;white-space:nowrap}
 .hd-cta .btn .btn-sub{flex-basis:auto}
 @media(max-width:1040px){nav.g{display:none}}
 @media(max-width:1180px){.hd-cta .btn .btn-sub{display:none}} /* 狭いPC幅でヘッダーCTAが縦潰れしないよう補助文言を隠す */
 @media(max-width:1120px){nav.g ul{gap:11px;font-size:12px}.hd-cta .btn{white-space:nowrap}} /* 8項目ナビ＋CTAを1行維持 */
-@media(max-width:520px){.logo{font-size:15px}.logo .r{display:none}}
+@media(max-width:520px){.logo{font-size:15px}.logo .r{display:none}.logo .logo-img{height:34px}}
 
 /* ============ ヒーロー ============ */
 .hero{position:relative;padding:88px 0 76px;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--pale-1) 100%)}
@@ -415,8 +415,8 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
    ヒトトナリ流は「--accent系トークンの差し替えだけで着替わる」設計。
    桜モチーフ(花びら/バッジ/ロゴ)と写真プレースホルダも効かせ色に追従させ、全体を調和させる。
    確定色=桜（2026-08-18 園決定・:rootの値が正）。※LINE緑(--line-green)＝行動色は固定。 */
-.sakura-mark g,.spin-badge .badge-core g{fill:var(--accent-sub)}
-.sakura-mark circle,.spin-badge .badge-core circle{fill:var(--accent-2nd)}
+.spin-badge .badge-core g{fill:var(--accent-sub)}
+.spin-badge .badge-core circle{fill:var(--accent-2nd)}
 .spin-badge > svg.rot > circle{stroke:var(--accent)}
 .spin-badge > svg.rot text{fill:var(--accent)}
 .photo-ph{background:
@@ -512,8 +512,9 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 <header class="site-header">
   <div class="hd-in">
     <a class="logo" href="#top">
-      <svg class="sakura-mark" viewBox="-28 -28 56 56" aria-hidden="true"><g fill="#E4566E"><use href="#sakuraFlower" transform="scale(0.85)"/></g><circle r="4" fill="#CF9A3C"/></svg>
-      こざくら保育園 <span class="r">RECRUIT</span>
+      <!-- 園名ロゴ: 社長支給 top_header.gif（原本控え=images/logo-src/）から帯を切除し白を透過化した正規ロゴ。リクレボ指示2026-08-20 -->
+      <img class="logo-img" src="images/logo-kozakura.png?v=20260820" width="368" height="74" alt="社会福祉法人こざくら福祉会 こざくら保育園">
+      <span class="r">RECRUIT</span>
     </a>
     <nav class="g" aria-label="採用ナビ">
       <ul>
@@ -826,7 +827,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
         <tr><th>手当・福利厚生</th><td>住宅手当 最大42,000円/月（最長5年）、入職祝い金 最大30万円、保育料補助、退職金制度（福祉医療機構退職共済）、通勤手当（実費支給）、マイカー通勤可（無料駐車場）<br><span class="req-sub">※本庄市の保育士宿舎借上支援制度の対象になる場合があります（要件あり・面接時にご確認ください）</span></td></tr>
         <tr><th>加入保険</th><td>健康保険・厚生年金・雇用保険・労災保険（社会保険完備）</td></tr>
         <tr><th>受動喫煙防止措置</th><td>施設内全面禁煙</td></tr>
-        <tr><th>募集者</th><td>社会福祉法人こざくら福祉会（埼玉県本庄市栄3-6-34）</td></tr>
+        <tr><th>募集者</th><td>社会福祉法人こざくら福祉会（代表者：根岸広幸／埼玉県本庄市栄3-6-34）</td></tr>
       </tbody>
     </table>
 
@@ -991,6 +992,7 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 <footer>
   <div class="wrap">
     <p class="f-org">社会福祉法人こざくら福祉会／こざくら保育園</p>
+    <p>代表者：根岸広幸</p>
     <p>〒367-0046 埼玉県本庄市栄3-6-34　電話：0495-22-5812</p>
     <p class="f-nav"><a href="privacy.html">プライバシーポリシー</a></p>
     <!-- 公開前メモ（表示なし）: 数値・労働条件の一部は園の最終確認前・先輩の声は文字起こし待ち。
