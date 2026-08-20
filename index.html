@@ -89,7 +89,6 @@ img{max-width:100%;display:block}
 .logo{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:800;font-size:18px;color:var(--accent-deep);letter-spacing:.08em;white-space:nowrap}
 .logo .logo-img{height:36px;width:auto;display:block}
 .logo .logo-mark{height:32px;width:auto;display:block;flex-shrink:0}
-.logo .r{font-family:var(--num);font-size:10.5px;letter-spacing:.18em;color:#fff;background:var(--accent);border-radius:99px;padding:3px 12px}
 nav.g ul{display:flex;gap:15px;list-style:none;font-size:12.5px;font-weight:700}
 nav.g a{position:relative;padding:6px 0;color:var(--ink);white-space:nowrap}
 nav.g a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .4s var(--ease)}
@@ -110,7 +109,7 @@ nav.g a:hover::after{width:100%}
 .sp-menu-panel a:active,.sp-menu-panel a:hover{background:var(--pale-1);color:var(--accent-deep)}
 section[id]{scroll-margin-top:64px}
 @media(max-width:1120px){nav.g ul{gap:11px;font-size:12px}.hd-cta .btn{white-space:nowrap}} /* 8項目ナビ＋CTAを1行維持 */
-@media(max-width:520px){.logo{gap:8px}.logo .r{display:none}.logo .logo-img{height:34px}.logo .logo-mark{height:34px}.hd-cta .btn{display:none}}  /* SPはスティッキー＋ヒーローがLINE導線＝ヘッダー内はメニューだけ残しロゴに幅を譲る */
+@media(max-width:520px){.logo{gap:8px}.logo .logo-img{height:34px}.logo .logo-mark{height:34px}.hd-cta .btn{display:none}}  /* SPはスティッキー＋ヒーローがLINE導線＝ヘッダー内はメニューだけ残しロゴに幅を譲る */
 
 /* ============ ヒーロー ============ */
 .hero{position:relative;padding:88px 0 76px;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--pale-1) 100%)}
@@ -181,7 +180,6 @@ section{padding:88px 0}
 .num-card .v small{font-size:16px;font-family:var(--gothic);margin-left:2px}
 .num-card .d{font-size:11.5px;font-weight:400;color:#6b5a61;margin-top:8px;line-height:1.7}
 .num-card sup{font-size:9px;color:var(--gray)}
-.numbers .disclosure{max-width:840px;margin:34px auto 0;text-align:center;font-family:var(--serif);font-size:15px;color:var(--accent-deep);line-height:2;letter-spacing:.04em}
 @media(max-width:900px){.num-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:460px){.num-grid{grid-template-columns:1fr}}
 
@@ -411,11 +409,6 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 @media(max-width:520px){.flow-steps{grid-template-columns:1fr}.flow{border-radius:0 4rem 0 0}}
 
 /* ============ CTA直前の顔（視線の受け皿・A案から移植 2026-08-18） ============ */
-.cta-faces{display:flex;flex-direction:column;align-items:center;gap:10px;margin:-14px auto 30px}
-.cta-faces .faces-row{display:flex}
-.cta-faces img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 4px 14px rgba(184,50,79,.25)}
-.cta-faces img + img{margin-left:-14px}
-.cta-faces-note{font-family:var(--serif);font-size:13.5px;color:#fff;letter-spacing:.06em}
 
 /* ============ レスポンシブ安全策（グリッド/フレックス子のはみ出し防止） ============ */
 .hero .wrap>*,.about-in>*,.feature-card>*,.day-in>*,.director-in>*,.apply-grid>*,.access-in>*,.timeline li>.tl-body{min-width:0}
@@ -524,7 +517,6 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
       <!-- 園名ロゴ: 社長支給 top_header.gif（原本控え=images/logo-src/）から帯を切除し白を透過化した正規ロゴ。リクレボ指示2026-08-20 -->
       <img class="logo-mark" src="images/logo-mark-kozakura.png?v=20260820" width="34" height="36" alt="">
       <img class="logo-img" src="images/logo-kozakura.png?v=20260820" width="368" height="74" alt="社会福祉法人こざくら福祉会 こざくら保育園">
-      <span class="r">RECRUIT</span>
     </a>
     <nav class="g" aria-label="採用ナビ">
       <ul>
@@ -616,7 +608,6 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
       <div class="num-card fade-up"><div class="k">平均勤続</div><div class="v">11<small>年</small></div><div class="d">先生たちが、長く働き続けている園</div></div>
       <div class="num-card fade-up"><div class="k">早番の退勤</div><div class="v txt">昼過ぎ</div><div class="d">役所や病院に行ける、<span class="nw">時差出勤の仕組み</span></div></div>
     </div>
-    <p class="disclosure">ここに載せていない数字も、<span class="nw">聞いていただければお答えします。</span></p>
     <!-- 出典注記※1〜3はリクレボ指示（2026-08-20）で削除。出典の控え: 定員=本庄市公式一覧／創立=園公式サイト沿革／平均勤続・早番=園ヒアリング2026年時点（launch-checklist A8=勤続実データ裏取りが未了のまま断り書きが消えた点に注意） -->
   </div>
 </div>
@@ -940,15 +931,6 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
     <div class="sec-head center">
       <span class="hand">entry</span>
       <h2>応募・見学のお申し込み</h2>
-    </div>
-    <!-- CTA直前の顔（視線の受け皿・2026-08-18 A案から移植。alt空=意味はテキスト側が持つ） -->
-    <div class="cta-faces">
-      <div class="faces-row">
-        <img src="images/staff-3.webp?v=20260818" width="900" height="1200" alt="" loading="lazy">
-        <img src="images/staff-4.webp?v=20260818" width="900" height="1200" alt="" loading="lazy">
-        <img src="images/staff-5.webp?v=20260818" width="900" height="1200" alt="" loading="lazy">
-      </div>
-      <p class="cta-faces-note">この先生たちが待っています</p>
     </div>
     <div class="apply-grid">
       <!-- 主役: LINE -->
