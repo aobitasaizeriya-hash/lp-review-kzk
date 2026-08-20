@@ -100,9 +100,21 @@ nav.g a:hover::after{width:100%}
 .hd-cta .btn-sub{display:none}  /* ロゴ設置(2026-08-20)で幅が要るため補助文言はヒーロー/スティッキー側に任せる */
 .hd-cta .btn .btn-sub{flex-basis:auto}
 @media(max-width:1040px){nav.g{display:none}}
+/* モバイルメニュー（PCナビ非表示帯=1040px以下で出す） */
+.hd-cta{display:flex;align-items:center;gap:10px}
+.sp-menu{display:none;position:relative}
+@media(max-width:1040px){.sp-menu{display:block}}
+.sp-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;min-height:44px;padding:9px 14px;border:1.5px solid var(--accent);border-radius:99px;color:var(--accent-deep);font-family:var(--gothic);font-weight:700;font-size:12.5px;letter-spacing:.06em;white-space:nowrap;user-select:none}
+.sp-menu summary::-webkit-details-marker{display:none}
+.sp-menu[open] summary{background:var(--pale-1)}
+.sp-menu-panel{position:absolute;right:0;top:calc(100% + 10px);background:#fff;border-radius:1.6rem;box-shadow:0 14px 38px rgba(60,20,35,.16);padding:10px;min-width:216px;z-index:120}
+.sp-menu-panel ul{list-style:none;margin:0;padding:0}
+.sp-menu-panel a{display:block;padding:12px 18px;font-family:var(--gothic);font-size:14px;font-weight:700;color:var(--ink);border-radius:12px;letter-spacing:.04em}
+.sp-menu-panel a:active,.sp-menu-panel a:hover{background:var(--pale-1);color:var(--accent-deep)}
+section[id]{scroll-margin-top:64px}
 @media(max-width:1180px){.hd-cta .btn .btn-sub{display:none}} /* 狭いPC幅でヘッダーCTAが縦潰れしないよう補助文言を隠す */
 @media(max-width:1120px){nav.g ul{gap:11px;font-size:12px}.hd-cta .btn{white-space:nowrap}} /* 8項目ナビ＋CTAを1行維持 */
-@media(max-width:520px){.logo{gap:8px}.logo .r{display:none}.logo .logo-img{height:34px}.logo .logo-mark{height:34px}.hd-cta{display:none}}  /* SPはスティッキー＋ヒーローがLINE導線＝ヘッダー内ボタンは畳んでロゴに幅を譲る */
+@media(max-width:520px){.logo{gap:8px}.logo .r{display:none}.logo .logo-img{height:34px}.logo .logo-mark{height:34px}.hd-cta .btn{display:none}}  /* SPはスティッキー＋ヒーローがLINE導線＝ヘッダー内はメニューだけ残しロゴに幅を譲る */
 
 /* ============ ヒーロー ============ */
 .hero{position:relative;padding:88px 0 76px;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--pale-1) 100%)}
@@ -536,6 +548,25 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
         <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
         LINEで相談<span class="btn-sub">応募じゃなくてOK</span>
       </a>
+      <!-- モバイル用メニュー: PCナビが1040px以下で消える帯のアンカー導線（2026-08-20社長指摘で新設） -->
+      <details class="sp-menu" id="spMenu">
+        <summary aria-label="メニューを開く">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+          メニュー
+        </summary>
+        <nav class="sp-menu-panel" aria-label="採用ナビ（モバイル）">
+          <ul>
+            <li><a href="#about">園紹介</a></li>
+            <li><a href="#features">5つの制度</a></li>
+            <li><a href="#day">1日の流れ</a></li>
+            <li><a href="#voices">先輩の声</a></li>
+            <li><a href="#requirements">募集要項</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#flow">採用の流れ</a></li>
+            <li><a href="#access">アクセス</a></li>
+          </ul>
+        </nav>
+      </details>
     </div>
   </div>
 </header>
@@ -1087,6 +1118,21 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
     var s = document.getElementById('features');
     if (s) s.classList.remove('is-drop'); /* 失敗時は全カード表示へ戻す */
   }
+})();
+</script>
+<script>
+/* モバイルメニュー（2026-08-20）: 項目タップ・パネル外タップで閉じる。JS無効でもdetailsの標準開閉だけで機能する */
+(function () {
+  try {
+    var menu = document.getElementById('spMenu');
+    if (!menu) return;
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { menu.removeAttribute('open'); });
+    });
+    document.addEventListener('click', function (e) {
+      if (menu.open && !menu.contains(e.target)) menu.removeAttribute('open');
+    });
+  } catch (err) { /* 失敗しても標準のdetails開閉は生きる */ }
 })();
 </script>
 </body>
