@@ -1,12 +1,1178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PXZXKWX7');</script>
+<!-- End Google Tag Manager -->
+<!-- 公開時: 本番ドメイン確定後にこのnoindexを削除する（レビューURLのまま公開しない） -->
 <meta name="robots" content="noindex,nofollow">
-<meta http-equiv="refresh" content="0; url=./">
-<title>こざくら保育園 採用ページ（移動しました）</title>
+<meta name="format-detection" content="telephone=no">
+<title>保育士採用｜こざくら保育園（埼玉県本庄市）・5つの制度で長く働ける園</title>
+<meta name="description" content="埼玉県本庄市で最大規模・創立58年のこざくら保育園の保育士採用ページ。複数担任制・時差出勤・内勤制度・新人サポート・子育て両立支援の5つの制度で、長く続けられる働き方を用意しています。相談はLINEから。">
+<!-- favicon: ヘッダーロゴと同じ五弁桜（自己完結SVG・外部ファイル不要） -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-34 -34 68 68'%3E%3Cdefs%3E%3Cpath id='p' d='M0 8C-12 -4 -11 -20 -3 -27L0 -21L3 -27C11 -20 12 -4 0 8Z'/%3E%3C/defs%3E%3Cg fill='%23E4566E'%3E%3Cuse href='%23p' transform='translate(0 -6)'/%3E%3Cuse href='%23p' transform='rotate(72) translate(0 -6)'/%3E%3Cuse href='%23p' transform='rotate(144) translate(0 -6)'/%3E%3Cuse href='%23p' transform='rotate(216) translate(0 -6)'/%3E%3Cuse href='%23p' transform='rotate(288) translate(0 -6)'/%3E%3C/g%3E%3Ccircle r='4' fill='%23CF9A3C'/%3E%3C/svg%3E">
+<!-- ▼公開時に有効化: OGP（本番ドメイン確定後にURLを入れて有効化する）
+<meta property="og:type" content="website">
+<meta property="og:title" content="保育士採用｜こざくら保育園（埼玉県本庄市）">
+<meta property="og:description" content="5つの制度で長く続けられる園。ご相談はLINEから受け付けています。">
+<meta property="og:url" content="https://＜本番ドメイン＞/">
+<meta property="og:image" content="https://＜本番ドメイン＞/images/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+▲OGPここまで -->
+<!-- 計測イベント: line_click / tel_click / form_submit / cta_click（本文末尾のスクリプトがdataLayerへpush） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=BIZ+UDPGothic:wght@400;700&family=Caveat:wght@500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   こざくら保育園 採用LP 確定版（ヒトトナリ流・2026-08-18 園決定）
+   明朝×手書き英字×効かせ色=深い桜×有機的な丸×さりげない動き
+   ============================================================ */
+:root{
+  /* --- 効かせ色（深い桜）--- */
+  --accent:      #D5235E;   /* 主役 */
+  --accent-deep: #B9214C;   /* 主役の暗部（見出し文字・フッター） */
+  --accent-sub:  #E4566E;   /* 主役の明部（下線・hand英字・マーカー） */
+  --accent-2nd:  #CF9A3C;   /* 第2アクセント（金茶・控えめに。文字には使わない=罫線・面のみ） */
+  --accent-2nd-deep:#82611A; /* 金茶の文字用暗部（白地でAA 4.5:1以上・2026-08-18監査反映） */
+
+  /* --- 受けの淡色 --- */
+  --pale-1: #FCEEF1;   /* 桜の淡色 */
+  --pale-2: #FFFCF3;   /* クリーム */
+  --pale-3: #FDF0F1;   /* 差し色の淡色 */
+
+  /* --- 基本色 --- */
+  --ink:  #3a2b30;
+  --gray: #857078;
+  --line: #EADCE0;
+
+  /* --- LINE緑（主導線）--- */
+  --line-green: #06C755;
+  --line-green-dark:#05A648;
+
+  /* --- フォント3層 --- */
+  --serif:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",serif;
+  --gothic:"BIZ UDPGothic","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  --hand:"Caveat",cursive;
+  --num:"Jost",sans-serif;
+  --ease:cubic-bezier(0.4,0,0.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--gothic);color:var(--ink);line-height:2.05;letter-spacing:.05em;background:#fff;font-size:14.5px;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+.nw{white-space:nowrap}
+
+/* 手書き英字ラベル（英字のみ・日本語には使わない） */
+.hand{font-family:var(--hand);font-weight:500;font-size:30px;color:var(--accent-sub);transform:rotate(-3deg);display:inline-block;line-height:1}
+/* 注意: 見出し下線・マーカー等の rgba(228,86,110,X) は --accent-sub の直書き値。効かせ色を変える際は手動同期が必要 */
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-radius:99px;font-size:14px;padding:13px 28px;min-height:48px;transition:all .4s var(--ease);font-family:var(--gothic);letter-spacing:.06em;text-align:center;line-height:1.5}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.btn:focus-visible{outline:3px solid var(--accent-sub);outline-offset:2px}
+.btn{flex-wrap:wrap}
+/* LINE緑=主導線 */
+.btn-line-green{background:var(--line-green);color:#fff}
+.btn-line-green:hover{box-shadow:0 8px 22px rgba(6,199,85,.38)}
+.btn-line-green .ico{width:20px;height:20px;flex-shrink:0}
+/* サブ導線（枠線・桜） */
+.btn-outline{border:1.5px solid var(--accent);color:var(--accent);background:#fff}
+/* （btn-ghost・chip-checkは未使用のため削除・2026-08-18監査反映） */
+
+/* ============ ヘッダー（sticky） ============ */
+.site-header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1160px;margin:0 auto;padding:0 18px;gap:12px}
+.logo{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:800;font-size:18px;color:var(--accent-deep);letter-spacing:.08em;white-space:nowrap}
+.logo .logo-img{height:36px;width:auto;display:block}
+.logo .logo-mark{height:32px;width:auto;display:block;flex-shrink:0}
+nav.g ul{display:flex;gap:15px;list-style:none;font-size:12.5px;font-weight:700}
+nav.g a{position:relative;padding:6px 0;color:var(--ink);white-space:nowrap}
+nav.g a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .4s var(--ease)}
+nav.g a:hover::after{width:100%}
+.hd-cta{display:flex;align-items:center;gap:10px}
+.hd-cta .btn{padding:10px 20px;font-size:13px;min-height:44px;flex-wrap:nowrap;white-space:nowrap}
+@media(max-width:1040px){nav.g{display:none}}
+/* モバイルメニュー（PCナビ非表示帯=1040px以下で出す） */
+.hd-cta{display:flex;align-items:center;gap:10px}
+.sp-menu{display:none;position:relative}
+@media(max-width:1040px){.sp-menu{display:block}}
+.sp-menu summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:6px;min-height:44px;padding:9px 14px;border:1.5px solid var(--accent);border-radius:99px;color:var(--accent-deep);font-family:var(--gothic);font-weight:700;font-size:12.5px;letter-spacing:.06em;white-space:nowrap;user-select:none}
+.sp-menu summary::-webkit-details-marker{display:none}
+.sp-menu[open] summary{background:var(--pale-1)}
+.sp-menu-panel{position:absolute;right:0;top:calc(100% + 10px);background:#fff;border-radius:1.6rem;box-shadow:0 14px 38px rgba(60,20,35,.16);padding:10px;min-width:216px;z-index:120}
+.sp-menu-panel ul{list-style:none;margin:0;padding:0}
+.sp-menu-panel a{display:block;padding:12px 18px;font-family:var(--gothic);font-size:14px;font-weight:700;color:var(--ink);border-radius:12px;letter-spacing:.04em}
+.sp-menu-panel a:active,.sp-menu-panel a:hover{background:var(--pale-1);color:var(--accent-deep)}
+section[id]{scroll-margin-top:64px}
+@media(max-width:1120px){nav.g ul{gap:11px;font-size:12px}.hd-cta .btn{white-space:nowrap}} /* 8項目ナビ＋CTAを1行維持 */
+@media(max-width:520px){.logo{gap:8px}.logo .logo-img{height:34px}.logo .logo-mark{height:34px}.hd-cta .btn{display:none}}  /* SPはスティッキー＋ヒーローがLINE導線＝ヘッダー内はメニューだけ残しロゴに幅を譲る */
+
+/* ============ ヒーロー ============ */
+.hero{position:relative;padding:88px 0 76px;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--pale-1) 100%)}
+.hero-bg-circle{position:absolute;border-radius:50%;background:var(--pale-2);z-index:1;opacity:.7}
+/* 桜の花びら散らし */
+.petal-deco{position:absolute;inset:0;z-index:1;pointer-events:none}
+.petal-deco .p{position:absolute;width:34px;height:34px;opacity:.5;color:var(--accent-sub);animation:sway 7s ease-in-out infinite}
+.petal-deco .p svg{width:100%;height:100%;fill:currentColor}
+.petal-deco .p1{top:12%;left:6%;transform:rotate(18deg);animation-delay:-.5s}
+.petal-deco .p2{top:26%;right:9%;width:24px;transform:rotate(-22deg);animation-delay:-2.4s;opacity:.4}
+.petal-deco .p3{bottom:22%;left:12%;width:22px;transform:rotate(46deg);animation-delay:-4s;opacity:.35}
+.petal-deco .p4{top:60%;right:16%;width:30px;transform:rotate(8deg);animation-delay:-1.2s}
+.petal-deco .p5{bottom:12%;right:30%;width:20px;transform:rotate(-40deg);animation-delay:-3.2s;opacity:.4}
+@keyframes sway{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(10deg)}}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;position:relative;z-index:2}
+.hero .hand{font-size:34px;margin-bottom:12px}
+/* 改行設計: 『長く続けられる』/には、理由があります。の2行固定（<br>）。
+   サイズはこの2行が360px〜PCカラム(約515px)に収まる上限で決めている＝変えるときは両幅で再確認 */
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(25px,4.4vw,42px);color:var(--accent-deep);line-height:1.72;letter-spacing:.09em}
+@media(max-width:430px){.hero h1{font-size:24px;letter-spacing:.05em}} /* 360pxでも「には、理由があります。」を1行に収める（末尾1文字の泣き別れ防止） */
+.hero h1 em{font-style:normal;color:var(--accent);border-bottom:3px solid rgba(228,86,110,.5);padding-bottom:2px}
+.hero .lead{margin-top:22px;font-size:14.5px;color:#63525a;line-height:2}
+.hero .lead strong{color:var(--accent-deep);font-weight:700}
+.hero-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap}
+.hero-cta .btn-note{flex-basis:100%;font-size:11.5px;color:var(--gray);margin-top:-2px;letter-spacing:.02em}
+@media(max-width:767px){.hero-cta{justify-content:center}} /* SPは2段目の見学ボタンを中央に（リクレボ指示2026-08-20） */
+.hero-visual{position:relative}
+/* 運用: 実写真<img>への差し替え時もaspect-ratio指定を維持するか、width/height属性を必ず付与すること（CLS対策） */
+.photo-ph{background:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.20) 0 16px,transparent 16px 32px),
+  linear-gradient(140deg,#E88BA0,#D5235E 62%,#CF9A3C);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-align:center;line-height:1.9;padding:20px}
+.hero-visual .photo-ph{aspect-ratio:5/4;border-radius:8rem 3rem 3rem 3rem}
+.ph-note{font-size:10.5px;letter-spacing:.04em;opacity:.9;display:block;margin-top:6px;font-weight:400}
+/* 実写真差し替え済みスロット: プレースホルダ用paddingを打ち消し、枠形状は維持してcoverで敷き詰める */
+img.photo-ph{object-fit:cover;width:100%;height:auto;padding:0;display:block}
+/* 回転バッジ（桜色・中央に桜マーク） */
+.spin-badge{position:absolute;right:-26px;bottom:-30px;width:132px;height:132px;z-index:3}
+.spin-badge .rot{animation:rotation 20s linear infinite;transform-origin:50% 50%}
+@keyframes rotation{to{transform:rotate(360deg)}}
+.spin-badge .badge-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:44px;height:44px}
+@media(prefers-reduced-motion:reduce){.spin-badge .rot,.petal-deco .p{animation:none}}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:40px}.hero{padding:52px 0 60px}.spin-badge{right:6px;width:112px;height:112px}}
+
+/* ============ セクション共通 ============ */
+section{padding:88px 0}
+.sec-head{margin-bottom:44px}
+.sec-head .hand{margin-bottom:2px;font-size:28px}
+.sec-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(23px,3vw,33px);color:var(--accent-deep);letter-spacing:.1em;line-height:1.7;text-wrap:balance}
+.sec-head h2 em{font-style:normal;color:var(--accent);position:relative}
+.sec-head h2 em::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:6px;background:rgba(228,86,110,.22);border-radius:99px;z-index:-1}
+.sec-head.center{text-align:center}
+.sec-note{font-size:11px;color:var(--gray);margin-top:16px;line-height:1.8}
+@supports (animation-timeline: view()){
+  @media(prefers-reduced-motion:no-preference){
+    .fade-up{animation:fadeup both;animation-timeline:view();animation-range:entry 0% entry 40%}
+    @keyframes fadeup{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+  }
+}
+
+/* ============ 数字 ============ */
+.numbers{padding:0;margin-top:-34px;position:relative;z-index:5}
+.num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.num-card{background:#fff;border:1px solid var(--line);border-radius:1.8rem;text-align:center;padding:30px 16px;box-shadow:0 12px 30px rgba(184,50,79,.08)}
+.num-card .k{font-size:11.5px;font-weight:700;color:var(--gray);letter-spacing:.08em}
+.num-card .v{font-family:var(--num);font-weight:600;font-size:clamp(34px,4vw,46px);color:var(--accent);line-height:1.15;letter-spacing:.02em;margin-top:4px}
+.num-card .v.txt{font-family:var(--serif);font-size:clamp(28px,3.4vw,38px)}
+.num-card .v small{font-size:16px;font-family:var(--gothic);margin-left:2px}
+.num-card .d{font-size:11.5px;font-weight:400;color:#6b5a61;margin-top:8px;line-height:1.7}
+.num-card sup{font-size:9px;color:var(--gray)}
+@media(max-width:900px){.num-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.num-grid{grid-template-columns:1fr}}
+
+/* ============ 園紹介 ============ */
+.about{background:var(--pale-2);border-radius:6rem 6rem 0 0;margin-top:64px}
+.about-in{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.about-in .photo-ph{aspect-ratio:16/12;border-radius:50% 50% 2.5rem 2.5rem / 42% 42% 2.5rem 2.5rem}
+.about-body h3{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--accent-deep);line-height:1.85;letter-spacing:.08em;margin-bottom:16px}
+.about-body p{font-size:13.5px;color:#5c4b52;margin-top:14px;line-height:2}
+.about-body strong{color:var(--accent-deep);font-weight:700}
+.about-body .marker{background:linear-gradient(transparent 62%,rgba(228,86,110,.28) 62%);padding:0 2px}
+.about-body .req-sub{font-size:11px;color:var(--gray)}
+@media(max-width:900px){.about-in{grid-template-columns:1fr}.about{border-radius:4rem 4rem 0 0}}
+
+/* ============ 5つの制度 ============ */
+.features{background:#fff}
+/* fear-map */
+.fear-map{list-style:none;max-width:840px;margin:0 auto 52px;display:grid;gap:12px}
+.fear-map li{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;background:var(--pale-1);border:1px solid var(--line);border-radius:1.4rem;padding:16px 22px}
+.fear-map .fear-q{font-size:13.5px;color:#5c4b52;font-weight:700;line-height:1.7}
+.fear-map .fear-a{display:inline-flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:15px;color:#fff;background:var(--accent);border-radius:99px;padding:8px 18px;white-space:nowrap;transition:all .3s var(--ease)}
+.fear-map .fear-a:hover{background:var(--accent-deep);transform:translateY(-1px)}
+.fear-map .fear-a .num{font-family:var(--num);font-weight:600;letter-spacing:.05em}
+@media(max-width:640px){.fear-map li{grid-template-columns:1fr;gap:10px}.fear-map .fear-a{justify-self:start}}
+/* --- 5制度のプルダウン化（2026-08-06）: 不安の行の直下に制度カードが開く。JS無効時は従来どおり全カード縦積み --- */
+/* 1行要約: 閉じた状態でも5制度の便益を比較できるようにする（Codex反証R2の妥協案） */
+.fear-sum{grid-column:1/-1;font-size:12px;color:var(--gray);letter-spacing:.03em;line-height:1.7;margin-top:-4px}
+.fear-sum::before{content:"— ";opacity:.6}
+.fear-hint{text-align:center;font-size:12.5px;color:var(--gray);margin:-40px auto 44px;letter-spacing:.04em}
+.features.is-drop .fear-map{margin-bottom:0}
+.features.is-drop .fear-hint{margin:18px auto 0}
+.features.is-drop .fear-map li{cursor:pointer;transition:border-color .3s var(--ease),background-color .3s var(--ease),box-shadow .3s var(--ease)}
+.features.is-drop .fear-map li.is-active{border-color:var(--accent);background:#fff;box-shadow:0 6px 18px rgba(43,43,58,.07)}
+.features.is-drop .fear-a::after{content:"▾";margin-left:8px;display:inline-block;transition:transform .3s var(--ease);font-size:12px}
+.features.is-drop li.is-active .fear-a::after{transform:rotate(180deg)}
+.features.is-drop .fear-map li:not(.is-active) .fear-a{background:transparent;color:var(--accent-deep);box-shadow:inset 0 0 0 1.5px var(--accent-deep)}
+.features.is-drop .fear-map li:not(.is-active) .fear-a:hover{background:var(--pale-3);transform:none}
+.features.is-drop .fear-map li .feature-card{grid-column:1/-1;display:none;margin-top:16px;cursor:auto}
+.features.is-drop .fear-map li .feature-card.is-open{display:grid;animation:featIn .45s var(--ease) both}
+.features.is-drop .feature-list{display:none}
+@keyframes featIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+/* DOM移動でnth-childの偶奇・角丸バリエーションが失われるため、JS付与の.pos-Nで復元 */
+.feature-card.pos-2,.feature-card.pos-4{grid-template-columns:1.1fr .9fr}
+.feature-card.pos-2 .feature-media,.feature-card.pos-4 .feature-media{order:2}
+.feature-card.pos-1 .photo-ph{border-radius:3rem 8rem 3rem 3rem}
+.feature-card.pos-2 .photo-ph{border-radius:8rem 3rem 3rem 3rem}
+.feature-card.pos-3 .photo-ph{border-radius:2.5rem 2.5rem 6rem 2.5rem}
+.feature-card.pos-4 .photo-ph{border-radius:3rem 3rem 3rem 8rem}
+.feature-card.pos-5 .photo-ph{border-radius:3rem 8rem 3rem 3rem}
+@media(max-width:820px){.feature-card.pos-2,.feature-card.pos-4{grid-template-columns:1fr}.feature-card.pos-2 .feature-media,.feature-card.pos-4 .feature-media{order:0}}
+/* 動きの抑制設定を尊重 */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .fade-up,.features.is-drop .fear-map li .feature-card.is-open{animation:none}
+  .spin-badge .rot{animation:none}
+}
+/* feature cards */
+.feature-list{display:grid;gap:34px}
+.feature-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;scroll-margin-top:90px}
+.feature-card:nth-child(even){grid-template-columns:1.1fr .9fr}
+.feature-card:nth-child(even) .feature-media{order:2}
+.feature-media .photo-ph{aspect-ratio:4/3}
+.feature-card:nth-child(4n+1) .photo-ph{border-radius:3rem 8rem 3rem 3rem}
+.feature-card:nth-child(4n+2) .photo-ph{border-radius:8rem 3rem 3rem 3rem}
+.feature-card:nth-child(4n+3) .photo-ph{border-radius:2.5rem 2.5rem 6rem 2.5rem}
+.feature-card:nth-child(4n) .photo-ph{border-radius:3rem 3rem 3rem 8rem}
+.num-label{font-family:var(--num);font-weight:600;font-size:15px;color:var(--accent-2nd-deep);letter-spacing:.28em;display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.num-label::after{content:"";width:52px;height:1px;background:var(--accent-2nd)}
+.num-label .who{font-family:var(--gothic);font-size:11px;letter-spacing:.06em;color:#fff;background:var(--accent-2nd-deep);border-radius:99px;padding:2px 12px}
+.feature-body h3{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--accent-deep);letter-spacing:.06em;line-height:1.6}
+.feature-body h3 .sub{display:block;font-family:var(--gothic);font-size:12.5px;font-weight:700;color:var(--accent);margin-top:6px;letter-spacing:.04em}
+.feature-body .desc{font-size:13.5px;color:#5c4b52;margin-top:14px;line-height:2}
+.feature-voice{margin-top:16px;background:var(--pale-2);border-left:3px solid var(--accent-sub);border-radius:0 1rem 1rem 0;padding:14px 18px;font-family:var(--serif);font-size:13px;color:#4d3c43;line-height:1.9}
+.feature-voice span{display:block;font-family:var(--gothic);font-size:10.5px;color:var(--gray);margin-top:6px;font-weight:700;letter-spacing:.03em}
+@media(max-width:820px){.feature-card,.feature-card:nth-child(even){grid-template-columns:1fr;gap:22px}.feature-card:nth-child(even) .feature-media{order:0}}
+.sec-cta{text-align:center;margin-top:52px}
+
+/* ============ 1日の流れ ============ */
+.day{background:var(--pale-1);border-radius:6rem 6rem 0 0}
+.day-in{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:start}
+.timeline{list-style:none}
+.timeline li{display:flex;gap:22px;padding:15px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.timeline li.hot{background:linear-gradient(90deg,rgba(228,86,110,.08),transparent);border-radius:1rem;padding:15px 16px;border-bottom:1px solid transparent}
+.timeline .t{font-family:var(--num);font-weight:600;color:var(--accent);width:60px;flex-shrink:0;font-size:16px}
+.timeline .tl-body h4{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--accent-deep);letter-spacing:.04em}
+.timeline .tl-body p{font-size:12.5px;color:#6b5a61;margin-top:2px;line-height:1.8}
+.timeline .tl-body strong{color:var(--accent);font-weight:700}
+.day-photos{display:grid;gap:18px}
+.day-photos .photo-ph{aspect-ratio:4/3;border-radius:2.5rem}
+.day-photos .photo-ph:nth-child(2){border-radius:8rem 2.5rem 2.5rem 2.5rem}
+@media(max-width:820px){.day-in{grid-template-columns:1fr}.day{border-radius:4rem 4rem 0 0}}
+
+/* ============ 先輩の声 ============ */
+.voices{background:#fff}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.voice-card{background:var(--pale-2);border:1px solid var(--line);border-radius:2.2rem;padding:30px 26px}
+.voice-head{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.voice-face{width:78px;height:78px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,#EDA9BA,#C64B6A);display:flex;align-items:center;justify-content:center;color:#fff;font-size:9.5px;font-weight:700;text-align:center;line-height:1.5;border:3px solid #fff;box-shadow:0 4px 12px rgba(184,50,79,.18);padding:6px}
+.voice-name{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--accent-deep);line-height:1.5}
+/* 実写真差し替え済み: 円形のまま写真をcoverで敷き詰める */
+img.voice-face{object-fit:cover;padding:0}
+/* SPもPCと同じ横構図（玄関前ジャンプ・2026-08-20社長指示）＝基本の5/4がそのまま効く */
+.voice-name span{display:block;font-family:var(--gothic);font-size:10.5px;font-weight:700;color:var(--accent);margin-top:3px;letter-spacing:.02em}
+.voice-q{font-size:12.5px;color:#7a6169;font-weight:700;line-height:1.85;position:relative;padding-left:22px}
+.voice-q::before{content:"「";position:absolute;left:0;top:-4px;font-family:var(--serif);font-size:28px;color:var(--accent-sub);line-height:1}
+.voice-a{font-family:var(--serif);font-size:13px;color:#4d3c43;margin-top:12px;line-height:2;letter-spacing:.02em}
+@media(max-width:900px){.voice-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.voice-grid{grid-template-columns:1fr}}
+
+/* ============ CTAバンド（効かせ色地・全幅） ============ */
+.cta-band{background:linear-gradient(120deg,var(--accent),var(--accent-deep));color:#fff;text-align:center;padding:66px 0}
+.cta-band .copy{font-family:var(--serif);font-weight:700;font-size:clamp(20px,3vw,28px);letter-spacing:.06em;line-height:1.7;margin-bottom:26px}
+.cta-band .copy em{font-style:normal;border-bottom:3px solid rgba(255,255,255,.5);padding-bottom:2px}
+.cta-band .note{font-size:11.5px;opacity:.9;margin-top:16px}
+
+/* ============ 募集要項 ============ */
+.requirements{background:var(--pale-2);border-radius:6rem 0 0 0}
+.req-table{width:100%;border-collapse:collapse;background:#fff;border-radius:1.6rem;overflow:hidden;box-shadow:0 10px 28px rgba(184,50,79,.06);border:1px solid var(--line)}
+.req-table th,.req-table td{text-align:left;padding:16px 20px;font-size:13px;line-height:1.85;border-bottom:1px solid var(--line);vertical-align:top}
+.req-table tr:last-child th,.req-table tr:last-child td{border-bottom:none}
+.req-table th{width:32%;background:var(--pale-1);font-weight:700;color:var(--accent-deep);letter-spacing:.03em;white-space:nowrap}
+.req-table td{color:#4d3c43}
+.req-table td strong{color:var(--accent-deep);font-family:var(--num);font-weight:600;letter-spacing:.02em}
+.req-sub{display:inline-block;font-size:10.5px;color:var(--gray);margin-top:2px}
+.req-parttime{margin-top:44px;background:#fff;border:1px dashed var(--accent-sub);border-radius:2rem;padding:34px 32px}
+.req-parttime-title{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--accent-deep);display:flex;align-items:center;gap:12px;letter-spacing:.05em}
+.tag-pt{font-family:var(--num);font-size:11px;font-weight:600;letter-spacing:.14em;color:#fff;background:var(--accent);border-radius:99px;padding:3px 12px}
+.req-parttime-lead{font-size:13px;color:#5c4b52;margin:12px 0 20px;line-height:1.9}
+.req-table--pt{box-shadow:none}
+@media(max-width:720px){.req-table th,.req-table td{display:block;width:100%;white-space:normal}.req-table th{border-bottom:none;padding-bottom:4px}.req-table td{padding-top:4px;padding-bottom:16px}.requirements{border-radius:4rem 0 0 0}}
+
+/* ============ FAQ ============ */
+.faq{background:#fff}
+.faq-list{max-width:800px;margin:0 auto}
+details.faq-item{background:#fff;border:1px solid var(--line);border-radius:1.4rem;margin-bottom:13px;overflow:hidden;transition:box-shadow .3s}
+details.faq-item[open]{box-shadow:0 8px 24px rgba(184,50,79,.08)}
+details.faq-item summary{cursor:pointer;list-style:none;padding:18px 24px;font-weight:700;font-size:14px;color:var(--accent-deep);display:flex;gap:14px;align-items:baseline;min-height:44px}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::before{content:"Q";font-family:var(--num);font-weight:600;color:var(--accent);flex-shrink:0}
+details.faq-item summary::after{content:"＋";margin-left:auto;color:var(--accent-sub);font-weight:700;flex-shrink:0}
+details.faq-item[open] summary::after{content:"−"}
+details.faq-item p{padding:0 24px 20px 52px;font-size:13px;color:#5c4b52;line-height:2}
+
+/* 理事長メッセージのCSSは削除済み（本文は園の意向で非掲載・2026-08-05。復活時はgit履歴から） */
+
+/* ============ 応募（効かせ色地） ============ */
+.apply{background:linear-gradient(150deg,var(--accent-deep),var(--accent));color:#fff;border-radius:6rem 6rem 0 0;position:relative;overflow:hidden}
+.apply .deco-circle{position:absolute;border-radius:50%;background:rgba(255,255,255,.06)}
+.apply .wrap{position:relative;z-index:2}
+.apply .sec-head .hand{color:#FFD1DC}
+.apply .sec-head h2{color:#fff}
+.apply-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+/* 主役=LINE */
+.apply-line{background:#fff;border-radius:2.4rem;padding:38px 34px;color:var(--ink);text-align:center}
+.apply-line .lg-mark{width:60px;height:60px;margin:0 auto 14px}
+.apply-line h3{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--accent-deep);letter-spacing:.05em}
+.apply-line .num2{font-family:var(--num);font-size:12px;background:rgba(213,35,94,.1);color:var(--accent-deep);border-radius:99px;padding:2px 11px;font-weight:600;letter-spacing:.06em;margin-right:8px;vertical-align:3px}
+.apply-line .lead{font-size:13px;color:#5c4b52;margin:12px 0 22px;line-height:1.95}
+.apply-line .btn{width:100%;font-size:16px;padding:16px}
+.apply-line .safe{font-size:11px;color:var(--gray);margin-top:14px;line-height:1.8}
+.apply-line .line-howto{font-size:11.5px;color:#5c4b52;margin-top:12px;line-height:1.8}
+.apply-line .line-fb{font-size:11.5px;margin-top:10px;color:var(--accent-deep);font-weight:700}
+.apply-line .line-fb a{border-bottom:1px solid currentColor}
+/* 第2導線=フォーム / 第3=電話 */
+.apply-secondary{display:flex;flex-direction:column;gap:18px}
+.apply-box{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.22);border-radius:2rem;padding:26px 26px;scroll-margin-top:84px}
+.apply-box h4{font-family:var(--serif);font-weight:700;font-size:16px;letter-spacing:.05em;display:flex;align-items:center;gap:8px}
+.apply-box .num2{font-family:var(--num);font-size:12px;background:rgba(255,255,255,.22);border-radius:99px;padding:2px 11px;font-weight:600;letter-spacing:.06em}
+.apply-box p{font-size:12.5px;opacity:.92;margin-top:8px;line-height:1.85}
+.f-row{margin-bottom:14px}
+.f-row label{display:block;font-size:12px;font-weight:700;margin-bottom:6px}
+.f-row label .req{color:#FFE3EA;font-size:10px;margin-left:6px}
+.f-row input,.f-row select,.f-row textarea{width:100%;border:1.5px solid rgba(255,255,255,.4);border-radius:.9rem;padding:12px 15px;font-size:16px;font-family:var(--gothic);background:rgba(255,255,255,.96);color:var(--ink)}
+.f-row input:focus,.f-row select:focus,.f-row textarea:focus{outline:2px solid #fff;border-color:#fff}
+.f-row textarea{resize:vertical;min-height:74px}
+.apply-box .btn{margin-top:6px}
+.apply-box .btn-form{width:100%;background:#fff;color:var(--accent-deep);font-size:14px;padding:14px}
+.apply-box .btn-form:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.apply-box .tel-num{font-family:var(--num);font-size:22px;font-weight:600;letter-spacing:.04em;margin-top:6px;display:inline-block}
+.form-note{font-size:10.5px;opacity:.82;margin-top:12px;text-align:center;line-height:1.7}
+@media(max-width:820px){.apply-grid{grid-template-columns:1fr}.apply{border-radius:4rem 4rem 0 0}}
+
+/* ============ アクセス ============ */
+.access{background:var(--pale-2);border-radius:6rem 6rem 0 0}
+@media(max-width:820px){.access{border-radius:4rem 4rem 0 0}}
+.access-in{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.access-info dl{border-top:1px solid var(--line)}
+.access-info .row{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:16px 4px;border-bottom:1px solid var(--line);align-items:baseline}
+.access-info dt{font-family:var(--serif);font-weight:700;font-size:13.5px;color:var(--accent-deep);letter-spacing:.04em}
+.access-info dd{font-size:13px;color:#5c4b52;line-height:1.85}
+.access-map{border-radius:2rem;overflow:hidden;border:1px solid var(--line);background:var(--pale-1)}
+.access-map iframe{display:block;width:100%;aspect-ratio:4/3;border:0}
+@media(max-width:820px){.access-in{grid-template-columns:1fr}}
+
+/* ============ フッター ============ */
+footer{background:var(--accent-deep);color:#F1D8DF;padding:44px 0 30px;font-size:12.5px;text-align:center;letter-spacing:.04em;line-height:2}
+footer .f-org{font-family:var(--serif);font-weight:700;font-size:14px;color:#fff;letter-spacing:.06em}
+footer .f-nav{margin:14px 0}
+footer .f-nav a{color:#FFE3EA;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:1px}
+footer .f-tel{color:#FFE3EA;font-weight:700;border-bottom:1px solid currentColor;padding:2px 1px;display:inline-block}
+footer .f-draft{font-size:11px;opacity:.85;margin-top:12px;line-height:1.8}
+footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;letter-spacing:.1em}
+
+/* ============ スティッキーCTA（モバイル・LINE主導） ============ */
+.s-req{flex:0 0 auto;white-space:nowrap;font-size:12.5px;font-weight:700;color:var(--accent-deep);background:var(--pale-1);border:1px solid var(--line);border-radius:99px;padding:0 13px;min-height:44px;display:flex;align-items:center}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:8px;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -4px 18px rgba(0,0,0,.08)}
+.sticky-cta .s-btn{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;border-radius:99px;font-size:12.5px;font-weight:700;padding:0 14px}
+.sticky-cta .s-tel{flex:0 0 auto;border:1.5px solid var(--line);color:var(--accent-deep);background:#fff;gap:5px;padding:0 12px}
+.sticky-cta .s-line{flex:1 1 auto;background:var(--line-green);color:#fff;white-space:nowrap}
+/* 3ボタン（給与・条件／電話／LINE）が狭い端末でも1行に収まるよう詰める */
+@media(max-width:400px){.sticky-cta{gap:6px;padding-left:8px;padding-right:8px}.sticky-cta .s-btn{font-size:11.5px}.s-req{padding:0 10px}.sticky-cta .s-tel{padding:0 9px;gap:4px}}
+.sticky-cta .s-line .ico{width:18px;height:18px}
+@media(max-width:1040px){.sticky-cta{display:flex}main{padding-bottom:0}footer{padding-bottom:calc(114px + env(safe-area-inset-bottom))}}
+
+/* ============ ふだんのこざくら（横スワイプギャラリー・A案から移植 2026-08-18） ============ */
+.snaps{background:#fff}
+.snaps .sec-head{margin-bottom:8px} /* 左揃え=about・ヒーローと同じ左寄せ系の文法（意図的） */
+.snaps .snaps-lead{font-size:12.5px;color:var(--gray);margin-bottom:26px;letter-spacing:.04em}
+.snaps-strip{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:6px max(24px,calc((100vw - 1032px)/2)) 18px;scrollbar-width:thin}
+.snaps-strip figure{flex:0 0 auto;width:min(280px,70vw);scroll-snap-align:start;margin:0}
+.snaps-strip img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:2rem;border:1px solid var(--line)}
+.snaps-strip figcaption{font-size:11.5px;color:var(--gray);margin-top:9px;letter-spacing:.03em;line-height:1.7}
+
+/* ============ 採用までの流れ（園の指定カット3枚＋集合・A案から移植 2026-08-18） ============ */
+.flow{background:var(--pale-2);border-radius:0 6rem 0 0}
+.flow-steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:fs}
+.flow-step{background:#fff;border:1px solid var(--line);border-radius:2rem;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.flow-step img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.flow-step .fs-body{padding:18px 20px 22px;flex:1}
+.flow-step .fs-num{position:absolute;left:14px;top:14px;font-family:var(--num);font-weight:600;font-size:13px;letter-spacing:.08em;color:#fff;background:var(--accent);border-radius:99px;padding:3px 13px;box-shadow:0 2px 8px rgba(184,50,79,.28)}
+.flow-step h3{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--accent-deep);letter-spacing:.05em;line-height:1.6}
+.flow-step p{font-size:12px;color:#6b5a61;margin-top:6px;line-height:1.85}
+@media(max-width:900px){.flow-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.flow-steps{grid-template-columns:1fr}.flow{border-radius:0 4rem 0 0}}
+
+/* ============ CTA直前の顔（視線の受け皿・A案から移植 2026-08-18） ============ */
+
+/* ============ レスポンシブ安全策（グリッド/フレックス子のはみ出し防止） ============ */
+.hero .wrap>*,.about-in>*,.feature-card>*,.day-in>*,.director-in>*,.apply-grid>*,.access-in>*,.timeline li>.tl-body{min-width:0}
+
+/* ============ 効かせ色トークン追従 ============
+   ヒトトナリ流は「--accent系トークンの差し替えだけで着替わる」設計。
+   桜モチーフ(花びら/バッジ/ロゴ)と写真プレースホルダも効かせ色に追従させ、全体を調和させる。
+   確定色=桜（2026-08-18 園決定・:rootの値が正）。※LINE緑(--line-green)＝行動色は固定。 */
+.spin-badge .badge-core g{fill:var(--accent-sub)}
+.spin-badge .badge-core circle{fill:var(--accent-2nd)}
+.spin-badge > svg.rot > circle{stroke:var(--accent)}
+.spin-badge > svg.rot text{fill:var(--accent)}
+.photo-ph{background:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.20) 0 16px,transparent 16px 32px),
+  linear-gradient(140deg,var(--accent-sub),var(--accent) 62%,var(--accent-2nd))}
+.voice-face{background:linear-gradient(135deg,var(--accent-sub),var(--accent))}
+</style>
+<!-- FAQPage構造化データ（本文FAQと文言完全一致・同時更新が規約） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "車で通勤できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "できます。マイカー通勤可で、JR高崎線「本庄駅」から徒歩23分の立地のため、車・自転車通勤の職員が多数です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "I・Uターンでの就職も相談できますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい、歓迎します。本庄市に住民票を移して勤務する場合、市の制度による家賃補助（最大47,000円/月・最長5年）の対象になります。本庄駅周辺の家賃相場は都心より大幅に低く、新幹線なら東京駅まで約50分です。まずはLINEでご状況をお聞かせください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ブランクがあっても大丈夫ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "大丈夫です。全クラス複数担任制のため、一人で抱え込まずに再スタートできます。研修期間で少しずつ感覚を取り戻せます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "持ち帰り仕事は多くないですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "内勤制度で減らしています。月数日、保育を離れて書類・制作・事務にあてる時間があり、記録が滞らない仕組みです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "応募する前に、匿名で質問だけすることはできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "できます。LINEでは名乗らずに質問だけでもかまいません。応募や見学の意思が固まっていなくても、給与や休日など聞きにくいことこそ気軽にお尋ねください。" }
+    }
+  ]
+}
+</script>
+<!-- ▼公開時に有効化: JobPosting構造化データ。
+     賃金235,500〜285,500円は園公式求人サイト値（2026-08-19取得）で記入済み＝本文と一致。
+     有効化の条件: ①datePosted/validThroughを実日付にする ②全角＜＞placeholderの全置換 ③JSON.parseで機械検証
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "保育士（正社員／新卒・中途）",
+  "description": "埼玉県本庄市で最大規模・創立58年のこざくら保育園での保育業務全般。複数担任制・時差出勤・内勤制度・新人サポート・子育て両立支援の5つの制度があります。",
+  "datePosted": "＜公開日 YYYY-MM-DD＞",
+  "validThrough": "＜掲載期限 YYYY-MM-DD＞",
+  "employmentType": "FULL_TIME",
+  "hiringOrganization": { "@type": "Organization", "name": "社会福祉法人こざくら福祉会" },
+  "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "栄3-6-34", "addressLocality": "本庄市", "addressRegion": "埼玉県", "postalCode": "367-0046", "addressCountry": "JP" } },
+  "baseSalary": { "@type": "MonetaryAmount", "currency": "JPY", "value": { "@type": "QuantitativeValue", "minValue": 235500, "maxValue": 285500, "unitText": "MONTH" } }
+}
+</script>
+▲JobPostingここまで -->
 </head>
 <body>
-<p style="font-family:sans-serif;padding:24px">確定版ページへ移動します。切り替わらない場合は <a href="./">こちら</a> をタップしてください。</p>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXZXKWX7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ===== 共通インラインSVG defs（桜モチーフ＝こざくらのブランド意匠） ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- ※未適用（評価指摘あり）: #softDropは現在どのCSSからもfilter:url(#softDrop)で参照されておらず未使用。活用/削除は目視ゲート後に判断 -->
+    <filter id="softDrop" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="3"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- 桜の花びら（先端に切れ込み） -->
+    <g id="sakuraPetal">
+      <path d="M0 8 C -12 -4 -11 -20 -3 -27 L 0 -21 L 3 -27 C 11 -20 12 -4 0 8 Z"/>
+    </g>
+    <!-- 五弁の桜 -->
+    <g id="sakuraFlower">
+      <use href="#sakuraPetal" transform="translate(0 -6)"/>
+      <use href="#sakuraPetal" transform="rotate(72) translate(0 -6)"/>
+      <use href="#sakuraPetal" transform="rotate(144) translate(0 -6)"/>
+      <use href="#sakuraPetal" transform="rotate(216) translate(0 -6)"/>
+      <use href="#sakuraPetal" transform="rotate(288) translate(0 -6)"/>
+    </g>
+  </defs>
+</svg>
+
+<!-- 公開前メモ（表示なし）: 本ページはnoindexの公開前プレビュー。数値・労働条件の一部は園の最終確認前
+     （確認項目の一覧は docs/launch-checklist.md と引き渡し資料が正本）。先輩の声はインタビュー文字起こし待ち。 -->
+
+<!-- ===== (1) ヘッダー ===== -->
+<header class="site-header">
+  <div class="hd-in">
+    <a class="logo" href="#top">
+      <!-- 園名ロゴ: 社長支給 top_header.gif（原本控え=images/logo-src/）から帯を切除し白を透過化した正規ロゴ。リクレボ指示2026-08-20 -->
+      <img class="logo-mark" src="images/logo-mark-kozakura.png?v=20260820" width="34" height="36" alt="">
+      <img class="logo-img" src="images/logo-kozakura.png?v=20260820" width="368" height="74" alt="社会福祉法人こざくら福祉会 こざくら保育園">
+    </a>
+    <nav class="g" aria-label="採用ナビ">
+      <ul>
+        <li><a href="#about">園紹介</a></li>
+        <li><a href="#features">5つの制度</a></li>
+        <li><a href="#day">1日の流れ</a></li>
+        <li><a href="#voices">先輩の声</a></li>
+        <li><a href="#requirements">募集要項</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#flow">採用の流れ</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+    <div class="hd-cta">
+      <a class="btn btn-line-green" href="https://line.me/R/oaMessage/@529wdnfx/?%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" id="cta-line-header" data-cta-location="header">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
+        LINEで相談
+      </a>
+      <!-- モバイル用メニュー: PCナビが1040px以下で消える帯のアンカー導線（2026-08-20社長指摘で新設） -->
+      <details class="sp-menu" id="spMenu">
+        <summary aria-label="メニューを開く">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+          メニュー
+        </summary>
+        <nav class="sp-menu-panel" aria-label="採用ナビ（モバイル）">
+          <ul>
+            <li><a href="#about">園紹介</a></li>
+            <li><a href="#features">5つの制度</a></li>
+            <li><a href="#day">1日の流れ</a></li>
+            <li><a href="#voices">先輩の声</a></li>
+            <li><a href="#requirements">募集要項</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+            <li><a href="#flow">採用の流れ</a></li>
+            <li><a href="#access">アクセス</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ===== (2) ヒーロー ===== -->
+<div class="hero" id="top">
+  <div class="hero-bg-circle" style="width:460px;height:460px;left:-170px;top:-160px"></div>
+  <div class="petal-deco" aria-hidden="true">
+    <span class="p p1"><svg viewBox="-30 -30 60 60"><use href="#sakuraPetal"/></svg></span>
+    <span class="p p2"><svg viewBox="-30 -30 60 60"><use href="#sakuraPetal"/></svg></span>
+    <span class="p p3"><svg viewBox="-30 -30 60 60"><use href="#sakuraPetal"/></svg></span>
+    <span class="p p4"><svg viewBox="-30 -30 60 60"><use href="#sakuraPetal"/></svg></span>
+    <span class="p p5"><svg viewBox="-30 -30 60 60"><use href="#sakuraPetal"/></svg></span>
+  </div>
+  <div class="wrap">
+    <div>
+      <span class="hand">work with us at kozakura</span>
+      <h1>『長く続けられる』<br>には、<em>理由</em>があります。</h1>
+      <p class="lead">埼玉県本庄市で<strong><span class="nw">いちばん大きな認可保育園</span></strong>。<strong><span class="nw">創立58年（1968年）</span>・<span class="nw">定員200名</span></strong>の<span class="nw">こざくら保育園</span>で、5つの制度に支えられて長く働く仲間を<span class="nw">募集しています。</span></p>
+      <div class="hero-cta">
+        <a class="btn btn-line-green" href="https://line.me/R/oaMessage/@529wdnfx/?%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" id="cta-line-fv" data-cta-location="hero">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
+          まずはLINEで気軽に相談してみる
+        </a>
+        <a class="btn btn-outline" href="#contact">まず見学したい</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <picture>
+        <source media="(max-width: 767px)" srcset="images/hero-b-sp.webp?v=20260820" width="800" height="640">
+        <img class="photo-ph" src="images/hero-b.webp?v=20260818" width="1750" height="1400" alt="こざくら保育園の先生たち" fetchpriority="high">
+      </picture>
+      <div class="spin-badge" aria-hidden="true">
+        <svg viewBox="0 0 128 128" class="rot">
+          <defs><path id="circPath" d="M64,64 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <circle cx="64" cy="64" r="62" fill="#fff" stroke="#D5235E" stroke-width="1.5"/>
+          <text font-family="Jost,sans-serif" font-size="11" letter-spacing="3" fill="#D5235E" font-weight="500"><textPath href="#circPath">JOIN US · KOZAKURA · RECRUIT · </textPath></text>
+        </svg>
+        <svg class="badge-core" viewBox="-28 -28 56 56"><g fill="#E4566E"><use href="#sakuraFlower" transform="scale(0.9)"/></g><circle r="4.5" fill="#CF9A3C"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== (3) 数字 ===== -->
+<div class="numbers">
+  <div class="wrap">
+    <div class="num-grid">
+      <div class="num-card fade-up"><div class="k">定員</div><div class="v">200<small>名</small></div><div class="d">本庄市で最大規模の認可保育園</div></div>
+      <div class="num-card fade-up"><div class="k">創立</div><div class="v">58<small>年</small></div><div class="d">1968年開設・地域に根ざした園</div></div>
+      <div class="num-card fade-up"><div class="k">平均勤続</div><div class="v">11<small>年</small></div><div class="d">先生たちが、長く働き続けている園</div></div>
+      <div class="num-card fade-up"><div class="k">早番の退勤</div><div class="v txt">昼過ぎ</div><div class="d">役所や病院に行ける、<span class="nw">時差出勤の仕組み</span></div></div>
+    </div>
+    <!-- 出典注記※1〜3はリクレボ指示（2026-08-20）で削除。出典の控え: 定員=本庄市公式一覧／創立=園公式サイト沿革／平均勤続・早番=園ヒアリング2026年時点（launch-checklist A8=勤続実データ裏取りが未了のまま断り書きが消えた点に注意） -->
+  </div>
+</div>
+
+<!-- ===== (3b) 園紹介 ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-in">
+      <div class="about-body">
+        <div class="sec-head">
+          <span class="hand">about kozakura</span>
+          <h2>本庄市で、<br>いちばん<em>大きな</em>保育園</h2>
+        </div>
+        <p>こざくら保育園は<strong><span class="nw">昭和43年（1968年）創立</span></strong>。<span class="nw">定員200名</span>・<span class="nw">職員約50名</span>、本庄市で最大規模の認可保育園として、半世紀を超えてこの町の子どもたちを預かってきました。保育目標は<strong>『がんばれ 未知の可能性』</strong>。月1回の音体教育（マーチング・太鼓・器楽合奏）も特色です。</p>
+        <p>規模が大きいからこそ、複数担任制、シフトの柔軟さ、保育を離れて事務にあてる時間といった<strong class="marker">「先生が長く続けられる仕組み」に人員を割ける</strong>のが私たちの強みです。同じ法人が子育て支援センターと学童クラブも運営しており、園を中心に子どもたちと家庭が行き交う環境です。</p>
+      </div>
+      <div class="fade-up"><img class="photo-ph" src="images/facade.webp?v=20260818" width="1600" height="1200" alt="こざくら保育園の園舎外観" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== (4) 5つの制度 ===== -->
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="hand">five systems</span>
+      <h2>働きやすさ ＝ <em>5つの制度</em></h2>
+      <p class="sec-note">「長く続けられる」のは、頑張りではなく、仕組みがあるからです。</p>
+    </div>
+
+    <!-- fear-map: 不安 → それを消す制度 -->
+    <ul class="fear-map">
+      <li><span class="fear-q">人間関係で消耗しない？ ひとりで抱え込まない？</span><a class="fear-a" href="#f1"><span class="num">01</span>複数担任制</a><span class="fear-sum">クラスを複数の先生で受け持ち、ひとりで抱えない</span></li>
+      <li><span class="fear-q">平日にしかできない用事は、いつ済ませる？</span><a class="fear-a" href="#f2"><span class="num">02</span>時差出勤</a><span class="fear-sum">早番の日は昼過ぎに退勤できる</span></li>
+      <li><span class="fear-q">書類の持ち帰り、また増えない？</span><a class="fear-a" href="#f3"><span class="num">03</span>内勤制度</a><span class="fear-sum">月数日、保育を離れて書類・制作に集中できる</span></li>
+      <li><span class="fear-q">1年目からいきなり担任は、こわくない？</span><a class="fear-a" href="#f4"><span class="num">04</span>新人サポート</a><span class="fear-sum">1年目は担任を持たず、半年かけて学べる</span></li>
+      <li><span class="fear-q">出産・子育てのあとも、続けられる？</span><a class="fear-a" href="#f5"><span class="num">05</span>子育て両立支援</a><span class="fear-sum">結婚・出産後も経験を活かして働ける</span></li>
+    </ul>
+    <p class="fear-hint">気になる不安をタップすると、答えになる制度がすぐ下に開きます</p>
+
+    <div class="feature-list">
+      <article class="feature-card" id="f1">
+        <div class="feature-media"><img class="photo-ph" src="images/feature-1.webp?v=20260818" width="1600" height="1200" alt="タブレットを見ながら相談し合う2人の保育士" loading="lazy"></div>
+        <div class="feature-body">
+          <p class="num-label">01<span class="who">全員に</span></p>
+          <h3>複数担任制<span class="sub">ひとりで抱え込まずに働ける</span></h3>
+          <p class="desc">クラスを複数の先生で受け持ちます。負担が軽くなるだけでなく、保育観がひとりに偏らず、先生同士で学び合えるのも利点です。</p>
+          <p class="feature-voice">「困ってもすぐ相談できるし、他の先生から学べます。休みも取りやすいです」<span>先輩保育士</span></p>
+        </div>
+      </article>
+      <article class="feature-card" id="f2">
+        <div class="feature-media"><img class="photo-ph" src="images/feature-2.webp?v=20260818" width="1600" height="1200" alt="早番を終えて昼過ぎに退勤する保育士" loading="lazy"></div>
+        <div class="feature-body">
+          <p class="num-label">02<span class="who">中途の方に</span></p>
+          <h3>時差出勤（早番・遅番）<span class="sub">早番の日は昼過ぎに帰れる</span></h3>
+          <p class="desc">役所や病院、銀行など、平日にしかできない用事のための時間を、シフトの中で確保しています。</p>
+          <p class="feature-voice">「平日の昼間に用事を済ませられるのは、想像以上に大きいです」<span>先輩保育士</span></p>
+        </div>
+      </article>
+      <article class="feature-card" id="f3">
+        <div class="feature-media"><img class="photo-ph" src="images/feature-3.webp?v=20260818" width="1600" height="1200" alt="内勤日に落ち着いて書類作成をする保育士" loading="lazy"></div>
+        <div class="feature-body">
+          <p class="num-label">03<span class="who">中途の方に</span></p>
+          <h3>内勤制度<span class="sub">月数日、保育を離れて書類・制作に集中できる</span></h3>
+          <p class="desc">持ち帰りを減らすため、書類・制作・事務にあてる時間を勤務の中に確保しています。</p>
+          <p class="feature-voice">「書類を家に持ち帰ることが、ほとんどなくなりました」<span>先輩保育士</span></p>
+        </div>
+      </article>
+      <article class="feature-card" id="f4">
+        <div class="feature-media"><img class="photo-ph" src="images/feature-4.webp?v=20260818" width="1600" height="1200" alt="先輩に教わりながら学ぶ新任保育士" loading="lazy"></div>
+        <div class="feature-body">
+          <p class="num-label">04<span class="who">新卒の方に</span></p>
+          <h3>新人サポート<span class="sub">担任を持たずに、半年かけて学べる</span></h3>
+          <p class="desc">1年目は、担任を持ちません。半年の研修期間に先輩の保育をじっくり見て、学んでからのスタートです。</p>
+          <p class="feature-voice">「先輩のやり方を近くで見てから始められました」<span>新任保育士</span></p>
+        </div>
+      </article>
+      <article class="feature-card" id="f5">
+        <div class="feature-media"><img class="photo-ph" src="images/feature-5.webp?v=20260818" width="1600" height="1200" alt="わが子とハイタッチする子育て中の保育士" loading="lazy"></div>
+        <div class="feature-body">
+          <p class="num-label">05<span class="who">中途の方に</span></p>
+          <h3>子育て両立支援<span class="sub">結婚・出産後も、経験を活かして働ける</span></h3>
+          <p class="desc">結婚・出産のあとも、続けられる職場です。実際に、子育て中の先生が経験を活かして働いています。</p>
+          <p class="feature-voice">「行事のたびに、ちゃんと休みをもらえるのがありがたいです」<span>ママ先生</span></p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec-cta">
+      <a class="btn btn-line-green" href="https://line.me/R/oaMessage/@529wdnfx/?%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" id="cta-line-features" data-cta-location="features">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
+        まずはLINEで質問してみる
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== (5) 1日の流れ ===== -->
+<section class="day" id="day">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="hand">a day</span>
+      <h2>1日の流れ</h2>
+    </div>
+    <div class="day-in">
+      <ol class="timeline">
+        <li><span class="t">8:30</span><div class="tl-body"><h4>出勤・受け入れ</h4><p>複数担任なので、朝の受け入れも分担して落ち着いて対応できます。</p></div></li>
+        <li><span class="t">9:30</span><div class="tl-body"><h4>朝の会・主活動</h4><p>外あそびは近隣公園や屋上へ出かけます。準備も複数名で進めます。</p></div></li>
+        <li><span class="t">11:30</span><div class="tl-body"><h4>給食</h4><p>クラスごとに配膳と食事のサポートをします。</p></div></li>
+        <li><span class="t">12:45</span><div class="tl-body"><h4>午睡</h4><p>内勤日はこの時間帯に保育を離れ、書類・制作を進めます。</p></div></li>
+        <li class="hot"><span class="t">13:30</span><div class="tl-body"><h4>早番の退勤</h4><p><strong>「お先に失礼します」——時差出勤の日は、ここで1日が終わります。</strong></p></div></li>
+        <li><span class="t">15:00</span><div class="tl-body"><h4>おやつ・自由あそび</h4><p>降園まで、子どもとじっくり関わります。</p></div></li>
+        <li><span class="t">17:00</span><div class="tl-body"><h4>退勤（中番）</h4><p>引き継ぎをして退勤します。持ち帰りの荷物はありません。</p></div></li>
+      </ol>
+      <div class="day-photos">
+        <img class="photo-ph" src="images/daily-1.webp?v=20260818" width="1200" height="900" alt="朝の保育準備をする先生" loading="lazy">
+        <img class="photo-ph" src="images/daily-2.webp?v=20260818" width="1200" height="900" alt="連絡帳を記入する先生たち" loading="lazy">
+      </div>
+    </div>
+    <!-- 公開前メモ: 時間帯は園のシフト実態との突合待ち（launch-checklist参照） -->
+    <p class="sec-note">※時間帯は一例です。クラス・シフトにより前後します。</p>
+  </div>
+</section>
+
+<!-- ===== (5b) ふだんのこざくら（横スワイプギャラリー・2026-08-18 A案から移植） ===== -->
+<section class="snaps" id="snaps">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="hand">snapshots</span>
+      <h2>ふだんの、こざくら</h2>
+    </div>
+    <p class="snaps-lead">2026年7月撮影。飾らない日常を、横にスワイプしてご覧ください。</p>
+  </div>
+  <div class="snaps-strip" role="region" tabindex="0" aria-label="園の日常写真ギャラリー（横スクロール）">
+    <figure><img src="images/gallery-1.webp?v=20260818" width="640" height="640" alt="青空の下でピースをする先生たち" loading="lazy"><figcaption>屋上で、担任の先生たち</figcaption></figure>
+    <figure><img src="images/gallery-2.webp?v=20260818" width="640" height="640" alt="いただきますをする2人の先生" loading="lazy"><figcaption>お昼ごはん、いただきます</figcaption></figure>
+    <figure><img src="images/gallery-3.webp?v=20260818" width="640" height="640" alt="行事のメダルを手づくりする先生" loading="lazy"><figcaption>行事のメダルは手づくり</figcaption></figure>
+    <figure><img src="images/gallery-4.webp?v=20260818" width="640" height="640" alt="保育室のロッカーを整える先生" loading="lazy"><figcaption>保育室の環境づくり</figcaption></figure>
+    <figure><img src="images/gallery-5.webp?v=20260818" width="640" height="640" alt="カラフルな大型遊具のある園庭" loading="lazy"><figcaption>大型遊具のある園庭</figcaption></figure>
+    <figure><img src="images/gallery-6.webp?v=20260818" width="640" height="640" alt="階段に飾られた歴代の共同制作" loading="lazy"><figcaption>階段には歴代の共同制作</figcaption></figure>
+    <figure><img src="images/gallery-7.webp?v=20260818" width="640" height="640" alt="こざくら保育園の園名看板" loading="lazy"><figcaption>創立58年の園名看板</figcaption></figure>
+    <figure><img src="images/gallery-8.webp?v=20260818" width="640" height="640" alt="玄関前でジャンプする先生たち" loading="lazy"><figcaption>撮影日のワンシーン</figcaption></figure>
+  </div>
+</section>
+
+<!-- ===== (6) 先輩の声 ===== -->
+<section class="voices" id="voices">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="hand">voices</span>
+      <h2>先輩に聞いた、<span class="nw">入職前の不安と実際</span></h2>
+    </div>
+    <div class="voice-grid">
+      <article class="voice-card fade-up">
+        <div class="voice-head">
+          <img class="voice-face" src="images/staff-1.webp?v=20260818" width="900" height="1200" alt="新任1年目の保育士" loading="lazy">
+          <h3 class="voice-name">新任<span>1年目・新卒／④新人サポート</span></h3>
+        </div>
+        <p class="voice-q">1年目からいきなり担任を持つのが、正直こわかったです。</p>
+        <p class="voice-a">こざくらは1年目は担任を持たない決まりで、半年の研修期間があります。先輩の保育をじっくり観察してから関われるので、安心してスタートできました。</p>
+      </article>
+      <article class="voice-card fade-up">
+        <div class="voice-head">
+          <img class="voice-face" src="images/staff-2.webp?v=20260818" width="900" height="1200" alt="新任2年目の保育士" loading="lazy">
+          <h3 class="voice-name">新任<span>2年目・新卒／①複数担任制</span></h3>
+        </div>
+        <p class="voice-q">実習と現場のギャップについていけるか不安でした。</p>
+        <p class="voice-a">隣にいつも先輩がいる複数担任制なので、その場で聞けます。「困ったら言ってね」が仕組みになっている感じです。</p>
+      </article>
+      <article class="voice-card fade-up">
+        <div class="voice-head">
+          <img class="voice-face" src="images/staff-3.webp?v=20260818" width="900" height="1200" alt="中途入職の保育士" loading="lazy">
+          <h3 class="voice-name">先輩<span>中途入職／②時差出勤</span></h3>
+        </div>
+        <p class="voice-q">平日に役所や病院へ行けない生活に、限界を感じていました。</p>
+        <p class="voice-a">早番の日は昼過ぎに退勤できます。通院もランチも行けるようになって、体がずいぶん楽になりました。</p>
+      </article>
+      <article class="voice-card fade-up">
+        <div class="voice-head">
+          <img class="voice-face" src="images/staff-4.webp?v=20260818" width="900" height="1200" alt="ベテラン保育士" loading="lazy">
+          <h3 class="voice-name">先輩<span>ベテラン／③内勤制度</span></h3>
+        </div>
+        <p class="voice-q">前の職場では、書類を持ち帰るのが当たり前でした。</p>
+        <p class="voice-a">月に数日、保育を離れて書類や制作に集中できる内勤日があります。記録が滞らないので、気持ちにも余裕ができました。</p>
+      </article>
+      <article class="voice-card fade-up">
+        <div class="voice-head">
+          <img class="voice-face" src="images/staff-5.webp?v=20260818" width="900" height="1200" alt="子育て中の保育士" loading="lazy">
+          <h3 class="voice-name">先輩<span>ママ先生／⑤子育て両立支援</span></h3>
+        </div>
+        <p class="voice-q">出産後、保育士に戻れるのか自信がありませんでした。</p>
+        <p class="voice-a">自分の子どもの行事で休めるし、経験を必要とされている実感があります。「戻ってきてよかった」と思える職場です。</p>
+      </article>
+    </div>
+    <!-- 公開前メモ: コメントは構成用のたたき台。撮影日に収録済みのインタビュー文字起こしの共有後、
+         実コメント（実名か匿名かは園の意向に従う）へ差し替える（launch-checklist A9/A10参照）。
+         「更新中」を匂わせる可視注記は置かない（未完成感の排除・2026-08-18監査反映） -->
+  </div>
+</section>
+
+<!-- ===== CTAバンド（効かせ色地・全幅） ===== -->
+<section class="cta-band">
+  <div class="wrap">
+    <p class="copy">この先生たちと、<span class="nw"><em>働いてみたい</em>と思ったら。</span></p>
+    <a class="btn btn-line-green" href="https://line.me/R/oaMessage/@529wdnfx/?%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" id="cta-line-voices" data-cta-location="voices-band">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
+      LINEで話を聞いてみる
+    </a>
+  </div>
+</section>
+
+<!-- ===== (7) 募集要項 ===== -->
+<section class="requirements" id="requirements">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="hand">requirements</span>
+      <h2>募集要項</h2>
+    </div>
+    <table class="req-table">
+      <tbody>
+        <tr><th>募集職種</th><td>保育士（正社員／新卒・中途）</td></tr>
+        <tr><th>採用予定人数</th><td>新卒2名程度＋中途は随時募集（I・Uターン歓迎）</td></tr>
+        <tr><th>応募資格</th><td>保育士資格をお持ちの方（取得見込み含む）。経験・年齢は不問、ブランクのある方も歓迎します。</td></tr>
+        <!-- 出典メモ（2026-08-19更新）: 就業時間・休日・賃金・賞与・手当・試用期間・時間外は
+             園公式求人サイト kozakura-recruit.jp（EntryPocket）＋新卒求人票PDFの値に更新済み。
+             出典間の食い違いと園への最終確認は docs/こざくら求人情報まとめ_20260819.xlsx シート2が正本。
+             残る園確定待ちは「変更の範囲（業務内容・就業場所）」のみ（職安法の明示項目・公開時必須） -->
+        <tr><th>業務内容</th><td>保育業務全般</td></tr>
+        <tr><th>就業場所</th><td>こざくら保育園（埼玉県本庄市栄3-6-34・本庄南小学校の北隣）</td></tr>
+        <tr><th>雇用形態・契約期間</th><td>正社員（期間の定めなし）</td></tr>
+        <tr><th>試用期間</th><td>なし</td></tr>
+        <tr><th>就業時間</th><td>7:00〜19:00の間でシフト制・実働7.5時間（休憩60分）。時差出勤：早番・遅番あり。早番は昼過ぎ退勤</td></tr>
+        <tr><th>休日・休暇</th><td>週休2日制（日曜・祝日ほかシフトによる）・年末年始（土曜は月1〜2回程度の出勤）／年次有給休暇 初年度10日</td></tr>
+        <tr><th>時間外労働</th><td>あり（残業手当は法定どおり別途支給）</td></tr>
+        <tr><th>賃金</th><td><strong>月給235,500円〜285,500円</strong>＋交通費（経験・能力を考慮）<br>想定年収：約350万円〜450万円</td></tr>
+        <tr><th>賞与・昇給</th><td>賞与年2回（計3.5〜4.2ヶ月程度・実績による）／昇給年1回（毎年4月）</td></tr>
+        <tr><th>手当・福利厚生</th><td>住宅手当 最大42,000円/月（最長5年）、入職祝い金 最大30万円、保育料補助、退職金制度（福祉医療機構退職共済）、通勤手当（実費支給）、マイカー通勤可（無料駐車場）<br><span class="req-sub">※本庄市の保育士宿舎借上支援制度の対象になる場合があります（要件あり・面接時にご確認ください）</span></td></tr>
+        <tr><th>加入保険</th><td>健康保険・厚生年金・雇用保険・労災保険（社会保険完備）</td></tr>
+        <tr><th>受動喫煙防止措置</th><td>施設内全面禁煙</td></tr>
+        <tr><th>募集者</th><td>社会福祉法人こざくら福祉会（理事長：根岸広幸／埼玉県本庄市栄3-6-34）</td></tr>
+      </tbody>
+    </table>
+
+    <div class="req-parttime" id="parttime">
+      <h3 class="req-parttime-title"><span class="tag-pt">PART</span>パート保育士も募集しています</h3>
+      <p class="req-parttime-lead">「まずは短い時間から」「扶養の範囲で」——そんな働き方もご相談ください。時間帯・日数は柔軟に調整します。</p>
+      <table class="req-table req-table--pt">
+        <tbody>
+          <tr><th>募集職種</th><td>パート保育士（短時間勤務・保育補助）</td></tr>
+          <!-- 出典メモ（2026-08-19）: 時給・時間・日数は園公式求人サイトのパート保育士求人（M0000078/79）の値に更新済み -->
+          <tr><th>時給</th><td><strong>1,250円〜1,350円</strong>＋交通費（昇給年1回）</td></tr>
+          <tr><th>契約期間</th><td>1年ごとの契約（更新あり）</td></tr>
+          <tr><th>勤務時間</th><td>週2日・1日3.5時間から。時間帯はシフト例（8:15〜16:30／8:30〜12:30／12:30〜16:30 など）をもとに相談できます</td></tr>
+          <tr><th>勤務日数</th><td>週2日から。扶養内勤務のご相談も可</td></tr>
+          <tr><th>仕事内容</th><td>保育補助（担任のサポート、朝夕の受け入れ・見守り、環境整備など）</td></tr>
+          <tr><th>応募資格</th><td>保育士資格をお持ちの方（取得見込み含む）。ブランクのある方も歓迎します。</td></tr>
+          <tr><th>待遇</th><td>社員登用制度あり・マイカー通勤可・施設内全面禁煙。社会保険は勤務時間により加入</td></tr>
+        </tbody>
+      </table>
+      <p class="sec-note">※パートの詳しい条件は、LINEかお電話でお尋ねください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== (8) FAQ ===== -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="hand">q &amp; a</span>
+      <h2>よくある質問</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>車で通勤できますか？</summary><p>できます。マイカー通勤可で、JR高崎線「本庄駅」から徒歩23分の立地のため、車・自転車通勤の職員が多数です。</p></details>
+      <details class="faq-item"><summary>I・Uターンでの就職も相談できますか？</summary><p>はい、歓迎します。本庄市に住民票を移して勤務する場合、市の制度による家賃補助（最大47,000円/月・最長5年）の対象になります。本庄駅周辺の家賃相場は都心より大幅に低く、新幹線なら東京駅まで約50分です。まずはLINEでご状況をお聞かせください。</p></details>
+      <details class="faq-item"><summary>ブランクがあっても大丈夫ですか？</summary><p>大丈夫です。全クラス複数担任制のため、一人で抱え込まずに再スタートできます。研修期間で少しずつ感覚を取り戻せます。</p></details>
+      <details class="faq-item"><summary>持ち帰り仕事は多くないですか？</summary><p>内勤制度で減らしています。月数日、保育を離れて書類・制作・事務にあてる時間があり、記録が滞らない仕組みです。</p></details>
+      <details class="faq-item"><summary>応募する前に、匿名で質問だけすることはできますか？</summary><p>できます。LINEでは名乗らずに質問だけでもかまいません。応募や見学の意思が固まっていなくても、給与や休日など聞きにくいことこそ気軽にお尋ねください。</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== (9) 理事長メッセージは園の意向で非掲載（2026-08-05 社長指示） ===== -->
+
+<!-- ===== (9b) 採用までの流れ（写真=園が事前設計した指定カット・2026-08-18 A案から移植） ===== -->
+<section class="flow" id="flow">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="hand">steps</span>
+      <h2>採用までの流れ</h2>
+    </div>
+    <ol class="flow-steps">
+      <li class="flow-step">
+        <img src="images/flow-1.webp?v=20260818" width="800" height="600" alt="スマホでLINEを操作するイメージ" loading="lazy">
+        <span class="fs-num">01</span>
+        <div class="fs-body"><h3>公式LINEで相談</h3><p>公式LINEを友だち追加して、気になることをメッセージでどうぞ。</p></div>
+      </li>
+      <li class="flow-step">
+        <img src="images/flow-2.webp?v=20260818" width="800" height="600" alt="書類を手渡しするイメージ" loading="lazy">
+        <span class="fs-num">02</span>
+        <div class="fs-body"><h3>書類のご提出</h3><p>必要な書類はLINEでご案内します。かしこまった志望動機は不要です。</p></div>
+      </li>
+      <li class="flow-step">
+        <img src="images/flow-3.webp?v=20260818" width="800" height="600" alt="面接のイメージ" loading="lazy">
+        <span class="fs-num">03</span>
+        <div class="fs-body"><h3>面接・園見学</h3><p>私服でどうぞ。見学だけで帰る方もいます。</p></div>
+      </li>
+      <li class="flow-step">
+        <img src="images/group.webp?v=20260818" width="1600" height="1200" alt="園舎前に集まったこざくら保育園の先生たち" loading="lazy">
+        <span class="fs-num">04</span>
+        <div class="fs-body"><h3>内定</h3><p>入職日はご都合に合わせて調整します。</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== (10) 応募（効かせ色地・LINE主役） ===== -->
+<section class="apply" id="apply">
+  <div class="deco-circle" style="width:420px;height:420px;right:-140px;top:-150px"></div>
+  <div class="deco-circle" style="width:220px;height:220px;left:-70px;bottom:-80px"></div>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="hand">entry</span>
+      <h2>応募・見学のお申し込み</h2>
+    </div>
+    <div class="apply-grid">
+      <!-- 主役: LINE -->
+      <div class="apply-line">
+        <svg class="lg-mark" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#06C755"/><path fill="#fff" d="M12 5.5c-3.9 0-7 2.5-7 5.6 0 2.8 2.5 5.1 5.8 5.5.2 0 .5.1.6.3 0 .2 0 .5 0 .7l-.1.6c0 .2-.1.7.6.4s4.2-2.5 5.7-4.2c1-.9 1.5-1.9 1.5-3.3 0-3.1-3.1-5.6-7.1-5.6z"/></svg>
+        <h3><span class="num2">1</span>公式LINEで相談する</h3>
+        <p class="lead">友だち追加は<strong>30秒</strong>。「見学だけ」「質問だけ」でもかまいません。</p>
+        <a class="btn btn-line-green" href="https://line.me/R/oaMessage/@529wdnfx/?%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" id="cta-line-apply" data-cta-location="apply-line">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
+          LINEで友だち追加して相談を始める
+        </a>
+        <p class="line-howto">タップするとLINEが開き、メッセージが入力された状態になります。そのまま送信してください。</p>
+        <p class="safe">しつこい連絡・在職先への連絡は一切ありません。いただいた内容は採用のご連絡以外に使いません。</p>
+        <p class="line-fb" id="line-fallback" hidden>LINEが開かない場合は<a href="https://line.me/R/ti/p/@529wdnfx">こちらから友だち追加</a>してください。</p>
+      </div>
+      <!-- 第2導線: フォーム / 第3導線: 電話（2026-08-19後段: 「フォーム必要」へ方針転換→復活） -->
+      <div class="apply-secondary">
+        <div class="apply-box" id="contact">
+          <h4><span class="num2">2</span>フォームで問い合わせる</h4>
+          <p>電話やLINEが使いにくい方は、こちらからどうぞ。</p>
+          <form id="contact-form" action="javascript:void(0)" onsubmit="this.querySelector('.form-done').hidden=false;this.querySelector('button').disabled=true;return false;" style="margin-top:14px">
+            <div class="f-row"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" name="f-name" placeholder="例）本庄 さくら" required autocomplete="name"></div>
+            <div class="f-row"><label for="f-contact">ご連絡先（電話 または メール）<span class="req">必須</span></label><input type="text" id="f-contact" name="f-contact" placeholder="例）090-0000-0000 ／ your@example.jp" required></div>
+            <div class="f-row"><label for="f-type">ご応募の区分<span class="req">必須</span></label>
+              <select id="f-type" name="f-type" required>
+                <option value="">選択してください</option>
+                <option>新卒</option>
+                <option>中途</option>
+                <option>パート</option>
+                <option>見学・質問のみ</option>
+              </select>
+            </div>
+            <div class="f-row"><label for="f-message">お問い合わせ内容</label><textarea id="f-message" name="f-message" placeholder="気になっていること、聞きにくいこと、何でもどうぞ。"></textarea></div>
+            <button class="btn btn-form" type="submit">この内容で送信する</button>
+            <!-- 公開前メモ: フォームは未接続（画面上の受付表示のみ）。公開前に送信先＋受信メールへの接続が必須（launch-checklist A12/B3参照） -->
+            <p class="form-note form-done" hidden>※フォームからの送信は、ページの正式公開と同時にご利用いただけます。お急ぎの場合はLINEまたはお電話（0495-22-5812）でご連絡ください。</p>
+            <p class="form-note">送信後、園の採用担当より折り返しご連絡します。</p>
+          </form>
+        </div>
+        <div class="apply-box">
+          <h4><span class="num2">3</span>電話で問い合わせる</h4>
+          <p>「採用ページを見た」とお伝えください。</p>
+          <a class="tel-num" href="tel:0495225812" id="cta-tel-apply" data-cta-location="apply-tel">0495-22-5812</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== (11) アクセス ===== -->
+<section class="access" id="access">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="hand">access</span>
+      <h2>アクセス</h2>
+    </div>
+    <div class="access-in">
+      <div class="access-info">
+        <dl>
+          <div class="row"><dt>所在地</dt><dd>〒367-0046 埼玉県本庄市栄3-6-34（本庄南小学校の北隣）</dd></div>
+          <div class="row"><dt>電車</dt><dd>JR高崎線「本庄駅」徒歩23分／上越新幹線「本庄早稲田駅」徒歩27分（東京駅まで新幹線約50分）</dd></div>
+          <div class="row"><dt>車・自転車</dt><dd>マイカー通勤可（関越道・本庄児玉ICが近く、車移動が中心のエリアです）</dd></div>
+        </dl>
+      </div>
+      <div class="access-map"><iframe src="https://www.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E6%9C%AC%E5%BA%84%E5%B8%82%E6%A0%843-6-34%20%E3%81%93%E3%81%96%E3%81%8F%E3%82%89%E4%BF%9D%E8%82%B2%E5%9C%92&output=embed" title="こざくら保育園の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== (12) フッター ===== -->
+<footer>
+  <div class="wrap">
+    <p class="f-org">社会福祉法人こざくら福祉会／こざくら保育園</p>
+    <p>理事長：根岸広幸</p>
+    <p>〒367-0046 埼玉県本庄市栄3-6-34　電話：<a class="f-tel" href="tel:0495225812" id="cta-tel-footer" data-cta-location="footer-tel">0495-22-5812</a></p>
+    <p class="f-nav"><a href="privacy.html">プライバシーポリシー</a></p>
+    <!-- 公開前メモ（表示なし）: 数値・労働条件の一部は園の最終確認前・先輩の声は文字起こし待ち。
+         公開前の確定項目一覧は docs/launch-checklist.md が正本 -->
+    <p class="f-copy">&copy; 2026 KOZAKURA HOIKUEN</p>
+  </div>
+</footer>
+
+<!-- ===== スティッキーCTA（モバイル・LINE主導） ===== -->
+<div class="sticky-cta" role="navigation" aria-label="お問い合わせ">
+  <!-- 条件を先に確かめたい層の離脱を防ぐ直リンク（ペルソナ検証で中途層の最重要要望・2026-08-06追加） -->
+  <a class="s-btn s-req" href="#requirements" data-cta-location="sticky-requirements">給与・条件</a>
+  <a class="s-btn s-tel" href="tel:0495225812" id="cta-tel-sticky" data-cta-location="sticky-tel">
+    <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    電話
+  </a>
+  <a class="s-btn s-line" href="https://line.me/R/oaMessage/@529wdnfx/?%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" id="cta-line-sticky" data-cta-location="sticky">
+    <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
+    LINEで相談する
+  </a>
+</div>
+
+<script>
+/* LINE導線（oaMessage方式・2026-08-21実URL投入）
+   ベーシックID=@529wdnfx／合言葉=「質問する」。タップでトーク画面が開き合言葉が入力済みになる。
+   本人が送信した時点で友だち追加＋（Lステップ側の）タグ付与が成立する仕組み。
+   - href直書きが本体＝JSが動かない環境でもそのまま機能する
+   - UTM出し分けは対応表（石橋さん支給予定）が来たら UTM_MAP に足すだけで有効化される。
+     取得できない場合は既定の合言葉にフォールバックし、空文字では送らせない
+   - 起動できなかった場合のみ、救済リンク（友だち追加）を表示する（通常時は最後まで非表示） */
+(function () {
+  var BASIC_ID = '@529wdnfx';
+  var DEFAULT_CODE = '質問する';
+  var UTM_MAP = {};   /* 例) { gps: '募集を見ましたA1' } ← 対応表が届いたらここに追記 */
+  var code = DEFAULT_CODE;
+  try {
+    var u = new URLSearchParams(location.search).get('utm_source');
+    if (u && UTM_MAP[u]) code = UTM_MAP[u];
+  } catch (e) {}
+  var url = 'https://line.me/R/oaMessage/' + BASIC_ID + '/?' + encodeURIComponent(code);
+
+  /* 送信は共通化: GTM未設置の間は dataLayer が無いので安全に何もしない */
+  function track(event, location) {
+    if (window.dataLayer) window.dataLayer.push({ event: event, cta_location: location || '' });
+  }
+  function loc(el) { return el.id || el.getAttribute('data-cta-location') || ''; }
+
+  /* 電話タップ（応募セクション／フッター／スティッキー） */
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+    a.addEventListener('click', function () { track('tel_click', loc(a)); });
+  });
+
+  /* 「給与・条件」など、LINE以外のCTAクリック */
+  document.querySelectorAll('a[data-cta-location="sticky-requirements"]').forEach(function (a) {
+    a.addEventListener('click', function () { track('cta_click', loc(a)); });
+  });
+
+  /* フォーム送信（送信先を接続したあともこのイベントがそのまま使える） */
+  var cf = document.getElementById('contact-form');
+  if (cf) {
+    cf.addEventListener('submit', function () {
+      var t = cf.querySelector('#f-type');
+      if (window.dataLayer) window.dataLayer.push({
+        event: 'form_submit', cta_location: 'apply-form',
+        entry_type: t && t.value ? t.value : ''   /* 新卒／中途／パート／見学・質問のみ */
+      });
+    });
+  }
+
+  document.querySelectorAll('a[href*="oaMessage"]').forEach(function (a) {
+    a.href = url;
+    a.addEventListener('click', function () {
+      if (window.dataLayer) window.dataLayer.push({ event: 'line_click', cta_location: a.id || a.getAttribute('data-cta-location') || '' });
+      var t = Date.now();
+      setTimeout(function () {   /* 3秒後もこのページが前面＝LINEが開けていない */
+        if (!document.hidden && Date.now() - t < 5000) {
+          var fb = document.getElementById('line-fallback');
+          if (fb) fb.hidden = false;
+        }
+      }, 3000);
+    });
+  });
+})();
+</script>
+
+<script>
+/* 5制度プルダウン（2026-08-06）: 不安の行をタップ→その行の直下に制度カードが開く（アコーディオン・同時に開くのは1つ）。
+   JSが動かない環境では is-drop が付かず、従来どおり全カード表示＋#アンカーで動く（安全側） */
+(function () {
+  try {
+    var sec = document.getElementById('features');
+    if (!sec) return;
+    var rows = [].slice.call(sec.querySelectorAll('.fear-map li'));
+    var cards = [].slice.call(sec.querySelectorAll('.feature-list .feature-card'));
+    if (!rows.length || rows.length !== cards.length) return;
+    function toggle(i) {
+      var willOpen = !rows[i].classList.contains('is-active');
+      rows.forEach(function (r, j) {
+        var on = willOpen && i === j;
+        r.classList.toggle('is-active', on);
+        cards[j].classList.toggle('is-open', on);
+        var a = r.querySelector('.fear-a');
+        if (a) a.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+      if (willOpen) {
+        var rect = rows[i].getBoundingClientRect();
+        if (rect.top < 60) rows[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    /* リスナー登録→DOM移動→is-drop付与の順（途中で失敗しても「全カード表示」の安全側に倒す） */
+    rows.forEach(function (row, i) {
+      row.addEventListener('click', function (e) {
+        if (e.target.closest('.feature-card')) return; /* 開いたカード内の操作では閉じない */
+        e.preventDefault();
+        toggle(i);
+      });
+    });
+    rows.forEach(function (row, i) {
+      row.appendChild(cards[i]);
+      cards[i].classList.add('pos-' + (i + 1)); /* nth-child依存の意匠を復元 */
+      var a = row.querySelector('.fear-a');
+      if (a) { a.setAttribute('aria-expanded', 'false'); a.setAttribute('aria-controls', cards[i].id || ''); }
+    });
+    sec.classList.add('is-drop');
+    /* #f1〜#f5 への直接着地・ハッシュ遷移で該当カードを開く */
+    function openFromHash() {
+      var m = /^#f([1-5])$/.exec(location.hash || '');
+      if (m) toggle(parseInt(m[1], 10) - 1);
+    }
+    window.addEventListener('hashchange', openFromHash);
+    openFromHash();
+  } catch (err) {
+    var s = document.getElementById('features');
+    if (s) s.classList.remove('is-drop'); /* 失敗時は全カード表示へ戻す */
+  }
+})();
+</script>
+<script>
+/* モバイルメニュー（2026-08-20）: 項目タップ・パネル外タップで閉じる。JS無効でもdetailsの標準開閉だけで機能する */
+(function () {
+  try {
+    var menu = document.getElementById('spMenu');
+    if (!menu) return;
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { menu.removeAttribute('open'); });
+    });
+    document.addEventListener('click', function (e) {
+      if (menu.open && !menu.contains(e.target)) menu.removeAttribute('open');
+    });
+  } catch (err) { /* 失敗しても標準のdetails開閉は生きる */ }
+})();
+</script>
 </body>
 </html>

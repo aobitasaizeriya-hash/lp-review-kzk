@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PXZXKWX7');</script>
+<!-- End Google Tag Manager -->
 <!-- 公開時: 本番ドメイン確定後にこのnoindexを削除する（レビューURLのまま公開しない） -->
 <meta name="robots" content="noindex,nofollow">
 <meta name="format-detection" content="telephone=no">
@@ -18,8 +25,7 @@
 <meta property="og:image" content="https://＜本番ドメイン＞/images/ogp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 ▲OGPここまで -->
-<!-- ▼公開時に有効化: GTM（園/チポーレ側のコンテナID確定後、この直下にGTMスニペットを設置。
-     LINEクリックは本文末尾のスクリプトが dataLayer に line_click（cta_location付き）をpushする） -->
+<!-- 計測イベント: line_click / tel_click / form_submit / cta_click（本文末尾のスクリプトがdataLayerへpush） -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=BIZ+UDPGothic:wght@400;700&family=Caveat:wght@500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
@@ -487,7 +493,10 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 ▲JobPostingここまで -->
 </head>
 <body>
-<!-- ▼公開時に有効化: GTM noscript（GTMスニペットはheadと、このbody直後の2箇所に設置＝リクレボ仕様） -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXZXKWX7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- ===== 共通インラインSVG defs（桜モチーフ＝こざくらのブランド意匠） ===== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
