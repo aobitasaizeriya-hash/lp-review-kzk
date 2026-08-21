@@ -376,6 +376,7 @@ footer{background:var(--accent-deep);color:#F1D8DF;padding:44px 0 30px;font-size
 footer .f-org{font-family:var(--serif);font-weight:700;font-size:14px;color:#fff;letter-spacing:.06em}
 footer .f-nav{margin:14px 0}
 footer .f-nav a{color:#FFE3EA;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:1px}
+footer .f-tel{color:#FFE3EA;font-weight:700;border-bottom:1px solid currentColor;padding:2px 1px;display:inline-block}
 footer .f-draft{font-size:11px;opacity:.85;margin-top:12px;line-height:1.8}
 footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;letter-spacing:.1em}
 
@@ -383,7 +384,10 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 .s-req{flex:0 0 auto;white-space:nowrap;font-size:12.5px;font-weight:700;color:var(--accent-deep);background:var(--pale-1);border:1px solid var(--line);border-radius:99px;padding:0 13px;min-height:44px;display:flex;align-items:center}
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:8px;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);box-shadow:0 -4px 18px rgba(0,0,0,.08)}
 .sticky-cta .s-btn{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:48px;border-radius:99px;font-size:12.5px;font-weight:700;padding:0 14px}
-.sticky-cta .s-line{flex:1 1 auto;background:var(--line-green);color:#fff}
+.sticky-cta .s-tel{flex:0 0 auto;border:1.5px solid var(--line);color:var(--accent-deep);background:#fff;gap:5px;padding:0 12px}
+.sticky-cta .s-line{flex:1 1 auto;background:var(--line-green);color:#fff;white-space:nowrap}
+/* 3ボタン（給与・条件／電話／LINE）が狭い端末でも1行に収まるよう詰める */
+@media(max-width:400px){.sticky-cta{gap:6px;padding-left:8px;padding-right:8px}.sticky-cta .s-btn{font-size:11.5px}.s-req{padding:0 10px}.sticky-cta .s-tel{padding:0 9px;gap:4px}}
 .sticky-cta .s-line .ico{width:18px;height:18px}
 @media(max-width:1040px){.sticky-cta{display:flex}main{padding-bottom:0}footer{padding-bottom:calc(114px + env(safe-area-inset-bottom))}}
 
@@ -842,12 +846,12 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
         <tr><th>就業時間</th><td>7:00〜19:00の間でシフト制・実働7.5時間（休憩60分）。時差出勤：早番・遅番あり。早番は昼過ぎ退勤</td></tr>
         <tr><th>休日・休暇</th><td>週休2日制（日曜・祝日ほかシフトによる）・年末年始（土曜は月1〜2回程度の出勤）／年次有給休暇 初年度10日</td></tr>
         <tr><th>時間外労働</th><td>あり（残業手当は法定どおり別途支給）</td></tr>
-        <tr><th>賃金</th><td><strong>月給235,500円〜285,500円</strong>＋交通費（経験・能力を考慮）<br>想定年収：約350万円〜450万円<br><span class="req-sub">※2026年8月時点の園公式求人掲載値（基本給＋各種手当。新卒・中途で内訳が異なります）。想定年収は月給12ヶ月分＋賞与実績から算出した目安です</span></td></tr>
+        <tr><th>賃金</th><td><strong>月給235,500円〜285,500円</strong>＋交通費（経験・能力を考慮）<br>想定年収：約350万円〜450万円</td></tr>
         <tr><th>賞与・昇給</th><td>賞与年2回（計3.5〜4.2ヶ月程度・実績による）／昇給年1回（毎年4月）</td></tr>
         <tr><th>手当・福利厚生</th><td>住宅手当 最大42,000円/月（最長5年）、入職祝い金 最大30万円、保育料補助、退職金制度（福祉医療機構退職共済）、通勤手当（実費支給）、マイカー通勤可（無料駐車場）<br><span class="req-sub">※本庄市の保育士宿舎借上支援制度の対象になる場合があります（要件あり・面接時にご確認ください）</span></td></tr>
         <tr><th>加入保険</th><td>健康保険・厚生年金・雇用保険・労災保険（社会保険完備）</td></tr>
         <tr><th>受動喫煙防止措置</th><td>施設内全面禁煙</td></tr>
-        <tr><th>募集者</th><td>社会福祉法人こざくら福祉会（代表者：根岸広幸／埼玉県本庄市栄3-6-34）</td></tr>
+        <tr><th>募集者</th><td>社会福祉法人こざくら福祉会（理事長：根岸広幸／埼玉県本庄市栄3-6-34）</td></tr>
       </tbody>
     </table>
 
@@ -1003,8 +1007,8 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 <footer>
   <div class="wrap">
     <p class="f-org">社会福祉法人こざくら福祉会／こざくら保育園</p>
-    <p>代表者：根岸広幸</p>
-    <p>〒367-0046 埼玉県本庄市栄3-6-34　電話：0495-22-5812</p>
+    <p>理事長：根岸広幸</p>
+    <p>〒367-0046 埼玉県本庄市栄3-6-34　電話：<a class="f-tel" href="tel:0495225812">0495-22-5812</a></p>
     <p class="f-nav"><a href="privacy.html">プライバシーポリシー</a></p>
     <!-- 公開前メモ（表示なし）: 数値・労働条件の一部は園の最終確認前・先輩の声は文字起こし待ち。
          公開前の確定項目一覧は docs/launch-checklist.md が正本 -->
@@ -1016,6 +1020,10 @@ footer .f-copy{font-family:var(--num);font-size:11px;opacity:.7;margin-top:12px;
 <div class="sticky-cta" role="navigation" aria-label="お問い合わせ">
   <!-- 条件を先に確かめたい層の離脱を防ぐ直リンク（ペルソナ検証で中途層の最重要要望・2026-08-06追加） -->
   <a class="s-btn s-req" href="#requirements" data-cta-location="sticky-requirements">給与・条件</a>
+  <a class="s-btn s-tel" href="tel:0495225812" data-cta-location="sticky-tel">
+    <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    電話
+  </a>
   <a class="s-btn s-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" id="cta-line-sticky" data-cta-location="sticky">
     <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.2 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
     LINEで相談する
