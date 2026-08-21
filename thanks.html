@@ -52,7 +52,7 @@
     <p>お問い合わせありがとうございます。<br>園の採用担当より、いただいたご連絡先へ折り返しご連絡します。</p>
     <p>お急ぎの方、すぐに質問したい方は、<br>LINEからどうぞ。</p>
     <!-- VAR:LINE_URL -->
-    <a class="thanks-line" href="https://lin.ee/XXXXXXXX" target="_blank" rel="noopener" data-cta-location="thanks">LINEで相談する</a>
+    <a class="thanks-line" href="https://line.me/R/oaMessage/@529wdnfx/?%E8%B3%AA%E5%95%8F%E3%81%99%E3%82%8B" target="_blank" rel="noopener" id="cta-line-thanks" data-cta-location="thanks">LINEで相談する</a>
     <br>
     <a class="thanks-back" href="index.html">採用ページにもどる</a>
   </main>
@@ -67,6 +67,11 @@
           sessionStorage.removeItem('lp_form_submitted');
         }
       } catch (e) { /* ストレージ不可でもページは表示する */ }
+      var ln = document.getElementById('cta-line-thanks');
+      if (ln) ln.addEventListener('click', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'line_click', cta_location: 'thanks' });
+      });
     })();
   </script>
 </body>
